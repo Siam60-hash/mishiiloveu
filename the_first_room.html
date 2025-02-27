@@ -1,0 +1,161 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Blinking Galaxy with Animated Stars</title>
+    <style>
+        /* General Reset */
+        body,
+        html {
+            margin: 0;
+            padding: 0;
+            height: 100%;
+            overflow: hidden;
+            font-family: Arial, sans-serif;
+        }
+
+        /* Galaxy Background */
+        body {
+            background: radial-gradient(circle, #00010d, #001233, #0d0452, #310070, #4a0088);
+            position: relative;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+        }
+
+        /* Blinking Stars */
+        .star {
+            position: absolute;
+            width: 2px;
+            height: 2px;
+            background: white;
+            border-radius: 50%;
+            animation: blink 2s infinite ease-in-out;
+        }
+
+        .star:nth-child(odd) {
+            animation-duration: 3s;
+        }
+
+        .star:nth-child(even) {
+            animation-duration: 4s;
+        }
+
+        @keyframes blink {
+
+            0%,
+            100% {
+                opacity: 0.3;
+                transform: scale(1);
+            }
+
+            50% {
+                opacity: 1;
+                transform: scale(1.5);
+            }
+        }
+
+        /* Star Placement */
+        .stars {
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            overflow: hidden;
+        }
+
+        /* Center container */
+        .button-container {
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
+            z-index: 2;
+        }
+
+        /* Buttons */
+        .button-container button {
+            background-color: rgba(255, 255, 255, 0.8);
+            color: #000;
+            border: none;
+            padding: 15px 30px;
+            margin: 10px 0;
+            font-size: 18px;
+            border-radius: 10px;
+            cursor: pointer;
+            transition: transform 0.3s ease, background-color 0.3s ease;
+        }
+
+        .button-container button:hover {
+            background-color: #4CAF50;
+            color: white;
+            transform: scale(1.1);
+            box-shadow: 0 0 15px rgba(255, 255, 255, 0.6);
+        }
+
+        .button-container button a {
+            text-decoration: none;
+            color: inherit;
+            display: inline-block;
+            background: linear-gradient(to right, pink, red, orange, yellow, green, cyan, blue, purple, magenta);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            animation: wordGlow 5s linear infinite;
+            background-size: 300% 100%;
+        }
+
+        @keyframes wordGlow {
+            0% {
+                background-position: 0% 50%;
+            }
+
+            33% {
+                background-position: 50% 50%;
+            }
+
+            66% {
+                background-position: 100% 50%;
+            }
+
+            100% {
+                background-position: 0% 50%;
+            }
+        }
+    </style>
+</head>
+
+<body>
+    <!-- Stars Container -->
+    <div class="stars">
+        <script>
+            // Generate stars dynamically
+            const starContainer = document.querySelector('body');
+            for (let i = 0; i < 100; i++) {
+                const star = document.createElement('div');
+                star.classList.add('star');
+                star.style.left = Math.random() * 100 + '%';
+                star.style.top = Math.random() * 100 + '%';
+                star.style.animationDelay = Math.random() * 5 + 's'; // Random delay for blink effect
+                star.style.width = star.style.height = Math.random() * 3 + 'px'; // Random star size
+                starContainer.appendChild(star);
+            }
+        </script>
+    </div>
+
+    <!-- Buttons -->
+    <div class="button-container">
+        <button><a href="pictures.html"target ="_blank">PICTURES</a></button>
+        <button><a href="voice.html"target ="_blank">VOICES</a></button>
+        <button><a href="#i_made.html"target ="_blank">I MADE</a></button>
+        <button><a href="my_feelings.html"target ="_blank">MY FEELINGS</a></button>
+        <button><a href="videos.html"target ="_blank">THE VIDEOS I WANT U TO WATCH</a></button>
+        <button><a href="how_much_i_love.html"target ="_blank">LOVE CALCULATOR</a></button>
+        <button><a href="surprice_button.html"target ="_blank">SURPRISE BUTTON</a></button>
+        <button><a href="the_best_time _i_enjoyed.html"target ="_blank">ONE OF THE BEST TIME IN MY WHOLE LIFE</a></button>
+    </div>
+</body>
+
+</html>

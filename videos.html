@@ -1,0 +1,250 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Vertical Video Gallery</title>
+    <link rel="stylesheet" href="styles.css">
+</head>
+<style>
+    * {
+        margin: 0;
+        padding: 0;
+        box-sizing: border-box;
+    }
+
+    body {
+        font-family: Arial, sans-serif;
+        overflow-x: hidden;
+        background: linear-gradient(to bottom, #0F2027, #203A43, #2C5364);
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        position: relative;
+    }
+
+    .video-gallery {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        width: 100%;
+        max-width: 600px;
+        padding: 10px;
+        position: relative;
+        z-index: 2;
+    }
+
+    .video-item {
+        width: 100%;
+        margin-bottom: 20px;
+    }
+
+    video {
+        width: 100%;
+        height: 650px;
+        border-radius: 8px;
+        box-shadow: 0 4px 8px rgba(255, 255, 255, 0.1);
+    }
+
+    /* Canvas for Frozen Crystal Effect */
+    canvas {
+        position: fixed;
+        top: 0;
+        left: 0;
+        width: 100%;
+        height: 100%;
+        z-index: 1;
+        pointer-events: none;
+    }
+
+    @media (max-width: 768px) {
+        .video-gallery {
+            padding: 5px;
+        }
+
+        .video-item {
+            margin-bottom: 15px;
+        }
+    }
+
+    @media (max-width: 480px) {
+        .video-item {
+            margin-bottom: 10px;
+        }
+    }
+</style>
+<script>
+    const canvas = document.getElementById("frozenCanvas");
+    const ctx = canvas.getContext("2d");
+
+    function resizeCanvas() {
+        canvas.width = window.innerWidth;
+        canvas.height = window.innerHeight;
+    }
+    window.addEventListener("resize", resizeCanvas);
+    resizeCanvas();
+
+    const particles = [];
+    class Particle {
+        constructor() {
+            this.x = Math.random() * canvas.width;
+            this.y = Math.random() * canvas.height;
+            this.size = Math.random() * 3 + 1;
+            this.speedX = Math.random() * 1 - 0.5;
+            this.speedY = Math.random() * 1 - 0.5;
+            this.alpha = Math.random() * 0.7 + 0.3;
+            this.color = `rgba(173, 216, 230, ${this.alpha})`; // Light blue ice glow
+        }
+        update() {
+            this.x += this.speedX;
+            this.y += this.speedY;
+            if (this.x > canvas.width || this.x < 0) this.speedX *= -1;
+            if (this.y > canvas.height || this.y < 0) this.speedY *= -1;
+        }
+        draw() {
+            ctx.fillStyle = this.color;
+            ctx.beginPath();
+            ctx.arc(this.x, this.y, this.size, 0, Math.PI * 2);
+            ctx.fill();
+        }
+    }
+
+    function createParticles() {
+        for (let i = 0; i < 120; i++) {  // Increased number of particles
+            particles.push(new Particle());
+        }
+    }
+
+    function animateParticles() {
+        ctx.clearRect(0, 0, canvas.width, canvas.height);
+        for (let particle of particles) {
+            particle.update();
+            particle.draw();
+        }
+        requestAnimationFrame(animateParticles);
+    }
+
+    createParticles();
+    animateParticles();
+</script>
+
+
+<body>
+    <canvas id="frozenCanvas"></canvas>
+    <div class="video-gallery">
+        <div class="video-item">
+            <video src="vdo/1.mp4" controls></video>
+        </div>
+        <div class="video-item">
+            <video src="vdo/2.mp4" controls></video>
+        </div>
+        <div class="video-item">
+            <video src="vdo/3.mp4" controls></video>
+        </div>
+        <div class="video-item">
+            <video src="vdo/4.mp4" controls></video>
+        </div>
+        <div class="video-item">
+            <video src="vdo/5.mp4" controls></video>
+        </div>
+        <div class="video-item">
+            <video src="vdo/6.mp4" controls></video>
+        </div>
+        <div class="video-item">
+            <video src="vdo/7.mp4" controls></video>
+        </div>
+        <div class="video-item">
+            <video src="vdo/8.mp4" controls></video>
+        </div>
+        <div class="video-item">
+            <video src="vdo/9.mp4" controls></video>
+        </div>
+        <div class="video-item">
+            <video src="vdo/10.mp4" controls></video>
+        </div>
+        <div class="video-item">
+            <video src="vdo/11.mp4" controls></video>
+        </div>
+        <div class="video-item">
+            <video src="vdo/12.mp4" controls></video>
+        </div>
+        <div class="video-item">
+            <video src="vdo/13.mp4" controls></video>
+        </div>
+        <div class="video-item">
+            <video src="vdo/14.mp4" controls></video>
+        </div>
+        <div class="video-item">
+            <video src="vdo/15.mp4" controls></video>
+        </div>
+        <div class="video-item">
+            <video src="vdo/16.mp4" controls></video>
+        </div>
+        <div class="video-item">
+            <video src="vdo/17.mp4" controls></video>
+        </div>
+        <div class="video-item">
+            <video src="vdo/18.mp4" controls></video>
+        </div>
+        <div class="video-item">
+            <video src="vdo/19.mp4" controls></video>
+        </div>
+        <div class="video-item">
+            <video src="vdo/20.mp4" controls></video>
+        </div>
+        <div class="video-item">
+            <video src="vdo/20.mp4" controls></video>
+        </div>        <div class="video-item">
+            <video src="vdo/21.mp4" controls></video>
+        </div>        <div class="video-item">
+            <video src="vdo/22.mp4" controls></video>
+        </div>        <div class="video-item">
+            <video src="vdo/23.mp4" controls></video>
+        </div>        <div class="video-item">
+            <video src="vdo/24.mp4" controls></video>
+        </div>        <div class="video-item">
+            <video src="vdo/25.mp4" controls></video>
+        </div>        <div class="video-item">
+            <video src="vdo/26.mp4" controls></video>
+        </div>        <div class="video-item">
+            <video src="vdo/27.mp4" controls></video>
+        </div>        <div class="video-item">
+            <video src="vdo/28.mp4" controls></video>
+        </div>        <div class="video-item">
+            <video src="vdo/29.mp4" controls></video>
+        </div>        <div class="video-item">
+            <video src="vdo/30.mp4" controls></video>
+        </div>        <div class="video-item">
+            <video src="vdo/31.mp4" controls></video>
+        </div>        <div class="video-item">
+            <video src="vdo/32.mp4" controls></video>
+        </div>        <div class="video-item">
+            <video src="vdo/33.mp4" controls></video>
+        </div>        <div class="video-item">
+            <video src="vdo/34.mp4" controls></video>
+        </div>        <div class="video-item">
+            <video src="vdo/35.mp4" controls></video>
+        </div>        <div class="video-item">
+            <video src="vdo/36.mp4" controls></video>
+        </div>        <div class="video-item">
+            <video src="vdo/37.mp4" controls></video>
+        </div>        <div class="video-item">
+            <video src="vdo/38.mp4" controls></video>
+        </div>        <div class="video-item">
+            <video src="vdo/39.mp4" controls></video>
+        </div>        <div class="video-item">
+            <video src="vdo/40.mp4" controls></video>
+        </div>        <div class="video-item">
+            <video src="vdo/41.mp4" controls></video>
+        </div>        <div class="video-item">
+            <video src="vdo/42.mp4" controls></video>
+        </div>        <div class="video-item">
+            <video src="vdo/43.mp4" controls></video>
+        </div>        <div class="video-item">
+            <video src="vdo/44.mp4" controls></video>
+        </div>
+        </div>
+        <!-- Add more video items as needed -->
+    </div>
+</body>
+</html>

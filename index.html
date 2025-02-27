@@ -1,0 +1,119 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>❤️ My Gift 4 U </title>
+    <style>
+        body {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            height: 100vh;
+            margin: 0;
+            background: linear-gradient(135deg, #f8a5c2, #e74c3c, #f8a5c2);
+            background-size: 400% 400%;
+            animation: gradientAnimation 6s ease infinite;
+            color: white;
+            font-family: 'Arial', sans-serif;
+            overflow: hidden;
+            position: relative;
+        }
+
+        @keyframes gradientAnimation {
+            0% {
+                background-position: 0% 50%;
+            }
+            50% {
+                background-position: 100% 50%;
+            }
+            100% {
+                background-position: 0% 50%;
+            }
+        }
+
+        .background-text {
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            font-size: 100px;
+            color: rgba(255, 255, 255, 0.2);
+            text-align: center;
+            line-height: 100vh;
+            white-space: nowrap;
+            z-index: -1;
+            animation: repeatText 10s linear infinite;
+            text-shadow: 0 0 10px #fff, 0 0 20px #ff0080, 0 0 30px #ff0080, 0 0 40px #ff0080, 0 0 50px #ff0080;
+        }
+
+        @keyframes repeatText {
+            0% {
+                transform: translateX(100%);
+            }
+            100% {
+                transform: translateX(-100%);
+            }
+        }
+
+        .background-text::after {
+            content: "Happy Birthday! Happy Birthday! Happy Birthday! Happy Birthday! Happy Birthday! Happy Birthday!Happy Birthday! Happy Birthday! Happy Birthday! Happy Birthday! Happy Birthday!Happy Birthday! Happy Birthday! Happy Birthday! Happy Birthday! Happy Birthday!Happy Birthday! Happy Birthday! Happy Birthday! Happy Birthday! Happy Birthday!Happy Birthday! Happy Birthday! Happy Birthday! Happy Birthday! Happy Birthday!Happy Birthday! Happy Birthday! Happy Birthday! Happy Birthday! Happy Birthday!";
+            display: block;
+            white-space: nowrap;
+        }
+
+        button {
+            padding: 15px 30px;
+            font-size: 16px;
+            color: #fff;
+            background-color: #007BFF;
+            border: none;
+            border-radius: 5px;
+            cursor: pointer;
+            transition: transform 0.2s ease, background-color 0.3s ease;
+            text-shadow: 0 0 10px #fff, 0 0 20px #00f, 0 0 30px #00f, 0 0 40px #00f;
+        }
+
+        button:hover {
+            background-color: #0056b3;
+            transform: scale(1.1);
+        }
+
+        button:active {
+            transform: scale(1);
+        }
+
+        button, a {
+            animation: glowEffect 1.5s infinite alternate;
+        }
+
+        @keyframes glowEffect {
+            0% {
+                text-shadow: 0 0 5px #fff, 0 0 10px #ff0080, 0 0 20px #ff0080, 0 0 30px #ff0080;
+            }
+            100% {
+                text-shadow: 0 0 10px #fff, 0 0 20px #ff0080, 0 0 40px #ff0080, 0 0 50px #ff0080;
+            }
+        }
+
+    </style>
+</head>
+
+<body>
+
+    <div class="background-text"></div>
+
+    <a href="the_first_room.html" target="_blank">
+        <button id="actionButton">Enter Madam plz</button>
+    </a>
+
+    <audio autoplay loop>
+        <source src="https://www.soundjay.com/button/happy-birthday-my-love.mp3" type="audio/mp3">
+        Your browser does not support the audio element.
+    </audio>
+
+</body>
+
+</html>

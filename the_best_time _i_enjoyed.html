@@ -1,0 +1,4260 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>The Time I Spent With An Angel</title>
+</head>
+<style>
+    {
+        margin: 0; 
+        padding: 0;
+    }
+    
+    body {
+        padding: 20px;
+        background: linear-gradient(135deg, #ff9a9e, #fad0c4, #ffdde1);
+        background-size: cover;
+        overflow-x: hidden; /* Allows vertical scrolling */
+        user-select: none;
+        position: relative;
+    }
+    
+    /* Adding a soft glitter effect */
+    body::before {
+        content: "";
+        position: absolute;
+        top: 0;
+        left: 0;
+        width: 100%;
+        height: 100%;
+        background: url('https://www.transparenttextures.com/patterns/stardust.png'); 
+        opacity: 0.2;
+        animation: sparkleAnimation 50s linear infinite;
+    }
+    
+    @keyframes sparkleAnimation {
+        from { background-position: 0 0; }
+        to { background-position: 5000px 5000px; }
+    }
+    
+    /* Floating Roses */
+    .rose {
+        position: absolute;
+        width: 80px; /* Increased size */
+        height: 80px;
+        background: url('https://upload.wikimedia.org/wikipedia/commons/5/5f/Red_Rose_PNG_Image.png') no-repeat center/contain;
+        opacity: 0.9;
+        animation: floatAnimation linear infinite;
+    }
+    
+    @keyframes floatAnimation {
+        0% {
+            transform: translateY(0) rotate(0deg);
+            opacity: 1;
+        }
+        50% {
+            opacity: 0.8;
+        }
+        100% {
+            transform: translateY(100vh) rotate(360deg);
+            opacity: 0;
+        }
+    }
+    
+    /* Styling the slider with a dreamy glow */
+    #slider {
+        height: 35vw;
+        position: relative;
+        perspective: 1000px;
+        transform-style: preserve-3d;
+        box-shadow: 0px 0px 20px rgba(255, 182, 193, 0.6);
+        border-radius: 15px;
+    }
+    
+    /* Making slider labels soft and glowing */
+    #slider label {
+        margin: auto;
+        width: 60%;
+        height: 100%;
+        border-radius: 10px;
+        position: absolute;
+        left: 0;
+        right: 0;
+        cursor: pointer;
+        transition: transform 0.4s ease, box-shadow 0.3s ease-in-out;
+        box-shadow: 0px 0px 15px rgba(255, 182, 193, 0.8);
+        background: linear-gradient(135deg, #ff9a9e, #ffdde1);
+    }
+    
+    #slider label:hover {
+        box-shadow: 0px 0px 25px rgba(255, 105, 180, 1);
+    }
+    
+    /* Hiding radio buttons */
+    [type=radio] {
+        display: none;
+    }
+    
+    <script>
+        document.addEventListener("DOMContentLoaded", function () {
+            const roseContainer = document.body;
+        
+            function createRose() {
+                const rose = document.createElement("div");
+                rose.classList.add("rose");
+        
+                // Random position at the top of the screen
+                rose.style.left = Math.random() * window.innerWidth + "px";
+                rose.style.animationDuration = (5 + Math.random() * 5) + "s"; // Random speed
+        
+                roseContainer.appendChild(rose);
+        
+                // Remove the rose after animation ends
+                setTimeout(() => {
+                    rose.remove();
+                }, 10000);
+            }
+        
+            // Generate roses every 1 second
+            setInterval(createRose, 800);
+        });
+        </script>
+                             
+
+#s1:checked ~ #slide4, #s2:checked ~ #slide5,
+#s3:checked ~ #slide1, #s4:checked ~ #slide2,
+#s5:checked ~ #slide3 {
+    box-shadow: 0 1px 4px 0 rgba(0,0,0,.37);
+    transform: translate3d(-30%,0,-200px);
+}
+
+#s1:checked ~ #slide5, #s2:checked ~ #slide1,
+#s3:checked ~ #slide2, #s4:checked ~ #slide3,
+#s5:checked ~ #slide4 {
+    box-shadow: 0 6px 10px 0 rgba(0,0,0,.3), 0 2px 2px 0 rgba(0,0,0,.2);
+    transform: translate3d(-15%,0,-100px);
+   }
+#s1:checked ~ #slide1, #s2:checked ~ #slide2,
+#s3:checked ~ #slide3, #s4:checked ~ #slide4,
+#s5:checked ~ #slide5 {
+    box-shadow: 0 13px 25px 0 rgba(0,0,0,.3), 0 11px 7px 0 rgba(0,0,0,.19)
+    transform: translate3d(-30%,0,-200px);
+}
+
+#s1:checked ~ #slide2, #s2:checked ~ #slide3,
+#s3:checked ~ #slide3, #s4:checked ~ #slide5,
+#s5:checked ~ #slide1 {
+    box-shadow: 0 6px 10px 0 rgba(0,0,0,.3), 0 2px 2px 0 rgba(0,0,0,.2);
+    transform: translate3d(-15%,0,-100px);
+}
+
+#s1:checked ~ #slide3, #s2:checked ~ #slide4,
+#s3:checked ~ #slide5, #s4:checked ~ #slide1,
+#s5:checked ~ #slide2 {
+    box-shadow: 0 1px 4px 0 rgba(0,0,0,.37);
+    transform: translate3d(30%,0,-200px);
+}
+
+
+#s6:checked ~ #slide9, #s7:checked ~ #slide10,
+#s8:checked ~ #slide6, #s9:checked ~ #slide7,
+#s10:checked ~ #slide8 {
+    box-shadow: 0 1px 4px 0 rgba(0,0,0,.37);
+    transform: translate3d(-30%,0,-200px);
+}
+
+#s6:checked ~ #slide10, #s7:checked ~ #slide6,
+#s8:checked ~ #slide7, #s9:checked ~ #slide8,
+#s10:checked ~ #slide9 {
+    box-shadow: 0 6px 10px 0 rgba(0,0,0,.3), 0 2px 2px 0 rgba(0,0,0,.2);
+    transform: translate3d(-15%,0,-100px);
+   }
+#s6:checked ~ #slide6, #s7:checked ~ #slide7,
+#s8:checked ~ #slide8, #s9:checked ~ #slide9,
+#s10:checked ~ #slide10 {
+    box-shadow: 0 13px 25px 0 rgba(0,0,0,.3), 0 11px 7px 0 rgba(0,0,0,.19)
+    transform: translate3d(-30%,0,-200px);
+}
+
+#s6:checked ~ #slide7, #s7:checked ~ #slide8,
+#s8:checked ~ #slide8, #s9:checked ~ #slide10,
+#s10:checked ~ #slide6 {
+    box-shadow: 0 6px 10px 0 rgba(0,0,0,.3), 0 2px 2px 0 rgba(0,0,0,.2);
+    transform: translate3d(-15%,0,-100px);
+}
+
+#s6:checked ~ #slide8, #s7:checked ~ #slide9,
+#s8:checked ~ #slide10, #s9:checked ~ #slide6,
+#s10:checked ~ #slide7 {
+    box-shadow: 0 1px 4px 0 rgba(0,0,0,.37);
+    transform: translate3d(30%,0,-200px);
+}
+
+#s11:checked ~ #slide14, #s12:checked ~ #slide15,
+#s13:checked ~ #slide11, #s14:checked ~ #slide12,
+#s15:checked ~ #slide13 {
+    box-shadow: 0 1px 4px 0 rgba(0,0,0,.37);
+    transform: translate3d(-30%,0,-200px);
+}
+
+#s11:checked ~ #slide15, #s12:checked ~ #slide11,
+#s13:checked ~ #slide12, #s14:checked ~ #slide13,
+#s15:checked ~ #slide14 {
+    box-shadow: 0 6px 10px 0 rgba(0,0,0,.3), 0 2px 2px 0 rgba(0,0,0,.2);
+    transform: translate3d(-15%,0,-100px);
+   }
+#s11:checked ~ #slide11, #s12:checked ~ #slide12,
+#s13:checked ~ #slide13, #s14:checked ~ #slide14,
+#s15:checked ~ #slide15 {
+    box-shadow: 0 13px 25px 0 rgba(0,0,0,.3), 0 11px 7px 0 rgba(0,0,0,.19)
+    transform: translate3d(-30%,0,-200px);
+}
+
+#s11:checked ~ #slide12, #s12:checked ~ #slide13,
+#s13:checked ~ #slide13, #s14:checked ~ #slide15,
+#s15:checked ~ #slide11 {
+    box-shadow: 0 6px 10px 0 rgba(0,0,0,.3), 0 2px 2px 0 rgba(0,0,0,.2);
+    transform: translate3d(-15%,0,-100px);
+}
+
+#s11:checked ~ #slide13, #s12:checked ~ #slide14,
+#s13:checked ~ #slide15, #s14:checked ~ #slide11,
+#s15:checked ~ #slide12 {
+    box-shadow: 0 1px 4px 0 rgba(0,0,0,.37);
+    transform: translate3d(30%,0,-200px);
+}
+
+
+#s16:checked ~ #slide19, #s17:checked ~ #slide20,
+#s18:checked ~ #slide16, #s19:checked ~ #slide17,
+#s20:checked ~ #slide18 {
+    box-shadow: 0 1px 4px 0 rgba(0,0,0,.37);
+    transform: translate3d(-30%,0,-200px);
+}
+
+#s16:checked ~ #slide20, #s17:checked ~ #slide16,
+#s18:checked ~ #slide17, #s19:checked ~ #slide18,
+#s20:checked ~ #slide19 {
+    box-shadow: 0 6px 10px 0 rgba(0,0,0,.3), 0 2px 2px 0 rgba(0,0,0,.2);
+    transform: translate3d(-15%,0,-100px);
+   }
+#s16:checked ~ #slide16, #s17:checked ~ #slide17,
+#s18:checked ~ #slide18, #s19:checked ~ #slide19,
+#s20:checked ~ #slide20 {
+    box-shadow: 0 13px 25px 0 rgba(0,0,0,.3), 0 11px 7px 0 rgba(0,0,0,.19)
+    transform: translate3d(-30%,0,-200px);
+}
+
+#s16:checked ~ #slide17, #s17:checked ~ #slide18,
+#s18:checked ~ #slide18, #s19:checked ~ #slide20,
+#s20:checked ~ #slide16 {
+    box-shadow: 0 6px 10px 0 rgba(0,0,0,.3), 0 2px 2px 0 rgba(0,0,0,.2);
+    transform: translate3d(-15%,0,-100px);
+}
+
+#s16:checked ~ #slide18, #s17:checked ~ #slide19,
+#s18:checked ~ #slide20, #s19:checked ~ #slide16,
+#s20:checked ~ #slide17 {
+    box-shadow: 0 1px 4px 0 rgba(0,0,0,.37);
+    transform: translate3d(30%,0,-200px);
+}
+
+
+#s21:checked ~ #slide24, #s22:checked ~ #slide25,
+#s23:checked ~ #slide21, #s24:checked ~ #slide22,
+#s25:checked ~ #slide23 {
+    box-shadow: 0 1px 4px 0 rgba(0,0,0,.37);
+    transform: translate3d(-30%,0,-200px);
+}
+
+#s21:checked ~ #slide25, #s22:checked ~ #slide21,
+#s23:checked ~ #slide22, #s24:checked ~ #slide23,
+#s25:checked ~ #slide24 {
+    box-shadow: 0 6px 10px 0 rgba(0,0,0,.3), 0 2px 2px 0 rgba(0,0,0,.2);
+    transform: translate3d(-15%,0,-100px);
+   }
+#s21:checked ~ #slide21, #s22:checked ~ #slide22,
+#s23:checked ~ #slide23, #s24:checked ~ #slide24,
+#s25:checked ~ #slide25 {
+    box-shadow: 0 13px 25px 0 rgba(0,0,0,.3), 0 11px 7px 0 rgba(0,0,0,.19)
+    transform: translate3d(-30%,0,-200px);
+}
+
+#s21:checked ~ #slide22, #s22:checked ~ #slide23,
+#s23:checked ~ #slide23, #s24:checked ~ #slide25,
+#s25:checked ~ #slide21 {
+    box-shadow: 0 6px 10px 0 rgba(0,0,0,.3), 0 2px 2px 0 rgba(0,0,0,.2);
+    transform: translate3d(-15%,0,-100px);
+}
+
+#s21:checked ~ #slide23, #s22:checked ~ #slide24,
+#s23:checked ~ #slide25, #s24:checked ~ #slide21,
+#s25:checked ~ #slide22 {
+    box-shadow: 0 1px 4px 0 rgba(0,0,0,.37);
+    transform: translate3d(30%,0,-200px);
+}
+
+
+#s26:checked ~ #slide29, #s27:checked ~ #slide30,
+#s28:checked ~ #slide26, #s29:checked ~ #slide27,
+#s30:checked ~ #slide28 {
+    box-shadow: 0 1px 4px 0 rgba(0,0,0,.37);
+    transform: translate3d(-30%,0,-200px);
+}
+
+#s26:checked ~ #slide30, #s27:checked ~ #slide26,
+#s28:checked ~ #slide27, #s29:checked ~ #slide28,
+#s30:checked ~ #slide29 {
+    box-shadow: 0 6px 10px 0 rgba(0,0,0,.3), 0 2px 2px 0 rgba(0,0,0,.2);
+    transform: translate3d(-15%,0,-100px);
+   }
+#s26:checked ~ #slide26, #s27:checked ~ #slide27,
+#s28:checked ~ #slide28, #s29:checked ~ #slide29,
+#s30:checked ~ #slide30 {
+    box-shadow: 0 13px 25px 0 rgba(0,0,0,.3), 0 11px 7px 0 rgba(0,0,0,.19)
+    transform: translate3d(-30%,0,-200px);
+}
+
+#s26:checked ~ #slide27, #s27:checked ~ #slide28,
+#s28:checked ~ #slide8, #s29:checked ~ #slide30,
+#s30:checked ~ #slide26 {
+    box-shadow: 0 6px 10px 0 rgba(0,0,0,.3), 0 2px 2px 0 rgba(0,0,0,.2);
+    transform: translate3d(-15%,0,-100px);
+}
+
+#s26:checked ~ #slide28, #s27:checked ~ #slide29,
+#s28:checked ~ #slide30, #s29:checked ~ #slide26,
+#s30:checked ~ #slide27 {
+    box-shadow: 0 1px 4px 0 rgba(0,0,0,.37);
+    transform: translate3d(30%,0,-200px);
+}
+
+#s31:checked ~ #slide34, #s32:checked ~ #slide35,
+#s33:checked ~ #slide31, #s34:checked ~ #slide32,
+#s35:checked ~ #slide33 {
+    box-shadow: 0 1px 4px 0 rgba(0,0,0,.37);
+    transform: translate3d(-30%,0,-200px);
+}
+
+#s31:checked ~ #slide35, #s32:checked ~ #slide31,
+#s33:checked ~ #slide32, #s34:checked ~ #slide33,
+#s35:checked ~ #slide34 {
+    box-shadow: 0 6px 10px 0 rgba(0,0,0,.3), 0 2px 2px 0 rgba(0,0,0,.2);
+    transform: translate3d(-15%,0,-100px);
+   }
+#s31:checked ~ #slide31, #s32:checked ~ #slide32,
+#s33:checked ~ #slide33, #s34:checked ~ #slide34,
+#s35:checked ~ #slide35 {
+    box-shadow: 0 13px 25px 0 rgba(0,0,0,.3), 0 11px 7px 0 rgba(0,0,0,.19)
+    transform: translate3d(-30%,0,-200px);
+}
+
+#s31:checked ~ #slide32, #s32:checked ~ #slide33,
+#s33:checked ~ #slide33, #s34:checked ~ #slide35,
+#s35:checked ~ #slide31 {
+    box-shadow: 0 6px 10px 0 rgba(0,0,0,.3), 0 2px 2px 0 rgba(0,0,0,.2);
+    transform: translate3d(-15%,0,-100px);
+}
+
+#s31:checked ~ #slide33, #s32:checked ~ #slide34,
+#s33:checked ~ #slide35, #s34:checked ~ #slide31,
+#s35:checked ~ #slide32 {
+    box-shadow: 0 1px 4px 0 rgba(0,0,0,.37);
+    transform: translate3d(30%,0,-200px);
+}
+
+
+#s36:checked ~ #slide39, #s37:checked ~ #slide40,
+#s38:checked ~ #slide36, #s39:checked ~ #slide37,
+#s40:checked ~ #slide38 {
+    box-shadow: 0 1px 4px 0 rgba(0,0,0,.37);
+    transform: translate3d(-30%,0,-200px);
+}
+
+#s36:checked ~ #slide40, #s37:checked ~ #slide36,
+#s38:checked ~ #slide37, #s39:checked ~ #slide38,
+#s40:checked ~ #slide39 {
+    box-shadow: 0 6px 10px 0 rgba(0,0,0,.3), 0 2px 2px 0 rgba(0,0,0,.2);
+    transform: translate3d(-15%,0,-100px);
+   }
+#s36:checked ~ #slide36, #s37:checked ~ #slide37,
+#s38:checked ~ #slide38, #s39:checked ~ #slide39,
+#s40:checked ~ #slide40 {
+    box-shadow: 0 13px 25px 0 rgba(0,0,0,.3), 0 11px 7px 0 rgba(0,0,0,.19)
+    transform: translate3d(-30%,0,-200px);
+}
+
+#s36:checked ~ #slide37, #s37:checked ~ #slide38,
+#s38:checked ~ #slide38, #s39:checked ~ #slide40,
+#s40:checked ~ #slide36 {
+    box-shadow: 0 6px 10px 0 rgba(0,0,0,.3), 0 2px 2px 0 rgba(0,0,0,.2);
+    transform: translate3d(-15%,0,-100px);
+}
+
+#s36:checked ~ #slide38, #s37:checked ~ #slide39,
+#s38:checked ~ #slide40, #s39:checked ~ #slide36,
+#s40:checked ~ #slide37 {
+    box-shadow: 0 1px 4px 0 rgba(0,0,0,.37);
+    transform: translate3d(30%,0,-200px);
+}
+
+#s41:checked ~ #slide44, #s42:checked ~ #slide45,
+#s43:checked ~ #slide41, #s44:checked ~ #slide42,
+#s45:checked ~ #slide43 {
+    box-shadow: 0 1px 4px 0 rgba(0,0,0,.37);
+    transform: translate3d(-30%,0,-200px);
+}
+
+#s41:checked ~ #slide45, #s42:checked ~ #slide41,
+#s43:checked ~ #slide42, #s44:checked ~ #slide43,
+#s45:checked ~ #slide44 {
+    box-shadow: 0 6px 10px 0 rgba(0,0,0,.3), 0 2px 2px 0 rgba(0,0,0,.2);
+    transform: translate3d(-15%,0,-100px);
+   }
+#s41:checked ~ #slide41, #s42:checked ~ #slide42,
+#s43:checked ~ #slide43, #s44:checked ~ #slide44,
+#s45:checked ~ #slide45 {
+    box-shadow: 0 13px 25px 0 rgba(0,0,0,.3), 0 11px 7px 0 rgba(0,0,0,.19)
+    transform: translate3d(-30%,0,-200px);
+}
+
+#s41:checked ~ #slide42, #s42:checked ~ #slide43,
+#s43:checked ~ #slide43, #s44:checked ~ #slide45,
+#s45:checked ~ #slide41 {
+    box-shadow: 0 6px 10px 0 rgba(0,0,0,.3), 0 2px 2px 0 rgba(0,0,0,.2);
+    transform: translate3d(-15%,0,-100px);
+}
+
+#s41:checked ~ #slide43, #s42:checked ~ #slide44,
+#s43:checked ~ #slide45, #s44:checked ~ #slide41,
+#s45:checked ~ #slide42 {
+    box-shadow: 0 1px 4px 0 rgba(0,0,0,.37);
+    transform: translate3d(30%,0,-200px);
+}
+
+
+#s46:checked ~ #slide49, #s47:checked ~ #slide50,
+#s48:checked ~ #slide46, #s49:checked ~ #slide47,
+#s50:checked ~ #slide48 {
+    box-shadow: 0 1px 4px 0 rgba(0,0,0,.37);
+    transform: translate3d(-30%,0,-200px);
+}
+
+#s46:checked ~ #slide50, #s47:checked ~ #slide46,
+#s48:checked ~ #slide47, #s49:checked ~ #slide48,
+#s50:checked ~ #slide49 {
+    box-shadow: 0 6px 10px 0 rgba(0,0,0,.3), 0 2px 2px 0 rgba(0,0,0,.2);
+    transform: translate3d(-15%,0,-100px);
+   }
+#s46:checked ~ #slide46, #s47:checked ~ #slide47,
+#s48:checked ~ #slide48, #s49:checked ~ #slide49,
+#s50:checked ~ #slide50 {
+    box-shadow: 0 13px 25px 0 rgba(0,0,0,.3), 0 11px 7px 0 rgba(0,0,0,.19)
+    transform: translate3d(-30%,0,-200px);
+}
+
+#s46:checked ~ #slide47, #s47:checked ~ #slide48,
+#s48:checked ~ #slide48, #s49:checked ~ #slide50,
+#s40:checked ~ #slide46 {
+    box-shadow: 0 6px 10px 0 rgba(0,0,0,.3), 0 2px 2px 0 rgba(0,0,0,.2);
+    transform: translate3d(-15%,0,-100px);
+}
+
+#s46:checked ~ #slide48, #s47:checked ~ #slide49,
+#s48:checked ~ #slide50, #s49:checked ~ #slide46,
+#s50:checked ~ #slide47 {
+    box-shadow: 0 1px 4px 0 rgba(0,0,0,.37);
+    transform: translate3d(30%,0,-200px);
+}
+
+#s51:checked ~ #slide54, #s52:checked ~ #slide55,
+#s53:checked ~ #slide51, #s54:checked ~ #slide52,
+#s55:checked ~ #slide53 {
+    box-shadow: 0 1px 4px 0 rgba(0,0,0,.37);
+    transform: translate3d(-30%,0,-200px);
+}
+
+#s51:checked ~ #slide55, #s52:checked ~ #slide51,
+#s53:checked ~ #slide52, #s54:checked ~ #slide53,
+#s55:checked ~ #slide54 {
+    box-shadow: 0 6px 10px 0 rgba(0,0,0,.3), 0 2px 2px 0 rgba(0,0,0,.2);
+    transform: translate3d(-15%,0,-100px);
+}
+#s51:checked ~ #slide51, #s52:checked ~ #slide52,
+#s53:checked ~ #slide53, #s54:checked ~ #slide54,
+#s55:checked ~ #slide55 {
+    box-shadow: 0 13px 25px 0 rgba(0,0,0,.3), 0 11px 7px 0 rgba(0,0,0,.19);
+    transform: translate3d(-30%,0,-200px);
+}
+
+#s51:checked ~ #slide52, #s52:checked ~ #slide53,
+#s53:checked ~ #slide53, #s54:checked ~ #slide55,
+#s55:checked ~ #slide51 {
+    box-shadow: 0 6px 10px 0 rgba(0,0,0,.3), 0 2px 2px 0 rgba(0,0,0,.2);
+    transform: translate3d(-15%,0,-100px);
+}
+
+#s51:checked ~ #slide53, #s52:checked ~ #slide54,
+#s53:checked ~ #slide55, #s54:checked ~ #slide51,
+#s55:checked ~ #slide52 {
+    box-shadow: 0 1px 4px 0 rgba(0,0,0,.37);
+    transform: translate3d(30%,0,-200px);
+}
+
+
+#s56:checked ~ #slide59, #s57:checked ~ #slide60,
+#s58:checked ~ #slide56, #s59:checked ~ #slide57,
+#s60:checked ~ #slide58 {
+    box-shadow: 0 1px 4px 0 rgba(0,0,0,.37);
+    transform: translate3d(-30%,0,-200px);
+}
+
+#s56:checked ~ #slide60, #s57:checked ~ #slide56,
+#s58:checked ~ #slide57, #s59:checked ~ #slide58,
+#s60:checked ~ #slide59 {
+    box-shadow: 0 6px 10px 0 rgba(0,0,0,.3), 0 2px 2px 0 rgba(0,0,0,.2);
+    transform: translate3d(-15%,0,-100px);
+}
+#s56:checked ~ #slide56, #s57:checked ~ #slide57,
+#s58:checked ~ #slide58, #s59:checked ~ #slide59,
+#s60:checked ~ #slide60 {
+    box-shadow: 0 13px 25px 0 rgba(0,0,0,.3), 0 11px 7px 0 rgba(0,0,0,.19);
+    transform: translate3d(-30%,0,-200px);
+}
+
+#s56:checked ~ #slide57, #s57:checked ~ #slide58,
+#s58:checked ~ #slide58, #s59:checked ~ #slide60,
+#s60:checked ~ #slide56 {
+    box-shadow: 0 6px 10px 0 rgba(0,0,0,.3), 0 2px 2px 0 rgba(0,0,0,.2);
+    transform: translate3d(-15%,0,-100px);
+}
+
+#s56:checked ~ #slide58, #s57:checked ~ #slide59,
+#s58:checked ~ #slide60, #s59:checked ~ #slide56,
+#s60:checked ~ #slide57 {
+    box-shadow: 0 1px 4px 0 rgba(0,0,0,.37);
+    transform: translate3d(30%,0,-200px);
+}
+
+#s61:checked ~ #slide64, #s62:checked ~ #slide65,
+#s63:checked ~ #slide61, #s64:checked ~ #slide62,
+#s65:checked ~ #slide63 {
+    box-shadow: 0 1px 4px 0 rgba(0,0,0,.37);
+    transform: translate3d(-30%,0,-200px);
+}
+
+#s61:checked ~ #slide65, #s62:checked ~ #slide61,
+#s63:checked ~ #slide62, #s64:checked ~ #slide63,
+#s65:checked ~ #slide64 {
+    box-shadow: 0 6px 10px 0 rgba(0,0,0,.3), 0 2px 2px 0 rgba(0,0,0,.2);
+    transform: translate3d(-15%,0,-100px);
+}
+#s61:checked ~ #slide61, #s62:checked ~ #slide62,
+#s63:checked ~ #slide63, #s64:checked ~ #slide64,
+#s65:checked ~ #slide65 {
+    box-shadow: 0 13px 25px 0 rgba(0,0,0,.3), 0 11px 7px 0 rgba(0,0,0,.19);
+    transform: translate3d(-30%,0,-200px);
+}
+
+#s61:checked ~ #slide62, #s62:checked ~ #slide63,
+#s63:checked ~ #slide63, #s64:checked ~ #slide65,
+#s65:checked ~ #slide61 {
+    box-shadow: 0 6px 10px 0 rgba(0,0,0,.3), 0 2px 2px 0 rgba(0,0,0,.2);
+    transform: translate3d(-15%,0,-100px);
+}
+
+#s61:checked ~ #slide63, #s62:checked ~ #slide64,
+#s63:checked ~ #slide65, #s64:checked ~ #slide61,
+#s65:checked ~ #slide62 {
+    box-shadow: 0 1px 4px 0 rgba(0,0,0,.37);
+    transform: translate3d(30%,0,-200px);
+}
+
+#s66:checked ~ #slide69, #s67:checked ~ #slide70,
+#s68:checked ~ #slide66, #s69:checked ~ #slide67,
+#s70:checked ~ #slide68 {
+    box-shadow: 0 1px 4px 0 rgba(0,0,0,.37);
+    transform: translate3d(-30%,0,-200px);
+}
+
+#s66:checked ~ #slide70, #s67:checked ~ #slide66,
+#s68:checked ~ #slide67, #s69:checked ~ #slide68,
+#s70:checked ~ #slide69 {
+    box-shadow: 0 6px 10px 0 rgba(0,0,0,.3), 0 2px
+    2px 0 rgba(0,0,0,.2);
+    transform: translate3d(-15%,0,-100px);
+}
+#s66:checked ~ #slide66, #s67:checked ~ #slide67,
+#s68:checked ~ #slide68, #s69:checked ~ #slide69,
+#s70:checked ~ #slide70 {
+    box-shadow: 0 13px 25px 0 rgba(0,0,0,.3), 0 11px 7px 0 rgba(0,0,0,.19);
+    transform: translate3d(-30%,0,-200px);
+}
+
+#s66:checked ~ #slide67, #s67:checked ~ #slide68,
+#s68:checked ~ #slide68, #s69:checked ~ #slide70,
+#s70:checked ~ #slide66 {
+    box-shadow: 0 6px 10px 0 rgba(0,0,0,.3), 0 2px 2px 0 rgba(0,0,0,.2);
+    transform: translate3d(-15%,0,-100px);
+}
+
+#s66:checked ~ #slide68, #s67:checked ~ #slide69,
+#s68:checked ~ #slide70, #s69:checked ~ #slide66,
+#s70:checked ~ #slide67 {
+    box-shadow: 0 1px 4px 0 rgba(0,0,0,.37);
+    transform: translate3d(30%,0,-200px);
+}
+
+#s71:checked ~ #slide74, #s72:checked ~ #slide75,
+#s73:checked ~ #slide71, #s74:checked ~ #slide72,
+#s75:checked ~ #slide73 {
+    box-shadow: 0 1px 4px 0 rgba(0,0,0,.37);
+    transform: translate3d(-30%,0,-200px);
+}
+
+#s71:checked ~ #slide75, #s72:checked ~ #slide71,
+#s73:checked ~ #slide72, #s74:checked ~ #slide73,
+#s75:checked ~ #slide74 {
+    box-shadow: 0 6px 10px 0 rgba(0,0,0,.3), 0 2px 2px 0 rgba(0,0,0,.2);
+    transform: translate3d(-15%,0,-100px);
+}
+#s71:checked ~ #slide71, #s72:checked ~ #slide72,
+#s73:checked ~ #slide73, #s74:checked ~ #slide74,
+#s75:checked ~ #slide75 {
+    box-shadow: 0 13px 25px 0 rgba(0,0,0,.3), 0 11px 7px 0 rgba(0,0,0,.19);
+    transform: translate3d(-30%,0,-200px);
+}
+
+#s71:checked ~ #slide72, #s72:checked ~ #slide73,
+#s73:checked ~ #slide73, #s74:checked ~ #slide75,
+#s75:checked ~ #slide71 {
+    box-shadow: 0 6px 10px 0 rgba(0,0,0,.3), 0 2px 2px 0 rgba(0,0,0,.2);
+    transform: translate3d(-15%,0,-100px);
+}
+
+#s71:checked ~ #slide73, #s72:checked ~ #slide74,
+#s73:checked ~ #slide75, #s74:checked ~ #slide71,
+#s75:checked ~ #slide72 {
+    box-shadow: 0 1px 4px 0 rgba(0,0,0,.37);
+    transform: translate3d(30%,0,-200px);
+}
+
+#s76:checked ~ #slide79, #s77:checked ~ #slide80,
+#s78:checked ~ #slide76, #s79:checked ~ #slide77,
+#s80:checked ~ #slide78 {
+    box-shadow: 0 1px 4px 0 rgba(0,0,0,.37);
+    transform: translate3d(-30%,0,-200px);
+}
+
+#s76:checked ~ #slide80, #s77:checked ~ #slide76,
+#s78:checked ~ #slide77, #s79:checked ~ #slide78,
+#s80:checked ~ #slide79 {
+    box-shadow: 0 6px 10px 0 rgba(0,0,0,.3), 0 2px 2px 0 rgba(0,0,0,.2);
+    transform: translate3d(-15%,0,-100px);
+}
+#s76:checked ~ #slide76, #s77:checked ~ #slide77,
+#s78:checked ~ #slide78, #s79:checked ~ #slide79,
+#s80:checked ~ #slide80 {
+    box-shadow: 0 13px 25px 0 rgba(0,0,0,.3), 0 11px 7px 0 rgba(0,0,0,.19);
+    transform: translate3d(-30%,0,-200px);
+}
+
+#s76:checked ~ #slide77, #s77:checked ~ #slide78,
+#s78:checked ~ #slide78, #s79:checked ~ #slide80,
+#s80:checked ~ #slide76 {
+    box-shadow: 0 6px 10px 0 rgba(0,0,0,.3), 0 2px 2px 0 rgba(0,0,0,.2);
+    transform: translate3d(-15%,0,-100px);
+}
+
+#s76:checked ~ #slide78, #s77:checked ~ #slide79,
+#s78:checked ~ #slide80, #s79:checked ~ #slide76,
+#s80:checked ~ #slide77 {
+    box-shadow: 0 1px 4px 0 rgba(0,0,0,.37);
+    transform: translate3d(30%,0,-200px);
+}
+
+#s81:checked ~ #slide84, #s82:checked ~ #slide85,
+#s83:checked ~ #slide81, #s84:checked ~ #slide82,
+#s85:checked ~ #slide83 {
+    box-shadow: 0 1px 4px 0 rgba(0,0,0,.37);
+    transform: translate3d(-30%,0,-200px);
+}
+
+#s81:checked ~ #slide85, #s82:checked ~ #slide81,
+#s83:checked ~ #slide82, #s84:checked ~ #slide83,
+#s85:checked ~ #slide84 {
+    box-shadow: 0 6px 10px 0 rgba(0,0,0,.3), 0 2px 2px 0 rgba(0,0,0,.2);
+    transform: translate3d(-15%,0,-100px);
+}
+#s81:checked ~ #slide81, #s82:checked ~ #slide82,
+#s83:checked ~ #slide83, #s84:checked ~ #slide84,
+#s85:checked ~ #slide85 {
+    box-shadow: 0 13px 25px 0 rgba(0,0,0,.3), 0 11px 7px 0 rgba(0,0,0,.19);
+    transform: translate3d(-30%,0,-200px);
+}
+
+#s81:checked ~ #slide82, #s82:checked ~ #slide83,
+#s83:checked ~ #slide83,#s84:checked ~ #slide85,
+#s85:checked ~ #slide81 {
+    box-shadow: 0 6px 10px 0 rgba(0,0,0,.3), 0 2px 2px 0 rgba(0,0,0,.2);
+    transform: translate3d(-15%,0,-100px);
+}
+#s83:checked ~ #slide83, #s84:checked ~ #slide84,
+#s85:checked ~ #slide85 {
+     box-shadow: 0 13px 25px 0 rgba(0,0,0,.3), 0 11px 7px 0 rgba(0,0,0,.19);
+    transform: translate3d(-30%,0,-200px);
+}
+
+#s81:checked ~ #slide82, #s82:checked ~ #slide83,
+#s83:checked ~ #slide83, #s84:checked ~ #slide85,
+#s85:checked ~ #slide81 {
+  box-shadow: 0 6px 10px 0 rgba(0,0,0,.3), 0 2px 2px 0 rgba(0,0,0,.2);
+  transform: translate3d(-15%,0,-100px);
+}
+
+#s81:checked ~ #slide83, #s82:checked ~ #slide84,
+#s83:checked ~ #slide85, #s84:checked ~ #slide81,
+#s85:checked ~ #slide82 {
+     box-shadow: 0 1px 4px 0 rgba(0,0,0,.37);
+     transform: translate3d(30%,0,-200px);
+}
+
+#s86:checked ~ #slide89, #s87:checked ~ #slide90,
+#s88:checked ~ #slide86, #s89:checked ~ #slide87,
+#s90:checked ~ #slide88 {
+    box-shadow: 0 1px 4px 0 rgba(0,0,0,.37);
+     transform: translate3d(-30%,0,-200px);
+}
+
+#s86:checked ~ #slide90, #s87:checked ~ #slide86,
+#s88:checked ~ #slide87, #s89:checked ~ #slide88,
+#s90:checked ~ #slide89 {
+    box-shadow: 0 6px 10px 0 rgba(0,0,0,.3), 0 2px 2px 0 rgba(0,0,0,.2);
+    transform: translate3d(-15%,0,-100px);
+}
+#s86:checked ~ #slide86, #s87:checked ~ #slide87,
+#s88:checked ~ #slide88, #s89:checked ~ #slide89,
+#s90:checked ~ #slide90 {
+    box-shadow: 0 13px 25px 0 rgba(0,0,0,.3), 0 11px 7px 0 rgba(0,0,0,.19);
+    transform: translate3d(-30%,0,-200px);
+}
+
+#s86:checked ~ #slide87, #s87:checked ~ #slide88,
+#s88:checked ~ #slide88, #s89:checked ~ #slide90,
+#s90:checked ~ #slide86 {
+    box-shadow: 0 6px 10px 0 rgba(0,0,0,.3), 0 2px 2px 0 rgba(0,0,0,.2);
+   transform: translate3d(-15%,0,-100px);
+}
+
+#s86:checked ~ #slide88, #s87:checked ~ #slide89,
+#s88:checked ~ #slide90, #s89:checked ~ #slide86,
+#s90:checked ~ #slide87 {
+     box-shadow: 0 1px 4px 0 rgba(0,0,0,.37);
+     transform: translate3d(30%,0,-200px);
+}
+
+#s91:checked ~ #slide94, #s92:checked ~ #slide95,
+#s93:checked ~ #slide91, #s94:checked ~ #slide92,
+#s95:checked ~ #slide93 {
+    box-shadow: 0 1px 4px 0 rgba(0,0,0,.37);
+    transform: translate3d(-30%,0,-200px);
+}
+
+#s91:checked ~ #slide95, #s92:checked ~ #slide91,
+#s93:checked ~ #slide92, #s94:checked ~ #slide93,
+#s95:checked ~ #slide94 {
+    box-shadow: 0 6px 10px 0 rgba(0,0,0,.3), 0 2px 2px 0 rgba(0,0,0,.2);
+    transform: translate3d(-15%,0,-100px);
+}
+#s91:checked ~ #slide91, #s92:checked ~ #slide92,
+#s93:checked ~ #slide93, #s94:checked ~ #slide94,
+#s95:checked ~ #slide95 {
+   box-shadow: 0 13px 25px 0 rgba(0,0,0,.3), 0 11px 7px 0 rgba(0,0,0,.19);
+  transform: translate3d(-30%,0,-200px);
+}
+
+#s91:checked ~ #slide92, #s92:checked ~ #slide93,
+#s93:checked ~ #slide93, #s94:checked ~ #slide95,
+#s95:checked ~ #slide91 {
+     box-shadow: 0 6px 10px 0 rgba(0,0,0,.3), 0 2px 2px 0 rgba(0,0,0,.2);
+     transform: translate3d(-15%,0,-100px);
+}
+
+#s91:checked ~ #slide93, #s92:checked ~ #slide94,
+#s93:checked ~ #slide95, #s94:checked ~ #slide91,
+#s95:checked ~ #slide92 {
+    box-shadow: 0 1px 4px 0 rgba(0,0,0,.37);
+    transform: translate3d(30%,0,-200px);
+}
+
+#s96:checked ~ #slide99, #s97:checked ~ #slide100,
+#s98:checked ~ #slide96, #s99:checked ~ #slide97,
+#s100:checked ~ #slide98 {
+     box-shadow: 0 1px 4px 0 rgba(0,0,0,.37);
+    transform: translate3d(-30%,0,-200px);
+}
+
+#s96:checked ~ #slide100, #s97:checked ~ #slide96,
+#s98:checked ~ #slide97, #s99:checked ~ #slide98,
+#s100:checked ~ #slide99 {
+    box-shadow: 0 6px 10px 0 rgba(0,0,0,.3), 0 2px 2px 0 rgba(0,0,0,.2);
+      transform: translate3d(-15%,0,-100px);
+}
+#s96:checked ~ #slide96, #s97:checked ~ #slide97,
+#s98:checked ~ #slide98, #s99:checked ~ #slide99,
+#s100:checked ~ #slide100 {
+    box-shadow: 0 13px 25px 0 rgba(0,0,0,.3), 0 11px 7px 0 rgba(0,0,0,.19);
+     transform: translate3d(-30%,0,-200px);
+}
+
+#s96:checked ~ #slide97, #s97:checked ~ #slide98,
+#s98:checked ~ #slide98, #s99:checked ~ #slide100,
+#s100:checked ~ #slide96 {
+   box-shadow: 0 6px 10px 0 rgba(0,0,0,.3), 0 2px 2px 0 rgba(0,0,0,.2);
+     transform: translate3d(-15%,0,-100px);
+}
+
+#s96:checked ~ #slide98, #s97:checked ~ #slide99,
+#s98:checked ~ #slide100, #s99:checked ~ #slide96,
+#s100:checked ~ #slide97 {
+    box-shadow: 0 1px 4px 0 rgba(0,0,0,.37);
+    transform: translate3d(30%,0,-200px);
+}
+
+#s101:checked ~ #slide104, #s102:checked ~ #slide105,
+#s103:checked ~ #slide101, #s104:checked ~ #slide102,
+#s105:checked ~ #slide103 {
+box-shadow: 0 1px 4px 0 rgba(0,0,0,.37);
+ transform: translate3d(-30%,0,-200px);
+}
+
+#s101:checked ~ #slide105, #s102:checked ~ #slide101,
+#s103:checked ~ #slide102, #s104:checked ~ #slide103,
+#s105:checked ~ #slide104 {
+ box-shadow: 0 6px 10px 0 rgba(0,0,0,.3), 0 2px 2px 0 rgba(0,0,0,.2);
+transform: translate3d(-15%,0,-100px);
+}
+#s101:checked ~ #slide101, #s102:checked ~ #slide102,
+#s103:checked ~ #slide103, #s104:checked ~ #slide104,
+#s105:checked ~ #slide105 {
+ box-shadow: 0 13px 25px 0 rgba(0,0,0,.3), 0 11px 7px 0 rgba(0,0,0,.19);
+transform: translate3d(-30%,0,-200px);
+}
+
+#s101:checked ~ #slide102, #s102:checked ~ #slide103,
+#s103:checked ~ #slide103, #s104:checked ~ #slide105,
+#s105:checked ~ #slide101 {
+ box-shadow: 0 6px 10px 0 rgba(0,0,0,.3), 0 2px 2px 0 rgba(0,0,0,.2);
+ transform: translate3d(-15%,0,-100px);
+}
+
+#s101:checked ~ #slide103, #s102:checked ~ #slide104,
+#s103:checked ~ #slide105, #s104:checked ~ #slide101,
+#s105:checked ~ #slide102 {
+ box-shadow: 0 1px 4px 0 rgba(0,0,0,.37);
+ transform: translate3d(30%,0,-200px);
+}
+
+#s106:checked ~ #slide109, #s107:checked ~ #slide110,
+#s108:checked ~ #slide106, #s109:checked ~ #slide107,
+#s110:checked ~ #slide108 {
+ box-shadow: 0 1px 4px 0 rgba(0,0,0,.37);
+ transform: translate3d(-30%,0,-200px);
+}
+
+#s106:checked ~ #slide110, #s107:checked ~ #slide106,
+#s108:checked ~ #slide107, #s109:checked ~ #slide108,
+#s110:checked ~ #slide109 {
+box-shadow: 0 6px 10px 0 rgba(0,0,0,.3), 0 2px 2px 0 rgba(0,0,0,.2);
+ transform: translate3d(-15%,0,-100px);
+}
+#s106:checked ~ #slide106, #s107:checked ~ #slide107,
+#s108:checked ~ #slide108, #s109:checked ~ #slide109,
+#s110:checked ~ #slide110 {
+box-shadow: 0 13px 25px 0 rgba(0,0,0,.3), 0 11px 7px 0 rgba(0,0,0,.19);
+ transform: translate3d(-30%,0,-200px);
+}
+
+#s106:checked ~ #slide107, #s107:checked ~ #slide108,
+#s108:checked ~ #slide108, #s109:checked ~ #slide110,
+#s110:checked ~ #slide106 {
+ box-shadow: 0 6px 10px 0 rgba(0,0,0,.3), 0 2px 2px 0 rgba(0,0,0,.2);
+ transform: translate3d(-15%,0,-100px);
+}
+
+#s106:checked ~ #slide108, #s107:checked ~ #slide109,
+#s108:checked ~ #slide110, #s109:checked ~ #slide106,
+#s110:checked ~ #slide107 {
+ box-shadow: 0 1px 4px 0 rgba(0,0,0,.37);
+transform: translate3d(30%,0,-200px);
+}
+
+#s111:checked ~ #slide114, #s112:checked ~ #slide115,
+#s113:checked ~ #slide111, #s114:checked ~ #slide112,
+#s115:checked ~ #slide113 {
+ box-shadow: 0 1px 4px 0 rgba(0,0,0,.37);
+ transform: translate3d(-30%,0,-200px);
+}
+
+#s111:checked ~ #slide115, #s112:checked ~ #slide111,
+#s113:checked ~ #slide112, #s114:checked ~ #slide113,
+#s115:checked ~ #slide114 {
+ box-shadow: 0 6px 10px 0 rgba(0,0,0,.3), 0 2px 2px 0 rgba(0,0,0,.2);
+transform: translate3d(-15%,0,-100px);
+}
+#s111:checked ~ #slide111, #s112:checked ~ #slide112,
+#s113:checked ~ #slide113, #s114:checked ~ #slide114,
+#s115:checked ~ #slide115 {
+ box-shadow: 0 13px 25px 0 rgba(0,0,0,.3), 0 11px 7px 0 rgba(0,0,0,.19);
+transform: translate3d(-30%,0,-200px);
+}
+
+#s111:checked ~ #slide112, #s112:checked ~ #slide113,
+#s113:checked ~ #slide113, #s114:checked ~ #slide115,
+#s115:checked ~ #slide111 {
+ box-shadow: 0 6px 10px 0 rgba(0,0,0,.3), 0 2px 2px 0 rgba(0,0,0,.2);
+transform: translate3d(-15%,0,-100px);
+}
+
+#s111:checked ~ #slide113, #s112:checked ~ #slide114,
+#s113:checked ~ #slide115, #s114:checked ~ #slide111,
+#s115:checked ~ #slide112 {
+ box-shadow: 0 1px 4px 0 rgba(0,0,0,.37);
+ transform: translate3d(30%,0,-200px);
+}
+
+#s116:checked ~ #slide119, #s117:checked ~ #slide120,
+#s118:checked ~ #slide116, #s119:checked ~ #slide117,
+#s120:checked ~ #slide118 {
+ box-shadow: 0 1px 4px 0 rgba(0,0,0,.37);
+transform: translate3d(-30%,0,-200px);
+}
+
+#s116:checked ~ #slide120, #s117:checked ~ #slide116,
+#s118:checked ~ #slide117, #s119:checked ~ #slide118,
+#s120:checked ~ #slide119 {
+ box-shadow: 0 6px 10px 0 rgba(0,0,0,.3), 0 2px 2px 0 rgba(0,0,0,.2);
+ transform: translate3d(-15%,0,-100px);
+}
+#s116:checked ~ #slide116, #s117:checked ~ #slide117,
+#s118:checked ~ #slide118, #s119:checked ~ #slide119,
+#s120:checked ~ #slide120 {
+ box-shadow: 0 13px 25px 0 rgba(0,0,0,.3), 0 11px 7px 0 rgba(0,0,0,.19);
+ transform: translate3d(-30%,0,-200px);
+}
+
+#s116:checked ~ #slide117, #s117:checked ~ #slide118,
+#s118:checked ~ #slide118, #s119:checked ~ #slide120,
+#s120:checked ~ #slide116 {
+ box-shadow: 0 6px 10px 0 rgba(0,0,0,.3), 0 2px 2px 0 rgba(0,0,0,.2);
+transform: translate3d(-15%,0,-100px);
+}
+
+#s116:checked ~ #slide118, #s117:checked ~ #slide119,
+#s118:checked ~ #slide120, #s119:checked ~ #slide116,
+#s120:checked ~ #slide117 {
+ box-shadow: 0 1px 4px 0 rgba(0,0,0,.37);
+transform: translate3d(30%,0,-200px);
+}
+
+#s121:checked ~ #slide124, #s122:checked ~ #slide125,
+#s123:checked ~ #slide121, #s124:checked ~ #slide122,
+#s125:checked ~ #slide123 {
+ box-shadow: 0 1px 4px 0 rgba(0,0,0,.37);
+transform: translate3d(-30%,0,-200px);
+}
+
+#s121:checked ~ #slide125, #s122:checked ~ #slide121,
+#s123:checked ~ #slide122, #s124:checked ~ #slide123,
+#s125:checked ~ #slide124 {
+ box-shadow: 0 6px 10px 0 rgba(0,0,0,.3), 0 2px 2px 0 rgba(0,0,0,.2);
+ transform: translate3d(-15%,0,-100px);
+}
+#s121:checked ~ #slide121, #s122:checked ~ #slide122,
+#s123:checked ~ #slide123, #s124:checked ~ #slide124,
+#s125:checked ~ #slide125 {
+box-shadow: 0 13px 25px 0 rgba(0,0,0,.3), 0 11px 7px 0 rgba(0,0,0,.19);
+ transform: translate3d(-30%,0,-200px);
+}
+
+#s121:checked ~ #slide122, #s122:checked ~ #slide123,
+#s123:checked ~ #slide123, #s124:checked ~ #slide125,
+#s125:checked ~ #slide121 {
+ box-shadow: 0 6px 10px 0 rgba(0,0,0,.3), 0 2px 2px 0 rgba(0,0,0,.2);
+ transform: translate3d(-15%,0,-100px);
+}
+
+#s121:checked ~ #slide123, #s122:checked ~ #slide124,
+#s123:checked ~ #slide125, #s124:checked ~ #slide121,
+#s125:checked ~ #slide122 {
+box-shadow: 0 1px 4px 0 rgba(0,0,0,.37);
+ transform: translate3d(30%,0,-200px);
+}
+
+#s126:checked ~ #slide129, #s127:checked ~ #slide130,
+#s128:checked ~ #slide126, #s129:checked ~ #slide127,
+#s130:checked ~ #slide128 {
+box-shadow: 0 1px 4px 0 rgba(0,0,0,.37);
+ transform: translate3d(-30%,0,-200px);
+}
+
+#s126:checked ~ #slide130, #s127:checked ~ #slide126,
+#s128:checked ~ #slide127, #s129:checked ~ #slide128,
+#s130:checked ~ #slide129 {
+box-shadow: 0 6px 10px 0 rgba(0,0,0,.3), 0 2px 2px 0 rgba(0,0,0,.2);
+ transform: translate3d(-15%,0,-100px);
+}
+#s126:checked ~ #slide126, #s127:checked ~ #slide127,
+#s128:checked ~ #slide128, #s129:checked ~ #slide129,
+#s130:checked ~ #slide130 {
+ box-shadow: 0 13px 25px 0 rgba(0,0,0,.3), 0 11px 7px 0 rgba(0,0,0,.19);
+transform: translate3d(-30%,0,-200px);
+}
+
+#s126:checked ~ #slide127, #s127:checked ~ #slide128,
+#s128:checked ~ #slide128, #s129:checked ~ #slide130,
+#s130:checked ~ #slide126 {
+ box-shadow: 0 6px 10px 0 rgba(0,0,0,.3), 0 2px 2px 0 rgba(0,0,0,.2);
+ transform: translate3d(-15%,0,-100px);
+}
+
+#s126:checked ~ #slide128, #s127:checked ~ #slide129,
+#s128:checked ~ #slide130, #s129:checked ~ #slide126,
+#s130:checked ~ #slide127 {
+ box-shadow: 0 1px 4px 0 rgba(0,0,0,.37);
+ transform: translate3d(30%,0,-200px);
+}
+
+#s131:checked ~ #slide134, #s132:checked ~ #slide135,
+#s133:checked ~ #slide131, #s134:checked ~ #slide132,
+#s135:checked ~ #slide133 {
+ box-shadow: 0 1px 4px 0 rgba(0,0,0,.37);
+transform: translate3d(-30%,0,-200px);
+}
+
+#s131:checked ~ #slide135, #s132:checked ~ #slide131,
+#s133:checked ~ #slide132, #s134:checked ~ #slide133,
+#s135:checked ~ #slide134 {
+ box-shadow: 0 6px 10px 0 rgba(0,0,0,.3), 0 2px 2px 0 rgba(0,0,0,.2);
+transform: translate3d(-15%,0,-100px);
+}
+#s131:checked ~ #slide131, #s132:checked ~ #slide132,
+#s133:checked ~ #slide133, #s134:checked ~ #slide134,
+#s135:checked ~ #slide135 {
+ box-shadow: 0 13px 25px 0 rgba(0,0,0,.3), 0 11px 7px 0 rgba(0,0,0,.19);
+transform: translate3d(-30%,0,-200px);
+}
+
+#s131:checked ~ #slide132, #s132:checked ~ #slide133,
+#s133:checked ~ #slide133, #s134:checked ~ #slide135,
+#s135:checked ~ #slide131 {
+ box-shadow: 0 6px 10px 0 rgba(0,0,0,.3), 0 2px 2px 0 rgba(0,0,0,.2);
+ transform: translate3d(-15%,0,-100px);
+}
+
+#s131:checked ~ #slide133, #s132:checked ~ #slide134,
+#s133:checked ~ #slide135, #s134:checked ~ #slide131,
+#s135:checked ~ #slide132 {
+ box-shadow: 0 1px 4px 0 rgba(0,0,0,.37);
+transform: translate3d(30%,0,-200px);
+}
+
+#s136:checked ~ #slide139, #s137:checked ~ #slide140,
+#s138:checked ~ #slide136, #s139:checked ~ #slide137,
+#s140:checked ~ #slide138 {
+ box-shadow: 0 1px 4px 0 rgba(0,0,0,.37);
+ transform: translate3d(-30%,0,-200px);
+}
+
+#s136:checked ~ #slide140, #s137:checked ~ #slide136,
+#s138:checked ~ #slide137, #s139:checked ~ #slide138,
+#s140:checked ~ #slide139 {
+box-shadow: 0 6px 10px 0 rgba(0,0,0,.3), 0 2px 2px 0 rgba(0,0,0,.2);
+transform: translate3d(-15%,0,-100px);
+}
+#s136:checked ~ #slide136, #s137:checked ~ #slide137,
+#s138:checked ~ #slide138, #s139:checked ~ #slide139,
+#s140:checked ~ #slide140 {
+ box-shadow: 0 13px 25px 0 rgba(0,0,0,.3), 0 11px 7px 0 rgba(0,0,0,.19);
+ transform: translate3d(-30%,0,-200px);
+}
+
+#s136:checked ~ #slide137, #s137:checked ~ #slide138,
+#s138:checked ~ #slide138, #s139:checked ~ #slide140,
+#s140:checked ~ #slide136 {
+ box-shadow: 0 6px 10px 0 rgba(0,0,0,.3), 0 2px 2px 0 rgba(0,0,0,.2);
+ transform: translate3d(-15%,0,-100px);
+}
+
+#s136:checked ~ #slide138, #s137:checked ~ #slide139,
+#s138:checked ~ #slide140, #s139:checked ~ #slide136,
+#s140:checked ~ #slide137 {
+ box-shadow: 0 1px 4px 0 rgba(0,0,0,.37);
+ transform: translate3d(30%,0,-200px);
+}
+
+#s141:checked ~ #slide144, #s142:checked ~ #slide145,
+#s143:checked ~ #slide141, #s144:checked ~ #slide142,
+#s145:checked ~ #slide143 {
+ box-shadow: 0 1px 4px 0 rgba(0,0,0,.37);
+ transform: translate3d(-30%,0,-200px);
+}
+
+#s141:checked ~ #slide145, #s142:checked ~ #slide141,
+#s143:checked ~ #slide142, #s144:checked ~ #slide143,
+#s145:checked ~ #slide144 {
+ box-shadow: 0 6px 10px 0 rgba(0,0,0,.3), 0 2px 2px 0 rgba(0,0,0,.2);
+transform: translate3d(-15%,0,-100px);
+}
+#s141:checked ~ #slide141, #s142:checked ~ #slide142,
+#s143:checked ~ #slide143, #s144:checked ~ #slide144,
+#s145:checked ~ #slide145 {
+box-shadow: 0 13px 25px 0 rgba(0,0,0,.3), 0 11px 7px 0 rgba(0,0,0,.19);
+transform: translate3d(-30%,0,-200px);
+}
+
+#s141:checked ~ #slide142, #s142:checked ~ #slide143,
+#s143:checked ~ #slide143, #s144:checked ~ #slide145,
+#s145:checked ~ #slide141 {
+ box-shadow: 0 6px 10px 0 rgba(0,0,0,.3), 0 2px 2px 0 rgba(0,0,0,.2);
+ transform: translate3d(-15%,0,-100px);
+}
+
+#s141:checked ~ #slide143, #s142:checked ~ #slide144,
+#s143:checked ~ #slide145, #s144:checked ~ #slide141,
+#s145:checked ~ #slide142 {
+ box-shadow: 0 1px 4px 0 rgba(0,0,0,.37);
+transform: translate3d(30%,0,-200px);
+}
+
+#s146:checked ~ #slide149, #s147:checked ~ #slide150,
+#s148:checked ~ #slide146, #s149:checked ~ #slide147,
+#s150:checked ~ #slide148 {
+box-shadow: 0 1px 4px 0 rgba(0,0,0,.37);
+transform: translate3d(-30%,0,-200px);
+}
+
+#s146:checked ~ #slide150, #s147:checked ~ #slide146,
+#s148:checked ~ #slide147, #s149:checked ~ #slide148,
+#s150:checked ~ #slide149 {
+box-shadow: 0 6px 10px 0 rgba(0,0,0,.3), 0 2px 2px 0 rgba(0,0,0,.2);
+ transform: translate3d(-15%,0,-100px);
+}
+#s146:checked ~ #slide146, #s147:checked ~ #slide147,
+#s148:checked ~ #slide148, #s149:checked ~ #slide149,
+#s150:checked ~ #slide150 {
+ box-shadow: 0 13px 25px 0 rgba(0,0,0,.3), 0 11px 7px 0 rgba(0,0,0,.19);
+ transform: translate3d(-30%,0,-200px);
+}
+
+#s146:checked ~ #slide147, #s147:checked ~ #slide148,
+#s148:checked ~ #slide148, #s149:checked ~ #slide150,
+#s150:checked ~ #slide146 {
+ box-shadow: 0 6px 10px 0 rgba(0,0,0,.3), 0 2px 2px 0 rgba(0,0,0,.2);
+ transform: translate3d(-15%,0,-100px);
+}
+
+#s146:checked ~ #slide148, #s147:checked ~ #slide149,
+#s148:checked ~ #slide150, #s149:checked ~ #slide146,
+#s150:checked ~ #slide147 {
+box-shadow: 0 1px 4px 0 rgba(0,0,0,.37);
+transform: translate3d(30%,0,-200px);
+}
+
+#s151:checked ~ #slide154, #s152:checked ~ #slide155,
+#s153:checked ~ #slide151, #s154:checked ~ #slide152,
+#s155:checked ~ #slide153 {
+ box-shadow: 0 1px 4px 0 rgba(0,0,0,.37);
+ transform: translate3d(-30%,0,-200px);
+}
+
+#s151:checked ~ #slide155, #s152:checked ~ #slide151,
+#s153:checked ~ #slide152, #s154:checked ~ #slide153,
+#s155:checked ~ #slide154 {
+ box-shadow: 0 6px 10px 0 rgba(0,0,0,.3), 0 2px 2px 0 rgba(0,0,0,.2);
+ transform: translate3d(-15%,0,-100px);
+}
+#s151:checked ~ #slide151, #s152:checked ~ #slide152,
+#s153:checked ~ #slide153, #s154:checked ~ #slide154,
+#s155:checked ~ #slide155 {
+ box-shadow: 0 13px 25px 0 rgba(0,0,0,.3), 0 11px 7px 0 rgba(0,0,0,.19);
+ transform: translate3d(-30%,0,-200px);
+}
+
+#s151:checked ~ #slide152, #s152:checked ~ #slide153,
+#s153:checked ~ #slide153, #s154:checked ~ #slide155,
+#s155:checked ~ #slide151 {
+ box-shadow: 0 6px 10px 0 rgba(0,0,0,.3), 0 2px 2px 0 rgba(0,0,0,.2);
+ transform: translate3d(-15%,0,-100px);
+}
+
+#s151:checked ~ #slide153, #s152:checked ~ #slide154,
+#s153:checked ~ #slide155, #s154:checked ~ #slide151,
+#s155:checked ~ #slide152 {
+ box-shadow: 0 1px 4px 0 rgba(0,0,0,.37);
+ transform: translate3d(30%,0,-200px);
+}
+
+#s156:checked ~ #slide159, #s157:checked ~ #slide160,
+#s158:checked ~ #slide156, #s159:checked ~ #slide157,
+#s160:checked ~ #slide158 {
+box-shadow: 0 1px 4px 0 rgba(0,0,0,.37);
+transform: translate3d(-30%,0,-200px);
+}
+
+#s156:checked ~ #slide160, #s157:checked ~ #slide156,
+#s158:checked ~ #slide157, #s159:checked ~ #slide158,
+#s160:checked ~ #slide159 {
+box-shadow: 0 6px 10px 0 rgba(0,0,0,.3), 0 2px 2px 0 rgba(0,0,0,.2);
+transform: translate3d(-15%,0,-100px);
+}
+#s156:checked ~ #slide156, #s157:checked ~ #slide157,
+#s158:checked ~ #slide158, #s159:checked ~ #slide159,
+#s160:checked ~ #slide160 {
+ box-shadow: 0 13px 25px 0 rgba(0,0,0,.3), 0 11px 7px 0 rgba(0,0,0,.19);
+ transform: translate3d(-30%,0,-200px);
+}
+
+#s156:checked ~ #slide157, #s157:checked ~ #slide158,
+#s158:checked ~ #slide158, #s159:checked ~ #slide160,
+#s160:checked ~ #slide156 {
+     box-shadow: 0 6px 10px 0 rgba(0,0,0,.3), 0 2px 2px 0 rgba(0,0,0,.2);
+ transform: translate3d(-15%,0,-100px);
+}
+
+#s156:checked ~ #slide158, #s157:checked ~ #slide159,
+#s158:checked ~ #slide160, #s159:checked ~ #slide156,
+#s160:checked ~ #slide157 {
+ box-shadow: 0 1px 4px 0 rgba(0,0,0,.37);
+ transform: translate3d(30%,0,-200px);
+}
+
+#s161:checked ~ #slide164, #s162:checked ~ #slide165,
+#s163:checked ~ #slide161, #s164:checked ~ #slide162,
+#s165:checked ~ #slide163 {
+ box-shadow: 0 1px 4px 0 rgba(0,0,0,.37);
+ transform: translate3d(-30%,0,-200px);
+}
+
+#s161:checked ~ #slide165, #s162:checked ~ #slide161,
+#s163:checked ~ #slide162, #s164:checked ~ #slide163,
+#s165:checked ~ #slide164 {
+ box-shadow: 0 6px 10px 0 rgba(0,0,0,.3), 0 2px 2px 0 rgba(0,0,0,.2);
+ transform: translate3d(-15%,0,-100px);
+}
+#s161:checked ~ #slide161, #s162:checked ~ #slide162,
+#s163:checked ~ #slide163, #s164:checked ~ #slide164,
+#s165:checked ~ #slide165 {
+ box-shadow: 0 13px 25px 0 rgba(0,0,0,.3), 0 11px 7px 0 rgba(0,0,0,.19);
+ transform: translate3d(-30%,0,-200px);
+}
+
+#s161:checked ~ #slide162, #s162:checked ~ #slide163,
+#s163:checked ~ #slide163, #s164:checked ~ #slide165,
+#s165:checked ~ #slide161 {
+ box-shadow: 0 6px 10px 0 rgba(0,0,0,.3), 0 2px 2px 0 rgba(0,0,0,.2);
+transform: translate3d(-15%,0,-100px);
+}
+
+#s161:checked ~ #slide163, #s162:checked ~ #slide164,
+#s163:checked ~ #slide165, #s164:checked ~ #slide161,
+#s165:checked ~ #slide162 {
+box-shadow: 0 1px 4px 0 rgba(0,0,0,.37);
+ transform: translate3d(30%,0,-200px);
+}
+
+#s166:checked ~ #slide169, #s167:checked ~ #slide170,
+#s168:checked ~ #slide166, #s169:checked ~ #slide167,
+#s170:checked ~ #slide168 {
+box-shadow: 0 1px 4px 0 rgba(0,0,0,.37);
+transform: translate3d(-30%,0,-200px);
+}
+
+#s166:checked ~ #slide170, #s167:checked ~ #slide166,
+#s168:checked ~ #slide167, #s169:checked ~ #slide168,
+#s170:checked ~ #slide169 {
+box-shadow: 0 6px 10px 0 rgba(0,0,0,.3), 0 2px 2px 0 rgba(0,0,0,.2);
+transform: translate3d(-15%,0,-100px);
+}
+#s166:checked ~ #slide166, #s167:checked ~ #slide167,
+#s168:checked ~ #slide168, #s169:checked ~ #slide169,
+#s170:checked ~ #slide170 {
+ box-shadow: 0 13px 25px 0 rgba(0,0,0,.3), 0 11px 7px 0 rgba(0,0,0,.19);
+transform: translate3d(-30%,0,-200px);
+}
+
+#s166:checked ~ #slide167, #s167:checked ~ #slide168,
+#s168:checked ~ #slide168, #s169:checked ~ #slide170,
+#s170:checked ~ #slide166 {
+ box-shadow: 0 6px 10px 0 rgba(0,0,0,.3), 0 2px 2px 0 rgba(0,0,0,.2);
+ transform: translate3d(-15%,0,-100px);
+}
+
+#s166:checked ~ #slide168, #s167:checked ~ #slide169,
+#s168:checked ~ #slide170, #s169:checked ~ #slide166,
+#s170:checked ~ #slide167 {
+box-shadow: 0 1px 4px 0 rgba(0,0,0,.37);
+ transform: translate3d(30%,0,-200px);
+}
+
+#s171:checked ~ #slide174, #s172:checked ~ #slide175,
+#s173:checked ~ #slide171, #s174:checked ~ #slide172,
+#s175:checked ~ #slide173 {
+box-shadow: 0 1px 4px 0 rgba(0,0,0,.37);
+transform: translate3d(-30%,0,-200px);
+}
+
+#s171:checked ~ #slide175, #s172:checked ~ #slide171,
+#s173:checked ~ #slide172, #s174:checked ~ #slide173,
+#s175:checked ~ #slide174 {
+box-shadow: 0 6px 10px 0 rgba(0,0,0,.3), 0 2px 2px 0 rgba(0,0,0,.2);
+transform: translate3d(-15%,0,-100px);
+}
+#s171:checked ~ #slide171, #s172:checked ~ #slide172,
+#s173:checked ~ #slide173, #s174:checked ~ #slide174,
+#s175:checked ~ #slide175 {
+ box-shadow: 0 13px 25px 0 rgba(0,0,0,.3), 0 11px 7px 0 rgba(0,0,0,.19);
+transform: translate3d(-30%,0,-200px);
+}
+
+#s171:checked ~ #slide172, #s172:checked ~ #slide173,
+#s173:checked ~ #slide173, #s174:checked ~ #slide175,
+#s175:checked ~ #slide171 {
+box-shadow: 0 6px 10px 0 rgba(0,0,0,.3), 0 2px 2px 0 rgba(0,0,0,.2);
+transform: translate3d(-15%,0,-100px);
+}
+
+#s171:checked ~ #slide173, #s172:checked ~ #slide174,
+#s173:checked ~ #slide175, #s174:checked ~ #slide171,
+#s175:checked ~ #slide172 {
+box-shadow: 0 1px 4px 0 rgba(0,0,0,.37);
+ transform: translate3d(30%,0,-200px);
+}
+
+#s176:checked ~ #slide179, #s177:checked ~ #slide180,
+#s178:checked ~ #slide176, #s179:checked ~ #slide177,
+#s180:checked ~ #slide178 {
+ box-shadow: 0 1px 4px 0 rgba(0,0,0,.37);
+ transform: translate3d(-30%,0,-200px);
+}
+
+#s176:checked ~ #slide180, #s177:checked ~ #slide176,
+#s178:checked ~ #slide177, #s179:checked ~ #slide178,
+#s180:checked ~ #slide179 {
+ box-shadow: 0 6px 10px 0 rgba(0,0,0,.3), 0 2px 2px 0 rgba(0,0,0,.2);
+transform: translate3d(-15%,0,-100px);
+}
+#s176:checked ~ #slide176, #s177:checked ~ #slide177,
+#s178:checked ~ #slide178, #s179:checked ~ #slide179,
+#s180:checked ~ #slide180 {
+ box-shadow: 0 13px 25px 0 rgba(0,0,0,.3), 0 11px 7px 0 rgba(0,0,0,.19);
+ transform: translate3d(-30%,0,-200px);
+}
+
+#s176:checked ~ #slide177, #s177:checked ~ #slide178,
+#s178:checked ~ #slide178, #s179:checked ~ #slide180,
+#s180:checked ~ #slide176 {
+box-shadow: 0 6px 10px 0 rgba(0,0,0,.3), 0 2px 2px 0 rgba(0,0,0,.2);
+ transform: translate3d(-15%,0,-100px);
+}
+
+#s176:checked ~ #slide178, #s177:checked ~ #slide179,
+#s178:checked ~ #slide180, #s179:checked ~ #slide176,
+#s180:checked ~ #slide177 {
+ box-shadow: 0 1px 4px 0 rgba(0,0,0,.37);
+transform: translate3d(30%,0,-200px);
+}
+
+#s181:checked ~ #slide184, #s182:checked ~ #slide185,
+#s183:checked ~ #slide181, #s184:checked ~ #slide182,
+#s185:checked ~ #slide183 {
+ box-shadow: 0 1px 4px 0 rgba(0,0,0,.37);
+ transform: translate3d(-30%,0,-200px);
+}
+
+#s181:checked ~ #slide185, #s182:checked ~ #slide181,
+#s183:checked ~ #slide182, #s184:checked ~ #slide183,
+#s185:checked ~ #slide184 {
+ box-shadow: 0 6px 10px 0 rgba(0,0,0,.3), 0 2px 2px 0 rgba(0,0,0,.2);
+transform: translate3d(-15%,0,-100px);
+}
+#s181:checked ~ #slide181, #s182:checked ~ #slide182,
+#s183:checked ~ #slide183, #s184:checked ~ #slide184,
+#s185:checked ~ #slide185 {
+box-shadow: 0 13px 25px 0 rgba(0,0,0,.3), 0 11px 7px 0 rgba(0,0,0,.19);
+ transform: translate3d(-30%,0,-200px);
+}
+
+#s181:checked ~ #slide182, #s182:checked ~ #slide183,
+#s183:checked ~ #slide183,#s184:checked ~ #slide185,
+#s185:checked ~ #slide181 {
+ box-shadow: 0 6px 10px 0 rgba(0,0,0,.3), 0 2px 2px 0 rgba(0,0,0,.2);
+ transform: translate3d(-15%,0,-100px);
+}
+#s183:checked ~ #slide183, #s184:checked ~ #slide184,
+#s185:checked ~ #slide185 {
+box-shadow: 0 13px 25px 0 rgba(0,0,0,.3), 0 11px 7px 0 rgba(0,0,0,.19);
+ transform: translate3d(-30%,0,-200px);
+}
+
+#s181:checked ~ #slide182, #s182:checked ~ #slide183,
+#s183:checked ~ #slide183, #s184:checked ~ #slide185,
+#s185:checked ~ #slide181 {
+ box-shadow: 0 6px 10px 0 rgba(0,0,0,.3), 0 2px 2px 0 rgba(0,0,0,.2);
+transform: translate3d(-15%,0,-100px);
+}
+
+#s181:checked ~ #slide183, #s182:checked ~ #slide184,
+#s183:checked ~ #slide185, #s184:checked ~ #slide181,
+#s185:checked ~ #slide182 {
+box-shadow: 0 1px 4px 0 rgba(0,0,0,.37);
+transform: translate3d(30%,0,-200px);
+}
+
+#s186:checked ~ #slide189, #s187:checked ~ #slide190,
+#s188:checked ~ #slide186, #s189:checked ~ #slide187,
+#s190:checked ~ #slide188 {
+ box-shadow: 0 1px 4px 0 rgba(0,0,0,.37);
+transform: translate3d(-30%,0,-200px);
+}
+
+#s186:checked ~ #slide190, #s187:checked ~ #slide186,
+#s188:checked ~ #slide187, #s189:checked ~ #slide188,
+#s190:checked ~ #slide189 {
+ box-shadow: 0 6px 10px 0 rgba(0,0,0,.3), 0 2px 2px 0 rgba(0,0,0,.2);
+transform: translate3d(-15%,0,-100px);
+}
+#s186:checked ~ #slide186, #s187:checked ~ #slide187,
+#s188:checked ~ #slide188, #s189:checked ~ #slide189,
+#s190:checked ~ #slide190 {
+ box-shadow: 0 13px 25px 0 rgba(0,0,0,.3), 0 11px 7px 0 rgba(0,0,0,.19);
+transform: translate3d(-30%,0,-200px);
+}
+
+#s186:checked ~ #slide187, #s187:checked ~ #slide188,
+#s188:checked ~ #slide188, #s189:checked ~ #slide190,
+#s190:checked ~ #slide186 {
+box-shadow: 0 6px 10px 0 rgba(0,0,0,.3), 0 2px 2px 0 rgba(0,0,0,.2);
+transform: translate3d(-15%,0,-100px);
+}
+
+#s186:checked ~ #slide188, #s187:checked ~ #slide189,
+#s188:checked ~ #slide190, #s189:checked ~ #slide186,
+#s190:checked ~ #slide187 {
+box-shadow: 0 1px 4px 0 rgba(0,0,0,.37);
+transform: translate3d(30%,0,-200px);
+}
+
+#s191:checked ~ #slide194, #s192:checked ~ #slide195,
+#s193:checked ~ #slide191, #s194:checked ~ #slide192,
+#s195:checked ~ #slide193 {
+ box-shadow: 0 1px 4px 0 rgba(0,0,0,.37);
+ transform: translate3d(-30%,0,-200px);
+}
+
+#s191:checked ~ #slide195, #s192:checked ~ #slide191,
+#s193:checked ~ #slide192, #s194:checked ~ #slide193,
+#s195:checked ~ #slide194 {
+box-shadow: 0 6px 10px 0 rgba(0,0,0,.3), 0 2px 2px 0 rgba(0,0,0,.2);
+ transform: translate3d(-15%,0,-100px);
+}
+#s191:checked ~ #slide191, #s192:checked ~ #slide192,
+#s193:checked ~ #slide193, #s194:checked ~ #slide194,
+#s195:checked ~ #slide195 {
+box-shadow: 0 13px 25px 0 rgba(0,0,0,.3), 0 11px 7px 0 rgba(0,0,0,.19);
+ transform: translate3d(-30%,0,-200px);
+}
+
+#s191:checked ~ #slide192, #s192:checked ~ #slide193,
+#s193:checked ~ #slide193, #s194:checked ~ #slide195,
+#s195:checked ~ #slide191 {
+box-shadow: 0 6px 10px 0 rgba(0,0,0,.3), 0 2px 2px 0 rgba(0,0,0,.2);
+transform: translate3d(-15%,0,-100px);
+}
+
+#s191:checked ~ #slide193, #s192:checked ~ #slide194,
+#s193:checked ~ #slide195, #s194:checked ~ #slide191,
+#s195:checked ~ #slide192 {
+ box-shadow: 0 1px 4px 0 rgba(0,0,0,.37);
+ transform: translate3d(30%,0,-200px);
+}
+
+#s196:checked ~ #slide199, #s197:checked ~ #slide200,
+#s198:checked ~ #slide196, #s199:checked ~ #slide197,
+#s200:checked ~ #slide198 {
+box-shadow: 0 1px 4px 0 rgba(0,0,0,.37);
+ transform: translate3d(-30%,0,-200px);
+}
+
+#s196:checked ~ #slide200, #s197:checked ~ #slide196,
+#s198:checked ~ #slide197, #s199:checked ~ #slide198,
+#s200:checked ~ #slide199 {
+ box-shadow: 0 6px 10px 0 rgba(0,0,0,.3), 0 2px 2px 0 rgba(0,0,0,.2);
+ transform: translate3d(-15%,0,-100px);
+}
+#s196:checked ~ #slide196, #s197:checked ~ #slide197,
+#s198:checked ~ #slide198, #s199:checked ~ #slide199,
+#s200:checked ~ #slide200 {
+ box-shadow: 0 13px 25px 0 rgba(0,0,0,.3), 0 11px 7px 0 rgba(0,0,0,.19);
+transform: translate3d(-30%,0,-200px);
+}
+
+#s196:checked ~ #slide197, #s197:checked ~ #slide198,
+#s198:checked ~ #slide198, #s199:checked ~ #slide200,
+#s200:checked ~ #slide196 {
+    box-shadow: 0 6px 10px 0 rgba(0,0,0,.3), 0 2px 2px 0 rgba(0,0,0,.2);
+transform: translate3d(-15%,0,-100px);
+}
+
+#s196:checked ~ #slide198, #s197:checked ~ #slide199,
+#s198:checked ~ #slide200, #s199:checked ~ #slide196,
+#s200:checked ~ #slide197 {
+ box-shadow: 0 1px 4px 0 rgba(0,0,0,.37);
+ transform: translate3d(30%,0,-200px);
+}
+
+#s201:checked ~ #slide201, #s202:checked ~ #slide202,
+#s203:checked ~ #slide203, #s204:checked ~ #slide204,
+#s205:checked ~ #slide205 {
+    box-shadow: 0 13px 25px 0 rgba(0,0,0,.3), 0 11px 7px 0 rgba(0,0,0,.19);
+    transform: translate3d(-30%,0,-200px);
+}
+
+#s201:checked ~ #slide202, #s202:checked ~ #slide203,
+#s203:checked ~ #slide204, #s204:checked ~ #slide205,
+#s205:checked ~ #slide201 {
+    box-shadow: 0 6px 10px 0 rgba(0,0,0,.3), 0 2px 2px 0 rgba(0,0,0,.2);
+    transform: translate3d(-15%,0,-100px);
+}
+
+#s201:checked ~ #slide205, #s202:checked ~ #slide201,
+#s203:checked ~ #slide202, #s204:checked ~ #slide203,
+#s205:checked ~ #slide204 {
+    box-shadow: 0 1px 4px 0 rgba(0,0,0,.37);
+    transform: translate3d(-30%,0,-200px);
+}
+
+#s201:checked ~ #slide203, #s202:checked ~ #slide204,
+#s203:checked ~ #slide205, #s204:checked ~ #slide201,
+#s205:checked ~ #slide202 {
+    box-shadow: 0 1px 4px 0 rgba(0,0,0,.37);
+    transform: translate3d(30%,0,-200px);
+}
+
+#s201:checked ~ #slide204, #s202:checked ~ #slide205,
+#s203:checked ~ #slide201, #s204:checked ~ #slide202,
+#s205:checked ~ #slide203 {
+    box-shadow: 0 6px 10px 0 rgba(0,0,0,.3), 0 2px 2px 0 rgba(0,0,0,.2);
+    transform: translate3d(-15%,0,-100px);
+}
+
+#s206:checked ~ #slide209, #s207:checked ~ #slide210,
+#s208:checked ~ #slide206, #s209:checked ~ #slide207,
+#s210:checked ~ #slide208 {
+    box-shadow: 0 1px 4px 0 rgba(0,0,0,.37);
+    transform: translate3d(-30%,0,-200px);
+}
+
+#s206:checked ~ #slide210, #s207:checked ~ #slide206,
+#s208:checked ~ #slide207, #s209:checked ~ #slide208,
+#s210:checked ~ #slide209 {
+    box-shadow: 0 6px 10px 0 rgba(0,0,0,.3), 0 2px 2px 0 rgba(0,0,0,.2);
+    transform: translate3d(-15%,0,-100px);
+}
+#s206:checked ~ #slide206, #s207:checked ~ #slide207,
+#s208:checked ~ #slide208, #s209:checked ~ #slide209,
+#s210:checked ~ #slide210 {
+    box-shadow: 0 13px 25px 0 rgba(0,0,0,.3), 0 11px 7px 0 rgba(0,0,0,.19);
+    transform: translate3d(-30%,0,-200px);
+}
+
+#s206:checked ~ #slide207, #s207:checked ~ #slide208,
+#s208:checked ~ #slide208, #s209:checked ~ #slide210,
+#s210:checked ~ #slide206 {
+    box-shadow: 0 6px 10px 0 rgba(0,0,0,.3), 0 2px 2px 0 rgba(0,0,0,.2);
+    transform: translate3d(-15%,0,-100px);
+}
+
+#s206:checked ~ #slide208, #s207:checked ~ #slide209,
+#s208:checked ~ #slide210, #s209:checked ~ #slide206,
+#s210:checked ~ #slide207 {
+    box-shadow: 0 1px 4px 0 rgba(0,0,0,.37);
+    transform: translate3d(30%,0,-200px);
+}
+
+#s211:checked ~ #slide214, #s212:checked ~ #slide215,
+#s213:checked ~ #slide211, #s214:checked ~ #slide212,
+#s215:checked ~ #slide213 {
+    box-shadow: 0 1px 4px 0 rgba(0,0,0,.37);
+    transform: translate3d(-30%,0,-200px);
+}
+
+#s211:checked ~ #slide215, #s212:checked ~ #slide211,
+#s213:checked ~ #slide212, #s214:checked ~ #slide213,
+#s215:checked ~ #slide214 {
+    box-shadow: 0 6px 10px 0 rgba(0,0,0,.3), 0 2px 2px 0 rgba(0,0,0,.2);
+    transform: translate3d(-15%,0,-100px);
+}
+#s211:checked ~ #slide211, #s212:checked ~ #slide212,
+#s213:checked ~ #slide213, #s214:checked ~ #slide214,
+#s215:checked ~ #slide215 {
+    box-shadow: 0 13px 25px 0 rgba(0,0,0,.3), 0 11px 7px 0 rgba(0,0,0,.19);
+    transform: translate3d(-30%,0,-200px);
+}
+
+#s211:checked ~ #slide212, #s212:checked ~ #slide213,
+#s213:checked ~ #slide213, #s214:checked ~ #slide215,
+#s215:checked ~ #slide211 {
+    box-shadow: 0 6px 10px 0 rgba(0,0,0,.3), 0 2px 2px 0 rgba(0,0,0,.2);
+    transform: translate3d(-15%,0,-100px);
+}
+
+#s211:checked ~ #slide213, #s212:checked ~ #slide214,
+#s213:checked ~ #slide215, #s214:checked ~ #slide211,
+#s215:checked ~ #slide212 {
+    box-shadow: 0 1px 4px 0 rgba(0,0,0,.37);
+    transform: translate3d(30%,0,-200px);
+}
+
+#s216:checked ~ #slide219, #s217:checked ~ #slide220,
+#s218:checked ~ #slide216, #s219:checked ~ #slide217,
+#s220:checked ~ #slide218 {
+    box-shadow: 0 1px 4px 0 rgba(0,0,0,.37);
+    transform: translate3d(-30%,0,-200px);
+}
+
+#s216:checked ~ #slide220, #s217:checked ~ #slide216,
+#s218:checked ~ #slide217, #s219:checked ~ #slide218,
+#s220:checked ~ #slide219 {
+    box-shadow: 0 6px 10px 0 rgba(0,0,0,.3), 0 2px 2px 0 rgba(0,0,0,.2);
+    transform: translate3d(-15%,0,-100px);
+}
+#s216:checked ~ #slide216, #s217:checked ~ #slide217,
+#s218:checked ~ #slide218, #s219:checked ~ #slide219,
+#s220:checked ~ #slide220 {
+    box-shadow: 0 13px 25px 0 rgba(0,0,0,.3), 0 11px 7px 0 rgba(0,0,0,.19);
+    transform: translate3d(-30%,0,-200px);
+}
+
+#s216:checked ~ #slide217, #s217:checked ~ #slide218,
+#s218:checked ~ #slide218, #s219:checked ~ #slide220,
+#s220:checked ~ #slide216 {
+    box-shadow: 0 6px 10px 0 rgba(0,0,0,.3), 0 2px 2px 0 rgba(0,0,0,.2);
+    transform: translate3d(-15%,0,-100px);
+}
+
+#s216:checked ~ #slide218, #s217:checked ~ #slide219,
+#s218:checked ~ #slide220, #s219:checked ~ #slide216,
+#s220:checked ~ #slide217 {
+    box-shadow: 0 1px 4px 0 rgba(0,0,0,.37);
+    transform: translate3d(30%,0,-200px);
+}
+
+#s221:checked ~ #slide224, #s222:checked ~ #slide225,
+#s223:checked ~ #slide221, #s224:checked ~ #slide222,
+#s225:checked ~ #slide223 {
+    box-shadow: 0 1px 4px 0 rgba(0,0,0,.37);
+    transform: translate3d(-30%,0,-200px);
+}
+
+#s221:checked ~ #slide225, #s222:checked ~ #slide221,
+#s223:checked ~ #slide222, #s224:checked ~ #slide223,
+#s225:checked ~ #slide224 {
+    box-shadow: 0 6px 10px 0 rgba(0,0,0,.3), 0 2px 2px 0 rgba(0,0,0,.2);
+    transform: translate3d(-15%,0,-100px);
+}
+#s221:checked ~ #slide221, #s222:checked ~ #slide222,
+#s223:checked ~ #slide223, #s224:checked ~ #slide224,
+#s225:checked ~ #slide225 {
+    box-shadow: 0 13px 25px 0 rgba(0,0,0,.3), 0 11px 7px 0 rgba(0,0,0,.19);
+    transform: translate3d(-30%,0,-200px);
+}
+
+#s221:checked ~ #slide222, #s222:checked ~ #slide223,
+#s223:checked ~ #slide223, #s224:checked ~ #slide225,
+#s225:checked ~ #slide221 {
+    box-shadow: 0 6px 10px 0 rgba(0,0,0,.3), 0 2px 2px 0 rgba(0,0,0,.2);
+    transform: translate3d(-15%,0,-100px);
+}
+
+#s221:checked ~ #slide223, #s222:checked ~ #slide224,
+#s223:checked ~ #slide225, #s224:checked ~ #slide221,
+#s225:checked ~ #slide222 {
+    box-shadow: 0 1px 4px 0 rgba(0,0,0,.37);
+    transform: translate3d(30%,0,-200px);
+}
+
+#s226:checked ~ #slide229, #s227:checked ~ #slide230,
+#s228:checked ~ #slide226, #s229:checked ~ #slide227,
+#s230:checked ~ #slide228 {
+    box-shadow: 0 1px 4px 0 rgba(0,0,0,.37);
+    transform: translate3d(-30%,0,-200px);
+}
+
+#s226:checked ~ #slide230, #s227:checked ~ #slide226,
+#s228:checked ~ #slide227, #s229:checked ~ #slide228,
+#s230:checked ~ #slide229 {
+    box-shadow: 0 6px 10px 0 rgba(0,0,0,.3), 0 2px 2px 0 rgba(0,0,0,.2);
+    transform: translate3d(-15%,0,-100px);
+}
+#s226:checked ~ #slide226, #s227:checked ~ #slide227,
+#s228:checked ~ #slide228, #s229:checked ~ #slide229,
+#s230:checked ~ #slide230 {
+    box-shadow: 0 13px 25px 0 rgba(0,0,0,.3), 0 11px 7px 0 rgba(0,0,0,.19);
+    transform: translate3d(-30%,0,-200px);
+}
+
+#s226:checked ~ #slide227, #s227:checked ~ #slide228,
+#s228:checked ~ #slide228, #s229:checked ~ #slide230,
+#s230:checked ~ #slide226 {
+    box-shadow: 0 6px 10px 0 rgba(0,0,0,.3), 0 2px 2px 0 rgba(0,0,0,.2);
+    transform: translate3d(-15%,0,-100px);
+}
+
+#s226:checked ~ #slide228, #s227:checked ~ #slide229,
+#s228:checked ~ #slide230, #s229:checked ~ #slide226,
+#s230:checked ~ #slide227 {
+    box-shadow: 0 1px 4px 0 rgba(0,0,0,.37);
+    transform: translate3d(30%,0,-200px);
+}
+
+#s231:checked ~ #slide234, #s232:checked ~ #slide235,
+#s233:checked ~ #slide231, #s234:checked ~ #slide232,
+#s235:checked ~ #slide233 {
+    box-shadow: 0 1px 4px 0 rgba(0,0,0,.37);
+    transform: translate3d(-30%,0,-200px);
+}
+
+#s231:checked ~ #slide235, #s232:checked ~ #slide231,
+#s233:checked ~ #slide232, #s234:checked ~ #slide233,
+#s235:checked ~ #slide234 {
+    box-shadow: 0 6px 10px 0 rgba(0,0,0,.3), 0 2px 2px 0 rgba(0,0,0,.2);
+    transform: translate3d(-15%,0,-100px);
+}
+#s231:checked ~ #slide231, #s232:checked ~ #slide232,
+#s233:checked ~ #slide233, #s234:checked ~ #slide234,
+#s235:checked ~ #slide235 {
+    box-shadow: 0 13px 25px 0 rgba(0,0,0,.3), 0 11px 7px 0 rgba(0,0,0,.19);
+    transform: translate3d(-30%,0,-200px);
+}
+
+#s231:checked ~ #slide232, #s232:checked ~ #slide233,
+#s233:checked ~ #slide233, #s234:checked ~ #slide235,
+#s235:checked ~ #slide231 {
+    box-shadow: 0 6px 10px 0 rgba(0,0,0,.3), 0 2px 2px 0 rgba(0,0,0,.2);
+    transform: translate3d(-15%,0,-100px);
+}
+
+#s231:checked ~ #slide233, #s232:checked ~ #slide234,
+#s233:checked ~ #slide235, #s234:checked ~ #slide231,
+#s235:checked ~ #slide232 {
+    box-shadow: 0 1px 4px 0 rgba(0,0,0,.37);
+    transform: translate3d(30%,0,-200px);
+}
+
+#s236:checked ~ #slide239, #s237:checked ~ #slide240,
+#s238:checked ~ #slide236, #s239:checked ~ #slide237,
+#s240:checked ~ #slide238 {
+    box-shadow: 0 1px 4px 0 rgba(0,0,0,.37);
+    transform: translate3d(-30%,0,-200px);
+}
+
+#s236:checked ~ #slide240, #s237:checked ~ #slide236,
+#s238:checked ~ #slide237, #s239:checked ~ #slide238,
+#s240:checked ~ #slide239 {
+    box-shadow: 0 6px 10px 0 rgba(0,0,0,.3), 0 2px 2px 0 rgba(0,0,0,.2);
+    transform: translate3d(-15%,0,-100px);
+}
+#s236:checked ~ #slide236, #s237:checked ~ #slide237,
+#s238:checked ~ #slide238, #s239:checked ~ #slide239,
+#s240:checked ~ #slide240 {
+    box-shadow: 0 13px 25px 0 rgba(0,0,0,.3), 0 11px 7px 0 rgba(0,0,0,.19);
+    transform: translate3d(-30%,0,-200px);
+}
+
+#s236:checked ~ #slide237, #s237:checked ~ #slide238,
+#s238:checked ~ #slide238, #s239:checked ~ #slide240,
+#s240:checked ~ #slide236 {
+    box-shadow: 0 6px 10px 0 rgba(0,0,0,.3), 0 2px 2px 0 rgba(0,0,0,.2);
+    transform: translate3d(-15%,0,-100px);
+}
+
+#s236:checked ~ #slide238, #s237:checked ~ #slide239,
+#s238:checked ~ #slide240, #s239:checked ~ #slide236,
+#s240:checked ~ #slide237 {
+    box-shadow: 0 1px 4px 0 rgba(0,0,0,.37);
+    transform: translate3d(30%,0,-200px);
+}
+
+#s241:checked ~ #slide244, #s242:checked ~ #slide245,
+#s243:checked ~ #slide241, #s244:checked ~ #slide242,
+#s245:checked ~ #slide243 {
+    box-shadow: 0 1px 4px 0 rgba(0,0,0,.37);
+    transform: translate3d(-30%,0,-200px);
+}
+
+#s241:checked ~ #slide245, #s242:checked ~ #slide241,
+#s243:checked ~ #slide242, #s244:checked ~ #slide243,
+#s245:checked ~ #slide244 {
+    box-shadow: 0 6px 10px 0 rgba(0,0,0,.3), 0 2px 2px 0 rgba(0,0,0,.2);
+    transform: translate3d(-15%,0,-100px);
+}
+#s241:checked ~ #slide241, #s242:checked ~ #slide242,
+#s243:checked ~ #slide243, #s244:checked ~ #slide244,
+#s245:checked ~ #slide245 {
+    box-shadow: 0 13px 25px 0 rgba(0,0,0,.3), 0 11px 7px 0 rgba(0,0,0,.19);
+    transform: translate3d(-30%,0,-200px);
+}
+
+#s241:checked ~ #slide242, #s242:checked ~ #slide243,
+#s243:checked ~ #slide243, #s244:checked ~ #slide245,
+#s245:checked ~ #slide241 {
+    box-shadow: 0 6px 10px 0 rgba(0,0,0,.3), 0 2px 2px 0 rgba(0,0,0,.2);
+    transform: translate3d(-15%,0,-100px);
+}
+
+#s241:checked ~ #slide243, #s242:checked ~ #slide244,
+#s243:checked ~ #slide245, #s244:checked ~ #slide241,
+#s245:checked ~ #slide242 {
+    box-shadow: 0 1px 4px 0 rgba(0,0,0,.37);
+    transform: translate3d(30%,0,-200px);
+}
+
+#s246:checked ~ #slide249, #s247:checked ~ #slide250,
+#s248:checked ~ #slide246, #s249:checked ~ #slide247,
+#s250:checked ~ #slide248 {
+    box-shadow: 0 1px 4px 0 rgba(0,0,0,.37);
+    transform: translate3d(-30%,0,-200px);
+}
+
+#s246:checked ~ #slide250, #s247:checked ~ #slide246,
+#s248:checked ~ #slide247, #s249:checked ~ #slide248,
+#s250:checked ~ #slide249 {
+    box-shadow: 0 6px 10px 0 rgba(0,0,0,.3), 0 2px 2px 0 rgba(0,0,0,.2);
+    transform: translate3d(-15%,0,-100px);
+}
+#s246:checked ~ #slide246, #s247:checked ~ #slide247,
+#s248:checked ~ #slide248, #s249:checked ~ #slide249,
+#s250:checked ~ #slide250 {
+    box-shadow: 0 13px 25px 0 rgba(0,0,0,.3), 0 11px 7px 0 rgba(0,0,0,.19);
+    transform: translate3d(-30%,0,-200px);
+}
+
+#s246:checked ~ #slide247, #s247:checked ~ #slide248,
+#s248:checked ~ #slide248, #s249:checked ~ #slide250,
+#s250:checked ~ #slide246 {
+    box-shadow: 0 6px 10px 0 rgba(0,0,0,.3), 0 2px 2px 0 rgba(0,0,0,.2);
+    transform: translate3d(-15%,0,-100px);
+}
+
+#s246:checked ~ #slide248, #s247:checked ~ #slide249,
+#s248:checked ~ #slide250, #s249:checked ~ #slide246,
+#s250:checked ~ #slide247 {
+    box-shadow: 0 1px 4px 0 rgba(0,0,0,.37);
+    transform: translate3d(30%,0,-200px);
+}
+
+#s251:checked ~ #slide254, #s252:checked ~ #slide255,
+#s253:checked ~ #slide251, #s254:checked ~ #slide252,
+#s255:checked ~ #slide253 {
+    box-shadow: 0 1px 4px 0 rgba(0,0,0,.37);
+    transform: translate3d(-30%,0,-200px);
+}
+
+#s251:checked ~ #slide255, #s252:checked ~ #slide251,
+#s253:checked ~ #slide252, #s254:checked ~ #slide253,
+#s255:checked ~ #slide254 {
+    box-shadow: 0 6px 10px 0 rgba(0,0,0,.3), 0 2px 2px 0 rgba(0,0,0,.2);
+    transform: translate3d(-15%,0,-100px);
+}
+#s251:checked ~ #slide251, #s252:checked ~ #slide252,
+#s253:checked ~ #slide253, #s254:checked ~ #slide254,
+#s255:checked ~ #slide255 {
+    box-shadow: 0 13px 25px 0 rgba(0,0,0,.3), 0 11px 7px 0 rgba(0,0,0,.19);
+    transform: translate3d(-30%,0,-200px);
+}
+
+#s251:checked ~ #slide252, #s252:checked ~ #slide253,
+#s253:checked ~ #slide253, #s254:checked ~ #slide255,
+#s255:checked ~ #slide251 {
+    box-shadow: 0 6px 10px 0 rgba(0,0,0,.3), 0 2px 2px 0 rgba(0,0,0,.2);
+    transform: translate3d(-15%,0,-100px);
+}
+
+#s251:checked ~ #slide253, #s252:checked ~ #slide254,
+#s253:checked ~ #slide255, #s254:checked ~ #slide251,
+#s255:checked ~ #slide252 {
+    box-shadow: 0 1px 4px 0 rgba(0,0,0,.37);
+    transform: translate3d(30%,0,-200px);
+}
+
+#s256:checked ~ #slide259, #s257:checked ~ #slide260,
+#s258:checked ~ #slide256, #s259:checked ~ #slide257,
+#s260:checked ~ #slide258 {
+    box-shadow: 0 1px 4px 0 rgba(0,0,0,.37);
+    transform: translate3d(-30%,0,-200px);
+}
+
+#s256:checked ~ #slide260, #s257:checked ~ #slide256,
+#s258:checked ~ #slide257, #s259:checked ~ #slide258,
+#s260:checked ~ #slide259 {
+    box-shadow: 0 6px 10px 0 rgba(0,0,0,.3), 0 2px 2px 0 rgba(0,0,0,.2);
+    transform: translate3d(-15%,0,-100px);
+}
+#s256:checked ~ #slide256, #s257:checked ~ #slide257,
+#s258:checked ~ #slide258, #s259:checked ~ #slide259,
+#s260:checked ~ #slide260 {
+    box-shadow: 0 13px 25px 0 rgba(0,0,0,.3), 0 11px 7px 0 rgba(0,0,0,.19);
+    transform: translate3d(-30%,0,-200px);
+}
+
+#s256:checked ~ #slide257, #s257:checked ~ #slide258,
+#s258:checked ~ #slide258, #s259:checked ~ #slide260,
+#s260:checked ~ #slide256 {
+    box-shadow: 0 6px 10px 0 rgba(0,0,0,.3), 0 2px 2px 0 rgba(0,0,0,.2);
+    transform: translate3d(-15%,0,-100px);
+}
+
+#s256:checked ~ #slide258, #s257:checked ~ #slide259,
+#s258:checked ~ #slide260, #s259:checked ~ #slide256,
+#s260:checked ~ #slide257 {
+    box-shadow: 0 1px 4px 0 rgba(0,0,0,.37);
+    transform: translate3d(30%,0,-200px);
+}
+
+#s261:checked ~ #slide264, #s262:checked ~ #slide265,
+#s263:checked ~ #slide261, #s264:checked ~ #slide262,
+#s265:checked ~ #slide263 {
+    box-shadow: 0 1px 4px 0 rgba(0,0,0,.37);
+    transform: translate3d(-30%,0,-200px);
+}
+
+#s261:checked ~ #slide265, #s262:checked ~ #slide261,
+#s263:checked ~ #slide262, #s264:checked ~ #slide263,
+#s265:checked ~ #slide264 {
+    box-shadow: 0 6px 10px 0 rgba(0,0,0,.3), 0 2px 2px 0 rgba(0,0,0,.2);
+    transform: translate3d(-15%,0,-100px);
+}
+#s261:checked ~ #slide261, #s262:checked ~ #slide262,
+#s263:checked ~ #slide263, #s264:checked ~ #slide264,
+#s265:checked ~ #slide265 {
+    box-shadow: 0 13px 25px 0 rgba(0,0,0,.3), 0 11px 7px 0 rgba(0,0,0,.19);
+    transform: translate3d(-30%,0,-200px);
+}
+
+#s261:checked ~ #slide262, #s262:checked ~ #slide263,
+#s263:checked ~ #slide263, #s264:checked ~ #slide265,
+#s265:checked ~ #slide261 {
+    box-shadow: 0 6px 10px 0 rgba(0,0,0,.3), 0 2px 2px 0 rgba(0,0,0,.2);
+    transform: translate3d(-15%,0,-100px);
+}
+
+#s261:checked ~ #slide263, #s262:checked ~ #slide264,
+#s263:checked ~ #slide265, #s264:checked ~ #slide261,
+#s265:checked ~ #slide262 {
+    box-shadow: 0 1px 4px 0 rgba(0,0,0,.37);
+    transform: translate3d(30%,0,-200px);
+}
+
+#s266:checked ~ #slide269, #s267:checked ~ #slide270,
+#s268:checked ~ #slide266, #s269:checked ~ #slide267,
+#s270:checked ~ #slide268 {
+    box-shadow: 0 1px 4px 0 rgba(0,0,0,.37);
+    transform: translate3d(-30%,0,-200px);
+}
+
+#s266:checked ~ #slide270, #s267:checked ~ #slide266,
+#s268:checked ~ #slide267, #s269:checked ~ #slide268,
+#s270:checked ~ #slide269 {
+    box-shadow: 0 6px 10px 0 rgba(0,0,0,.3), 0 2px
+    2px 0 rgba(0,0,0,.2);
+    transform: translate3d(-15%,0,-100px);
+}
+#s266:checked ~ #slide266, #s267:checked ~ #slide267,
+#s268:checked ~ #slide268, #s269:checked ~ #slide269,
+#s270:checked ~ #slide270 {
+    box-shadow: 0 13px 25px 0 rgba(0,0,0,.3), 0 11px 7px 0 rgba(0,0,0,.19);
+    transform: translate3d(-30%,0,-200px);
+}
+
+#s266:checked ~ #slide267, #s267:checked ~ #slide268,
+#s268:checked ~ #slide268, #s269:checked ~ #slide270,
+#s270:checked ~ #slide266 {
+    box-shadow: 0 6px 10px 0 rgba(0,0,0,.3), 0 2px 2px 0 rgba(0,0,0,.2);
+    transform: translate3d(-15%,0,-100px);
+}
+
+#s266:checked ~ #slide268, #s267:checked ~ #slide269,
+#s268:checked ~ #slide270, #s269:checked ~ #slide266,
+#s270:checked ~ #slide267 {
+    box-shadow: 0 1px 4px 0 rgba(0,0,0,.37);
+    transform: translate3d(30%,0,-200px);
+}
+
+#s271:checked ~ #slide274, #s272:checked ~ #slide275,
+#s273:checked ~ #slide271, #s274:checked ~ #slide272,
+#s275:checked ~ #slide273 {
+    box-shadow: 0 1px 4px 0 rgba(0,0,0,.37);
+    transform: translate3d(-30%,0,-200px);
+}
+
+#s271:checked ~ #slide275, #s272:checked ~ #slide271,
+#s273:checked ~ #slide272, #s274:checked ~ #slide273,
+#s275:checked ~ #slide274 {
+    box-shadow: 0 6px 10px 0 rgba(0,0,0,.3), 0 2px 2px 0 rgba(0,0,0,.2);
+    transform: translate3d(-15%,0,-100px);
+}
+#s271:checked ~ #slide271, #s272:checked ~ #slide272,
+#s273:checked ~ #slide273, #s274:checked ~ #slide274,
+#s275:checked ~ #slide275 {
+    box-shadow: 0 13px 25px 0 rgba(0,0,0,.3), 0 11px 7px 0 rgba(0,0,0,.19);
+    transform: translate3d(-30%,0,-200px);
+}
+
+#s271:checked ~ #slide272, #s272:checked ~ #slide273,
+#s273:checked ~ #slide273, #s274:checked ~ #slide275,
+#s275:checked ~ #slide271 {
+    box-shadow: 0 6px 10px 0 rgba(0,0,0,.3), 0 2px 2px 0 rgba(0,0,0,.2);
+    transform: translate3d(-15%,0,-100px);
+}
+
+#s271:checked ~ #slide273, #s272:checked ~ #slide274,
+#s273:checked ~ #slide275, #s274:checked ~ #slide271,
+#s275:checked ~ #slide272 {
+    box-shadow: 0 1px 4px 0 rgba(0,0,0,.37);
+    transform: translate3d(30%,0,-200px);
+}
+
+#s276:checked ~ #slide279, #s277:checked ~ #slide280,
+#s278:checked ~ #slide276, #s279:checked ~ #slide277,
+#s280:checked ~ #slide278 {
+    box-shadow: 0 1px 4px 0 rgba(0,0,0,.37);
+    transform: translate3d(-30%,0,-200px);
+}
+
+#s276:checked ~ #slide280, #s277:checked ~ #slide276,
+#s278:checked ~ #slide277, #s279:checked ~ #slide278,
+#s280:checked ~ #slide279 {
+    box-shadow: 0 6px 10px 0 rgba(0,0,0,.3), 0 2px 2px 0 rgba(0,0,0,.2);
+    transform: translate3d(-15%,0,-100px);
+}
+#s276:checked ~ #slide276, #s277:checked ~ #slide277,
+#s278:checked ~ #slide278, #s279:checked ~ #slide279,
+#s280:checked ~ #slide280 {
+    box-shadow: 0 13px 25px 0 rgba(0,0,0,.3), 0 11px 7px 0 rgba(0,0,0,.19);
+    transform: translate3d(-30%,0,-200px);
+}
+
+#s276:checked ~ #slide277, #s277:checked ~ #slide278,
+#s278:checked ~ #slide278, #s279:checked ~ #slide280,
+#s280:checked ~ #slide276 {
+    box-shadow: 0 6px 10px 0 rgba(0,0,0,.3), 0 2px 2px 0 rgba(0,0,0,.2);
+    transform: translate3d(-15%,0,-100px);
+}
+
+#s276:checked ~ #slide278, #s277:checked ~ #slide279,
+#s278:checked ~ #slide280, #s279:checked ~ #slide276,
+#s280:checked ~ #slide277 {
+    box-shadow: 0 1px 4px 0 rgba(0,0,0,.37);
+    transform: translate3d(30%,0,-200px);
+}
+
+#s281:checked ~ #slide284, #s282:checked ~ #slide285,
+#s283:checked ~ #slide281, #s284:checked ~ #slide282,
+#s285:checked ~ #slide283 {
+    box-shadow: 0 1px 4px 0 rgba(0,0,0,.37);
+    transform: translate3d(-30%,0,-200px);
+}
+
+#s281:checked ~ #slide285, #s282:checked ~ #slide281,
+#s283:checked ~ #slide282, #s284:checked ~ #slide283,
+#s285:checked ~ #slide284 {
+    box-shadow: 0 6px 10px 0 rgba(0,0,0,.3), 0 2px 2px 0 rgba(0,0,0,.2);
+    transform: translate3d(-15%,0,-100px);
+}
+#s281:checked ~ #slide281, #s282:checked ~ #slide282,
+#s283:checked ~ #slide283, #s284:checked ~ #slide284,
+#s285:checked ~ #slide285 {
+    box-shadow: 0 13px 25px 0 rgba(0,0,0,.3), 0 11px 7px 0 rgba(0,0,0,.19);
+    transform: translate3d(-30%,0,-200px);
+}
+
+#s281:checked ~ #slide282, #s282:checked ~ #slide283,
+#s283:checked ~ #slide283,#s284:checked ~ #slide285,
+#s285:checked ~ #slide281 {
+    box-shadow: 0 6px 10px 0 rgba(0,0,0,.3), 0 2px 2px 0 rgba(0,0,0,.2);
+    transform: translate3d(-15%,0,-100px);
+}
+#s283:checked ~ #slide283, #s284:checked ~ #slide284,
+#s285:checked ~ #slide285 {
+     box-shadow: 0 13px 25px 0 rgba(0,0,0,.3), 0 11px 7px 0 rgba(0,0,0,.19);
+    transform: translate3d(-30%,0,-200px);
+}
+
+#s281:checked ~ #slide282, #s282:checked ~ #slide283,
+#s283:checked ~ #slide283, #s284:checked ~ #slide285,
+#s285:checked ~ #slide281 {
+  box-shadow: 0 6px 10px 0 rgba(0,0,0,.3), 0 2px 2px 0 rgba(0,0,0,.2);
+  transform: translate3d(-15%,0,-100px);
+}
+
+#s281:checked ~ #slide283, #s282:checked ~ #slide284,
+#s283:checked ~ #slide285, #s284:checked ~ #slide281,
+#s285:checked ~ #slide282 {
+     box-shadow: 0 1px 4px 0 rgba(0,0,0,.37);
+     transform: translate3d(30%,0,-200px);
+}
+
+#s286:checked ~ #slide289, #s287:checked ~ #slide290,
+#s288:checked ~ #slide286, #s289:checked ~ #slide287,
+#s290:checked ~ #slide288 {
+    box-shadow: 0 1px 4px 0 rgba(0,0,0,.37);
+     transform: translate3d(-30%,0,-200px);
+}
+
+#s286:checked ~ #slide290, #s287:checked ~ #slide286,
+#s288:checked ~ #slide287, #s289:checked ~ #slide288,
+#s290:checked ~ #slide289 {
+    box-shadow: 0 6px 10px 0 rgba(0,0,0,.3), 0 2px 2px 0 rgba(0,0,0,.2);
+    transform: translate3d(-15%,0,-100px);
+}
+#s286:checked ~ #slide286, #s287:checked ~ #slide287,
+#s288:checked ~ #slide288, #s289:checked ~ #slide289,
+#s290:checked ~ #slide290 {
+    box-shadow: 0 13px 25px 0 rgba(0,0,0,.3), 0 11px 7px 0 rgba(0,0,0,.19);
+    transform: translate3d(-30%,0,-200px);
+}
+
+#s286:checked ~ #slide287, #s287:checked ~ #slide288,
+#s288:checked ~ #slide288, #s289:checked ~ #slide290,
+#s290:checked ~ #slide286 {
+    box-shadow: 0 6px 10px 0 rgba(0,0,0,.3), 0 2px 2px 0 rgba(0,0,0,.2);
+   transform: translate3d(-15%,0,-100px);
+}
+
+#s286:checked ~ #slide288, #s287:checked ~ #slide289,
+#s288:checked ~ #slide290, #s289:checked ~ #slide286,
+#s290:checked ~ #slide287 {
+     box-shadow: 0 1px 4px 0 rgba(0,0,0,.37);
+     transform: translate3d(30%,0,-200px);
+}
+
+#s291:checked ~ #slide294, #s292:checked ~ #slide295,
+#s293:checked ~ #slide291, #s294:checked ~ #slide292,
+#s295:checked ~ #slide293 {
+    box-shadow: 0 1px 4px 0 rgba(0,0,0,.37);
+    transform: translate3d(-30%,0,-200px);
+}
+
+#s291:checked ~ #slide295, #s292:checked ~ #slide291,
+#s293:checked ~ #slide292, #s294:checked ~ #slide293,
+#s295:checked ~ #slide294 {
+    box-shadow: 0 6px 10px 0 rgba(0,0,0,.3), 0 2px 2px 0 rgba(0,0,0,.2);
+    transform: translate3d(-15%,0,-100px);
+}
+#s291:checked ~ #slide291, #s292:checked ~ #slide292,
+#s293:checked ~ #slide293, #s294:checked ~ #slide294,
+#s295:checked ~ #slide295 {
+   box-shadow: 0 13px 25px 0 rgba(0,0,0,.3), 0 11px 7px 0 rgba(0,0,0,.19);
+  transform: translate3d(-30%,0,-200px);
+}
+
+#s291:checked ~ #slide292, #s292:checked ~ #slide293,
+#s293:checked ~ #slide293, #s294:checked ~ #slide295,
+#s295:checked ~ #slide291 {
+     box-shadow: 0 6px 10px 0 rgba(0,0,0,.3), 0 2px 2px 0 rgba(0,0,0,.2);
+     transform: translate3d(-15%,0,-100px);
+}
+
+#s291:checked ~ #slide293, #s292:checked ~ #slide294,
+#s293:checked ~ #slide295, #s294:checked ~ #slide291,
+#s295:checked ~ #slide292 {
+    box-shadow: 0 1px 4px 0 rgba(0,0,0,.37);
+    transform: translate3d(30%,0,-200px);
+}
+
+#s296:checked ~ #slide299, #s297:checked ~ #slide300,
+#s298:checked ~ #slide296, #s299:checked ~ #slide297,
+#s300:checked ~ #slide298 {
+     box-shadow: 0 1px 4px 0 rgba(0,0,0,.37);
+    transform: translate3d(-30%,0,-200px);
+}
+
+#s296:checked ~ #slide300, #s297:checked ~ #slide296,
+#s298:checked ~ #slide297, #s299:checked ~ #slide298,
+#s300:checked ~ #slide299 {
+    box-shadow: 0 6px 10px 0 rgba(0,0,0,.3), 0 2px 2px 0 rgba(0,0,0,.2);
+      transform: translate3d(-15%,0,-100px);
+}
+#s296:checked ~ #slide296, #s297:checked ~ #slide297,
+#s298:checked ~ #slide298, #s299:checked ~ #slide299,
+#s300:checked ~ #slide300 {
+    box-shadow: 0 13px 25px 0 rgba(0,0,0,.3), 0 11px 7px 0 rgba(0,0,0,.19);
+     transform: translate3d(-30%,0,-200px);
+}
+
+#s296:checked ~ #slide297, #s297:checked ~ #slide298,
+#s298:checked ~ #slide298, #s299:checked ~ #slide300,
+#s300:checked ~ #slide296 {
+   box-shadow: 0 6px 10px 0 rgba(0,0,0,.3), 0 2px 2px 0 rgba(0,0,0,.2);
+     transform: translate3d(-15%,0,-100px);
+}
+
+#s296:checked ~ #slide298, #s297:checked ~ #slide299,
+#s298:checked ~ #slide300, #s299:checked ~ #slide296,
+#s300:checked ~ #slide297 {
+    box-shadow: 0 1px 4px 0 rgba(0,0,0,.37);
+    transform: translate3d(30%,0,-200px);
+}
+
+#s301:checked ~ #slide304, #s302:checked ~ #slide305,
+#s303:checked ~ #slide301, #s304:checked ~ #slide302,
+#s305:checked ~ #slide303 {
+    box-shadow: 0 1px 4px 0 rgba(0,0,0,.37);
+    transform: translate3d(-30%,0,-200px);
+}
+
+#s301:checked ~ #slide305, #s302:checked ~ #slide301,
+#s303:checked ~ #slide302, #s304:checked ~ #slide303,
+#s305:checked ~ #slide304 {
+    box-shadow: 0 6px 10px 0 rgba(0,0,0,.3), 0 2px 2px 0 rgba(0,0,0,.2);
+    transform: translate3d(-15%,0,-100px);
+}
+#s301:checked ~ #slide301, #s302:checked ~ #slide302,
+#s303:checked ~ #slide303, #s304:checked ~ #slide304,
+#s305:checked ~ #slide305 {
+    box-shadow: 0 13px 25px 0 rgba(0,0,0,.3), 0 11px 7px 0 rgba(0,0,0,.19);
+    transform: translate3d(-30%,0,-200px);
+}
+
+#s301:checked ~ #slide302, #s302:checked ~ #slide303,
+#s303:checked ~ #slide303, #s304:checked ~ #slide305,
+#s305:checked ~ #slide301 {
+    box-shadow: 0 6px 10px 0 rgba(0,0,0,.3), 0 2px 2px 0 rgba(0,0,0,.2);
+    transform: translate3d(-15%,0,-100px);
+}
+
+#s301:checked ~ #slide303, #s302:checked ~ #slide304,
+#s303:checked ~ #slide305, #s304:checked ~ #slide301,
+#s305:checked ~ #slide302 {
+    box-shadow: 0 1px 4px 0 rgba(0,0,0,.37);
+    transform: translate3d(30%,0,-200px);
+}
+
+#s306:checked ~ #slide309, #s307:checked ~ #slide310,
+#s308:checked ~ #slide306, #s309:checked ~ #slide307,
+#s310:checked ~ #slide308 {
+    box-shadow: 0 1px 4px 0 rgba(0,0,0,.37);
+    transform: translate3d(-30%,0,-200px);
+}
+
+#s306:checked ~ #slide310, #s307:checked ~ #slide306,
+#s308:checked ~ #slide307, #s309:checked ~ #slide308,
+#s310:checked ~ #slide309 {
+    box-shadow: 0 6px 10px 0 rgba(0,0,0,.3), 0 2px 2px 0 rgba(0,0,0,.2);
+    transform: translate3d(-15%,0,-100px);
+}
+#s306:checked ~ #slide306, #s307:checked ~ #slide307,
+#s308:checked ~ #slide308, #s309:checked ~ #slide309,
+#s310:checked ~ #slide310 {
+    box-shadow: 0 13px 25px 0 rgba(0,0,0,.3), 0 11px 7px 0 rgba(0,0,0,.19);
+    transform: translate3d(-30%,0,-200px);
+}
+
+#s306:checked ~ #slide307, #s307:checked ~ #slide308,
+#s308:checked ~ #slide308, #s309:checked ~ #slide310,
+#s310:checked ~ #slide306 {
+    box-shadow: 0 6px 10px 0 rgba(0,0,0,.3), 0 2px 2px 0 rgba(0,0,0,.2);
+    transform: translate3d(-15%,0,-100px);
+}
+
+#s306:checked ~ #slide308, #s307:checked ~ #slide309,
+#s308:checked ~ #slide310, #s309:checked ~ #slide306,
+#s310:checked ~ #slide307 {
+    box-shadow: 0 1px 4px 0 rgba(0,0,0,.37);
+    transform: translate3d(30%,0,-200px);
+}
+
+#s311:checked ~ #slide314, #s312:checked ~ #slide315,
+#s313:checked ~ #slide311, #s314:checked ~ #slide312,
+#s315:checked ~ #slide313 {
+    box-shadow: 0 1px 4px 0 rgba(0,0,0,.37);
+    transform: translate3d(-30%,0,-200px);
+}
+
+#s311:checked ~ #slide315, #s312:checked ~ #slide311,
+#s313:checked ~ #slide312, #s314:checked ~ #slide313,
+#s315:checked ~ #slide314 {
+    box-shadow: 0 6px 10px 0 rgba(0,0,0,.3), 0 2px 2px 0 rgba(0,0,0,.2);
+    transform: translate3d(-15%,0,-100px);
+}
+#s311:checked ~ #slide311, #s312:checked ~ #slide312,
+#s313:checked ~ #slide313, #s314:checked ~ #slide314,
+#s315:checked ~ #slide315 {
+    box-shadow: 0 13px 25px 0 rgba(0,0,0,.3), 0 11px 7px 0 rgba(0,0,0,.19);
+    transform: translate3d(-30%,0,-200px);
+}
+
+#s311:checked ~ #slide312, #s312:checked ~ #slide313,
+#s313:checked ~ #slide313, #s314:checked ~ #slide315,
+#s315:checked ~ #slide311 {
+    box-shadow: 0 6px 10px 0 rgba(0,0,0,.3), 0 2px 2px 0 rgba(0,0,0,.2);
+    transform: translate3d(-15%,0,-100px);
+}
+
+#s311:checked ~ #slide313, #s312:checked ~ #slide314,
+#s313:checked ~ #slide315, #s314:checked ~ #slide311,
+#s315:checked ~ #slide312 {
+    box-shadow: 0 1px 4px 0 rgba(0,0,0,.37);
+    transform: translate3d(30%,0,-200px);
+}
+
+#s316:checked ~ #slide319, #s317:checked ~ #slide320,
+#s318:checked ~ #slide316, #s319:checked ~ #slide317,
+#s320:checked ~ #slide318 {
+    box-shadow: 0 1px 4px 0 rgba(0,0,0,.37);
+    transform: translate3d(-30%,0,-200px);
+}
+
+#s316:checked ~ #slide320, #s317:checked ~ #slide316,
+#s318:checked ~ #slide317, #s319:checked ~ #slide318,
+#s320:checked ~ #slide319 {
+    box-shadow: 0 6px 10px 0 rgba(0,0,0,.3), 0 2px 2px 0 rgba(0,0,0,.2);
+    transform: translate3d(-15%,0,-100px);
+}
+#s316:checked ~ #slide316, #s317:checked ~ #slide317,
+#s318:checked ~ #slide318, #s319:checked ~ #slide319,
+#s320:checked ~ #slide320 {
+    box-shadow: 0 13px 25px 0 rgba(0,0,0,.3), 0 11px 7px 0 rgba(0,0,0,.19);
+    transform: translate3d(-30%,0,-200px);
+}
+
+#s316:checked ~ #slide317, #s317:checked ~ #slide318,
+#s318:checked ~ #slide318, #s319:checked ~ #slide320,
+#s320:checked ~ #slide316 {
+    box-shadow: 0 6px 10px 0 rgba(0,0,0,.3), 0 2px 2px 0 rgba(0,0,0,.2);
+    transform: translate3d(-15%,0,-100px);
+}
+
+#s316:checked ~ #slide318, #s317:checked ~ #slide319,
+#s318:checked ~ #slide320, #s319:checked ~ #slide316,
+#s320:checked ~ #slide317 {
+    box-shadow: 0 1px 4px 0 rgba(0,0,0,.37);
+    transform: translate3d(30%,0,-200px);
+}
+
+#s321:checked ~ #slide324, #s322:checked ~ #slide325,
+#s323:checked ~ #slide321, #s324:checked ~ #slide322,
+#s325:checked ~ #slide323 {
+    box-shadow: 0 1px 4px 0 rgba(0,0,0,.37);
+    transform: translate3d(-30%,0,-200px);
+}
+
+#s321:checked ~ #slide325, #s322:checked ~ #slide321,
+#s323:checked ~ #slide322, #s324:checked ~ #slide323,
+#s325:checked ~ #slide324 {
+    box-shadow: 0 6px 10px 0 rgba(0,0,0,.3), 0 2px 2px 0 rgba(0,0,0,.2);
+    transform: translate3d(-15%,0,-100px);
+}
+#s321:checked ~ #slide321, #s322:checked ~ #slide322,
+#s323:checked ~ #slide323, #s324:checked ~ #slide324,
+#s325:checked ~ #slide325 {
+    box-shadow: 0 13px 25px 0 rgba(0,0,0,.3), 0 11px 7px 0 rgba(0,0,0,.19);
+    transform: translate3d(-30%,0,-200px);
+}
+
+#s321:checked ~ #slide322, #s322:checked ~ #slide323,
+#s323:checked ~ #slide323, #s324:checked ~ #slide325,
+#s325:checked ~ #slide321 {
+    box-shadow: 0 6px 10px 0 rgba(0,0,0,.3), 0 2px 2px 0 rgba(0,0,0,.2);
+    transform: translate3d(-15%,0,-100px);
+}
+
+#s321:checked ~ #slide323, #s322:checked ~ #slide324,
+#s323:checked ~ #slide325, #s324:checked ~ #slide321,
+#s325:checked ~ #slide322 {
+    box-shadow: 0 1px 4px 0 rgba(0,0,0,.37);
+    transform: translate3d(30%,0,-200px);
+}
+
+#s326:checked ~ #slide329, #s327:checked ~ #slide330,
+#s328:checked ~ #slide326, #s329:checked ~ #slide327,
+#s330:checked ~ #slide328 {
+    box-shadow: 0 1px 4px 0 rgba(0,0,0,.37);
+    transform: translate3d(-30%,0,-200px);
+}
+
+#s326:checked ~ #slide330, #s327:checked ~ #slide326,
+#s328:checked ~ #slide327, #s329:checked ~ #slide328,
+#s330:checked ~ #slide329 {
+    box-shadow: 0 6px 10px 0 rgba(0,0,0,.3), 0 2px 2px 0 rgba(0,0,0,.2);
+    transform: translate3d(-15%,0,-100px);
+}
+#s326:checked ~ #slide326, #s327:checked ~ #slide327,
+#s328:checked ~ #slide328, #s329:checked ~ #slide329,
+#s330:checked ~ #slide330 {
+    box-shadow: 0 13px 25px 0 rgba(0,0,0,.3), 0 11px 7px 0 rgba(0,0,0,.19);
+    transform: translate3d(-30%,0,-200px);
+}
+
+#s326:checked ~ #slide327, #s327:checked ~ #slide328,
+#s328:checked ~ #slide328, #s329:checked ~ #slide330,
+#s330:checked ~ #slide326 {
+    box-shadow: 0 6px 10px 0 rgba(0,0,0,.3), 0 2px 2px 0 rgba(0,0,0,.2);
+    transform: translate3d(-15%,0,-100px);
+}
+
+#s326:checked ~ #slide328, #s327:checked ~ #slide329,
+#s328:checked ~ #slide330, #s329:checked ~ #slide326,
+#s330:checked ~ #slide327 {
+    box-shadow: 0 1px 4px 0 rgba(0,0,0,.37);
+    transform: translate3d(30%,0,-200px);
+}
+
+
+
+
+
+</style>
+<body>
+    <br>
+    <h1>One Of The Best Moments Of My Life </h1>
+    <br><br>
+    <div class="slider-container">
+    <section id="slider">
+        <input type="radio" name="slider" id="s1">
+        <input type="radio" name="slider" id="s2">
+        <input type="radio" name="slider" id="s3" checked>
+        <input type="radio" name="slider" id="s4">
+        <input type="radio" name="slider" id="s5">
+
+        <label for="s1" id="slide1">
+            <img src="images\img1.jpg" height="100%" width="100%">
+        </label>
+        <label for="s2" id="slide2">
+            <img src="images\img2.jpg" height="100%" width="100%">
+        </label>
+        <label for="s3" id="slide3">
+            <img src="images\img3.jpg" height="100%" width="100%">
+        </label>
+        <label for="s4" id="slide4">
+            <img src="images\img4.jpg" height="100%" width="100%">
+        </label>
+        <label for="s5" id="slide5">
+            <img src="images\img5.jpg" height="100%" width="100%">
+ 
+    </section>
+</div>
+
+<h1>Another Beautiful Memory</h1>
+
+<div class="slider-container">
+    <section id="slider">
+        <input type="radio" name="slider" id="s6">
+        <input type="radio" name="slider" id="s7">
+        <input type="radio" name="slider" id="s8" checked>
+        <input type="radio" name="slider" id="s9">
+        <input type="radio" name="slider" id="s10">
+
+        <label for="s6" id="slide6">
+            <img src="images/img6.jpeg" height="100%" width="100%">
+        </label>
+        <label for="s7" id="slide7">
+            <img src="images/img7.jpeg" height="100%" width="100%">
+        </label>
+        <label for="s8" id="slide8">
+            <img src="images/img8.jpeg" height="100%" width="100%">
+        </label>
+        <label for="s9" id="slide9">
+            <img src="images/img9.jpeg" height="100%" width="100%">
+        </label>
+        <label for="s10" id="slide10">
+            <img src="images/img10.jpeg" height="100%" width="100%">
+ 
+    </section>
+</div>
+
+
+
+
+<br>
+<h1>One Of The Best Moments Of My Life </h1>
+<br><br>
+<div class="slider-container">
+<section id="slider">
+    <input type="radio" name="slider" id="s11">
+    <input type="radio" name="slider" id="s12">
+    <input type="radio" name="slider" id="s13" checked>
+    <input type="radio" name="slider" id="s14">
+    <input type="radio" name="slider" id="s15">
+
+    <label for="s11" id="slide11">
+        <img src="images/img11.jpg" height="100%" width="100%">
+    </label>
+    <label for="s12" id="slide12">
+        <img src="images/img12.jpg" height="100%" width="100%">
+    </label>
+    <label for="s13" id="slide13">
+        <img src="images/img13.jpg" height="100%" width="100%">
+    </label>
+    <label for="s14" id="slide14">
+        <img src="images/img14.jpg" height="100%" width="100%">
+    </label>
+    <label for="s15" id="slide15">
+        <img src="images/img15.jpg" height="100%" width="100%">
+
+</section>
+</div>
+
+<h1>Another Beautiful Memory</h1>
+
+<div class="slider-container">
+<section id="slider">
+    <input type="radio" name="slider" id="s16">
+    <input type="radio" name="slider" id="s17">
+    <input type="radio" name="slider" id="s18" checked>
+    <input type="radio" name="slider" id="s19">
+    <input type="radio" name="slider" id="s20">
+
+    <label for="s16" id="slide16">
+        <img src="images/img16.jpg" height="100%" width="100%">
+    </label>
+    <label for="s17" id="slide17">
+        <img src="images/img17.jpg" height="100%" width="100%">
+    </label>
+    <label for="s18" id="slide18">
+        <img src="images/img18.jpg" height="100%" width="100%">
+    </label>
+    <label for="s19" id="slide19">
+        <img src="images/img19.jpg" height="100%" width="100%">
+    </label>
+    <label for="s20" id="slide20">
+        <img src="images/img20.jpg" height="100%" width="100%">
+
+</section>
+</div>
+<br>
+<h1>Another Beautiful Memory</h1>
+
+<div class="slider-container">
+<section id="slider">
+    <input type="radio" name="slider" id="s21">
+    <input type="radio" name="slider" id="s22">
+    <input type="radio" name="slider" id="s23" checked>
+    <input type="radio" name="slider" id="s24">
+    <input type="radio" name="slider" id="s25">
+
+    <label for="s21" id="slide21">
+        <img src="images/img21.jpg" height="100%" width="100%">
+    </label>
+    <label for="s22" id="slide22">
+        <img src="images/img22.jpg" height="100%" width="100%">
+    </label>
+    <label for="s23" id="slide23">
+        <img src="images/img23.jpg" height="100%" width="100%">
+    </label>
+    <label for="s24" id="slide24">
+        <img src="images/img24.jpg" height="100%" width="100%">
+    </label>
+    <label for="s25" id="slide25">
+        <img src="images/img25.jpg" height="100%" width="100%">
+
+</section>
+</div>
+
+<h1>One Of The Best Moments Of My Life </h1>
+<br><br>
+<div class="slider-container">
+<section id="slider">
+    <input type="radio" name="slider" id="s26">
+    <input type="radio" name="slider" id="s27">
+    <input type="radio" name="slider" id="s28" checked>
+    <input type="radio" name="slider" id="s29">
+    <input type="radio" name="slider" id="s30">
+
+    <label for="s26" id="slide26">
+        <img src="iimages/img26.jpg" height="100%" width="100%">
+    </label>
+    <label for="s27" id="slide27">
+        <img src="images/img27.jpg" height="100%" width="100%">
+    </label>
+    <label for="s28" id="slide28">
+        <img src="images/img28.jpg" height="100%" width="100%">
+    </label>
+    <label for="s29" id="slide29">
+        <img src="images/img29.jpg" height="100%" width="100%">
+    </label>
+    <label for="s30" id="slide30">
+        <img src="images/img30.jpg" height="100%" width="100%">
+
+</section>
+</div>
+
+<h1>Another Beautiful Memory</h1>
+
+<div class="slider-container">
+<section id="slider">
+    <input type="radio" name="slider" id="s31">
+    <input type="radio" name="slider" id="s32">
+    <input type="radio" name="slider" id="s33" checked>
+    <input type="radio" name="slider" id="s34">
+    <input type="radio" name="slider" id="s35">
+
+    <label for="s31" id="slide31">
+        <img src="images/img31.jpg" height="100%" width="100%">
+    </label>
+    <label for="s32" id="slide32">
+        <img src="images/img32.jpg" height="100%" width="100%">
+    </label>
+    <label for="s33" id="slide33">
+        <img src="images/img33.jpg" height="100%" width="100%">
+    </label>
+    <label for="s34" id="slide34">
+        <img src="images/img34.jpg" height="100%" width="100%">
+    </label>
+    <label for="s35" id="slide35">
+        <img src="images/img35.jpg" height="100%" width="100%">
+
+</section>
+</div>
+<h1>One Of The Best Moments Of My Life </h1>
+<br><br>
+<div class="slider-container">
+<section id="slider">
+    <input type="radio" name="slider" id="s36">
+    <input type="radio" name="slider" id="s37">
+    <input type="radio" name="slider" id="s38" checked>
+    <input type="radio" name="slider" id="s39">
+    <input type="radio" name="slider" id="s40">
+
+    <label for="s36" id="slide36">
+        <img src="images/img36.jpg" height="100%" width="100%">
+    </label>
+    <label for="s37" id="slide37">
+        <img src="images/img37.jpg" height="100%" width="100%">
+    </label>
+    <label for="s38" id="slide38">
+        <img src="images/img38.jpg" height="100%" width="100%">
+    </label>
+    <label for="s39" id="slide39">
+        <img src="images/img39.jpg" height="100%" width="100%">
+    </label>
+    <label for="s40" id="slide40">
+        <img src="images/img40.jpg" height="100%" width="100%">
+
+</section>
+</div>
+
+<h1>Another Beautiful Memory</h1>
+
+<div class="slider-container">
+<section id="slider">
+    <input type="radio" name="slider" id="s41">
+    <input type="radio" name="slider" id="s42">
+    <input type="radio" name="slider" id="s43" checked>
+    <input type="radio" name="slider" id="s44">
+    <input type="radio" name="slider" id="s45">
+
+    <label for="s41" id="slide41">
+        <img src="images/img41.jpg" height="100%" width="100%">
+    </label>
+    <label for="s42" id="slide42">
+        <img src="images/img42.jpg" height="100%" width="100%">
+    </label>
+    <label for="s43" id="slide43">
+        <img src="images/img43.jpg" height="100%" width="100%">
+    </label>
+    <label for="s44" id="slide44">
+        <img src="images/img44.jpg" height="100%" width="100%">
+    </label>
+    <label for="s45" id="slide45">
+        <img src="images/img45.jpg" height="100%" width="100%">
+
+</section>
+</div>
+
+<h1>Another Beautiful Memory</h1>
+
+<div class="slider-container">
+<section id="slider">
+    <input type="radio" name="slider" id="s46">
+    <input type="radio" name="slider" id="s47">
+    <input type="radio" name="slider" id="s48" checked>
+    <input type="radio" name="slider" id="s49">
+    <input type="radio" name="slider" id="s50">
+
+    <label for="s46" id="slide46">
+        <img src="images/img46.jpg" height="100%" width="100%">
+    </label>
+    <label for="s47" id="slide47">
+        <img src="images/img47.jpg" height="100%" width="100%">
+    </label>
+    <label for="s48" id="slide48">
+        <img src="images/img48.jpg" height="100%" width="100%">
+    </label>
+    <label for="s49" id="slide49">
+        <img src="images/img49.jpg" height="100%" width="100%">
+    </label>
+    <label for="s50" id="slide50">
+        <img src="images/img50.jpg" height="100%" width="100%">
+
+</section>
+</div>
+<h1>One Of The Best Moments Of My Life </h1>
+<br><br>
+<div class="slider-container">
+<section id="slider">
+    <input type="radio" name="slider" id="s51">
+    <input type="radio" name="slider" id="s52">
+    <input type="radio" name="slider" id="s53" checked>
+    <input type="radio" name="slider" id="s54">
+    <input type="radio" name="slider" id="s55">
+
+    <label for="s51" id="slide51">
+        <img src="images/img51.jpg" height="100%" width="100%">
+    </label>
+    <label for="s52" id="slide52">
+        <img src="images/img52.jpg" height="100%" width="100%">
+    </label>
+    <label for="s53" id="slide53">
+        <img src="images/img53.jpg" height="100%" width="100%">
+    </label>
+    <label for="s54" id="slide54">
+        <img src="images/img54.jpg" height="100%" width="100%">
+    </label>
+    <label for="s55" id="slide55">
+        <img src="images/img55.png" height="100%" width="100%">
+
+</section>
+</div>
+
+<h1>Another Beautiful Memory</h1>
+
+<div class="slider-container">
+<section id="slider">
+    <input type="radio" name="slider" id="s56">
+    <input type="radio" name="slider" id="s57">
+    <input type="radio" name="slider" id="s58" checked>
+    <input type="radio" name="slider" id="s59">
+    <input type="radio" name="slider" id="s60">
+
+    <label for="s56" id="slide56">
+        <img src="images/img56.png" height="100%" width="100%">
+    </label>
+    <label for="s57" id="slide57">
+        <img src="images/img57.png" height="100%" width="100%">
+    </label>
+    <label for="s58" id="slide58">
+        <img src="images/img58.png" height="100%" width="100%">
+    </label>
+    <label for="s59" id="slide59">
+        <img src="images/img59.png" height="100%" width="100%">
+    </label>
+    <label for="s60" id="slide60">
+        <img src="images/img60.png" height="100%" width="100%">
+
+</section>
+</div>
+
+<h1>Another Beautiful Memory</h1>
+
+<div class="slider-container">
+<section id="slider">
+    <input type="radio" name="slider" id="s61">
+    <input type="radio" name="slider" id="s62">
+    <input type="radio" name="slider" id="s63" checked>
+    <input type="radio" name="slider" id="s64">
+    <input type="radio" name="slider" id="s65">
+
+    <label for="s61" id="slide61">
+        <img src="images/img61.png" height="100%" width="100%">
+    </label>
+    <label for="s62" id="slide62">
+        <img src="images/img62.png" height="100%" width="100%">
+    </label>
+    <label for="s63" id="slide63">
+        <img src="images/img63.png" height="100%" width="100%">
+    </label>
+    <label for="s64" id="slide64">
+        <img src="images/img64.png" height="100%" width="100%">
+    </label>
+    <label for="s65" id="slide65">
+        <img src="images/img65.png" height="100%" width="100%">
+
+</section>
+</div>
+<h1>One Of The Best Moments Of My Life </h1>
+<br><br>
+<div class="slider-container">
+<section id="slider">
+    <input type="radio" name="slider" id="s66">
+    <input type="radio" name="slider" id="s67">
+    <input type="radio" name="slider" id="s68" checked>
+    <input type="radio" name="slider" id="s69">
+    <input type="radio" name="slider" id="s70">
+
+    <label for="s66" id="slide66">
+        <img src="images/img66.png" height="100%" width="100%">
+    </label>
+    <label for="s67" id="slide67">
+        <img src="images/img67.png" height="100%" width="100%">
+    </label>
+    <label for="s68" id="slide68">
+        <img src="images/img68.png" height="100%" width="100%">
+    </label>
+    <label for="s69" id="slide69">
+        <img src="images/img69.png" height="100%" width="100%">
+    </label>
+    <label for="s70" id="slide70">
+        <img src="images/img70.png" height="100%" width="100%">
+
+</section>
+</div>
+
+<h1>Another Beautiful Memory</h1>
+
+<div class="slider-container">
+<section id="slider">
+    <input type="radio" name="slider" id="s71">
+    <input type="radio" name="slider" id="s72">
+    <input type="radio" name="slider" id="s73" checked>
+    <input type="radio" name="slider" id="s74">
+    <input type="radio" name="slider" id="s75">
+
+    <label for="s71" id="slide71">
+        <img src="images/img71.png" height="100%" width="100%">
+    </label>
+    <label for="s72" id="slide72">
+        <img src="images/img72.png" height="100%" width="100%">
+    </label>
+    <label for="s73" id="slide73">
+        <img src="images/img73.png" height="100%" width="100%">
+    </label>
+    <label for="s74" id="slide74">
+        <img src="images/img74.png" height="100%" width="100%">
+    </label>
+    <label for="s75" id="slide75">
+        <img src="images/img75.png" height="100%" width="100%">
+
+</section>
+</div>
+
+<h1>Another Beautiful Memory</h1>
+
+<div class="slider-container">
+<section id="slider">
+    <input type="radio" name="slider" id="s76">
+    <input type="radio" name="slider" id="s77">
+    <input type="radio" name="slider" id="s78" checked>
+    <input type="radio" name="slider" id="s79">
+    <input type="radio" name="slider" id="s80">
+
+    <label for="s76" id="slide76">
+        <img src="images/img76.png" height="100%" width="100%">
+    </label>
+    <label for="s77" id="slide77">
+        <img src="images/img77.png" height="100%" width="100%">
+    </label>
+    <label for="s78" id="slide78">
+        <img src="images/img78.png" height="100%" width="100%">
+    </label>
+    <label for="s79" id="slide79">
+        <img src="images/img79.png" height="100%" width="100%">
+    </label>
+    <label for="s80" id="slide80">
+        <img src="images/img80.png" height="100%" width="100%">
+
+</section>
+</div>
+<h1>One Of The Best Moments Of My Life </h1>
+<br><br>
+<div class="slider-container">
+<section id="slider">
+    <input type="radio" name="slider" id="s81">
+    <input type="radio" name="slider" id="s82">
+    <input type="radio" name="slider" id="s83" checked>
+    <input type="radio" name="slider" id="s84">
+    <input type="radio" name="slider" id="s85">
+
+    <label for="s81" id="slide81">
+        <img src="images/img81.png" height="100%" width="100%">
+    </label>
+    <label for="s82" id="slide82">
+        <img src="images/img82.png" height="100%" width="100%">
+    </label>
+    <label for="s83" id="slide83">
+        <img src="images/img83.png" height="100%" width="100%">
+    </label>
+    <label for="s84" id="slide84">
+        <img src="images/img84.png" height="100%" width="100%">
+    </label>
+    <label for="s85" id="slide85">
+        <img src="images/img85.png" height="100%" width="100%">
+
+</section>
+</div>
+
+<h1>Another Beautiful Memory</h1>
+
+<div class="slider-container">
+<section id="slider">
+    <input type="radio" name="slider" id="s86">
+    <input type="radio" name="slider" id="s87">
+    <input type="radio" name="slider" id="s88" checked>
+    <input type="radio" name="slider" id="s89">
+    <input type="radio" name="slider" id="s90">
+
+    <label for="s86" id="slide86">
+        <img src="images/img86.png" height="100%" width="100%">
+    </label>
+    <label for="s87" id="slide87">
+        <img src="images/img87.png" height="100%" width="100%">
+    </label>
+    <label for="s88" id="slide88">
+        <img src="images/img88.png" height="100%" width="100%">
+    </label>
+    <label for="s89" id="slide89">
+        <img src="images/img89.png" height="100%" width="100%">
+    </label>
+    <label for="s90" id="slide90">
+        <img src="images/img90.png" height="100%" width="100%">
+
+</section>
+</div>
+
+<h1>Another Beautiful Memory</h1>
+
+<div class="slider-container">
+<section id="slider">
+    <input type="radio" name="slider" id="s91">
+    <input type="radio" name="slider" id="s92">
+    <input type="radio" name="slider" id="s93" checked>
+    <input type="radio" name="slider" id="s94">
+    <input type="radio" name="slider" id="s95">
+
+    <label for="s91" id="slide91">
+        <img src="images/img91.png" height="100%" width="100%">
+    </label>
+    <label for="s92" id="slide92">
+        <img src="images/img92.png" height="100%" width="100%">
+    </label>
+    <label for="s93" id="slide93">
+        <img src="images/img93.png" height="100%" width="100%">
+    </label>
+    <label for="s94" id="slide94">
+        <img src="images/img94.png" height="100%" width="100%">
+    </label>
+    <label for="s95" id="slide95">
+        <img src="images/img95.png" height="100%" width="100%">
+
+</section>
+</div>
+<h1>One Of The Best Moments Of My Life </h1>
+<br><br>
+<div class="slider-container">
+<section id="slider">
+    <input type="radio" name="slider" id="s96">
+    <input type="radio" name="slider" id="s97">
+    <input type="radio" name="slider" id="s98" checked>
+    <input type="radio" name="slider" id="s99">
+    <input type="radio" name="slider" id="s100">
+
+    <label for="s96" id="slide96">
+        <img src="images/img96.png" height="100%" width="100%">
+    </label>
+    <label for="s97" id="slide97">
+        <img src="images/img97.png" height="100%" width="100%">
+    </label>
+    <label for="s98" id="slide98">
+        <img src="images/img98.png" height="100%" width="100%">
+    </label>
+    <label for="s99" id="slide99">
+        <img src="images/img99.png" height="100%" width="100%">
+    </label>
+    <label for="s100" id="slide100">
+        <img src="images/img100.png" height="100%" width="100%">
+
+</section>
+</div>
+
+<h1>Another Beautiful Memory</h1>
+
+<div class="slider-container">
+<section id="slider">
+    <input type="radio" name="slider" id="s101">
+    <input type="radio" name="slider" id="s102">
+    <input type="radio" name="slider" id="s103" checked>
+    <input type="radio" name="slider" id="s104">
+    <input type="radio" name="slider" id="s105">
+
+    <label for="s101" id="slide101">
+        <img src="images/img101.png" height="100%" width="100%">
+    </label>
+    <label for="s102" id="slide102">
+        <img src="images/img102.png" height="100%" width="100%">
+    </label>
+    <label for="s103" id="slide103">
+        <img src="images/img103.png" height="100%" width="100%">
+    </label>
+    <label for="s104" id="slide104">
+        <img src="images/img104.png" height="100%" width="100%">
+    </label>
+    <label for="s105" id="slide105">
+        <img src="images/img105.png" height="100%" width="100%">
+
+</section>
+</div>
+
+<h1>Another Beautiful Memory</h1>
+
+<div class="slider-container">
+<section id="slider">
+    <input type="radio" name="slider" id="s106">
+    <input type="radio" name="slider" id="s107">
+    <input type="radio" name="slider" id="s108" checked>
+    <input type="radio" name="slider" id="s109">
+    <input type="radio" name="slider" id="s110">
+
+    <label for="s106" id="slide106">
+        <img src="images/img106.png" height="100%" width="100%">
+    </label>
+    <label for="s107" id="slide107">
+        <img src="images/img107.png" height="100%" width="100%">
+    </label>
+    <label for="s108" id="slide108">
+        <img src="images/img108.png" height="100%" width="100%">
+    </label>
+    <label for="s109" id="slide109">
+        <img src="images/img109.png" height="100%" width="100%">
+    </label>
+    <label for="s110" id="slide110">
+        <img src="images/img110.png" height="100%" width="100%">
+
+    </section>
+</div>
+<h1>One Of The Best Moments Of My Life </h1>
+<br><br>
+<div class="slider-container">
+<section id="slider">
+    <input type="radio" name="slider" id="s111">
+    <input type="radio" name="slider" id="s112">
+    <input type="radio" name="slider" id="s113" checked>
+    <input type="radio" name="slider" id="s114">
+    <input type="radio" name="slider" id="s115">
+
+    <label for="s111" id="slide111">
+        <img src="images/img111.png" height="100%" width="100%">
+    </label>
+    <label for="s112" id="slide112">
+        <img src="images/img112.png" height="100%" width="100%">
+    </label>
+    <label for="s113" id="slide113">
+        <img src="images/img113.png" height="100%" width="100%">
+    </label>
+    <label for="s114" id="slide114">
+        <img src="images/img114.png" height="100%" width="100%">
+    </label>
+    <label for="s115" id="slide115">
+        <img src="images/img115.png" height="100%" width="100%">
+
+</section>
+</div>
+
+<h1>Another Beautiful Memory</h1>
+
+<div class="slider-container">
+<section id="slider">
+    <input type="radio" name="slider" id="s116">
+    <input type="radio" name="slider" id="s117">
+    <input type="radio" name="slider" id="s118" checked>
+    <input type="radio" name="slider" id="s119">
+    <input type="radio" name="slider" id="s120">
+
+    <label for="s116" id="slide116">
+        <img src="images/img116.png" height="100%" width="100%">
+    </label>
+    <label for="s117" id="slide117">
+        <img src="images/img117.png" height="100%" width="100%">
+    </label>
+    <label for="s118" id="slide118">
+        <img src="images/img118.png" height="100%" width="100%">
+    </label>
+    <label for="s119" id="slide119">
+        <img src="images/img119.png" height="100%" width="100%">
+    </label>
+    <label for="s120" id="slide120">
+        <img src="images/img120.png" height="100%" width="100%">
+
+</section>
+</div>
+
+<h1>Another Beautiful Memory</h1>
+
+<div class="slider-container">
+<section id="slider">
+    <input type="radio" name="slider" id="s121">
+    <input type="radio" name="slider" id="s122">
+    <input type="radio" name="slider" id="s123" checked>
+    <input type="radio" name="slider" id="s124">
+    <input type="radio" name="slider" id="s125">
+
+    <label for="s121" id="slide121">
+        <img src="images/img121.png" height="100%" width="100%">
+    </label>
+    <label for="s122" id="slide122">
+        <img src="images/img122.png" height="100%" width="100%">
+    </label>
+    <label for="s123" id="slide123">
+        <img src="images/img123.png" height="100%" width="100%">
+    </label>
+    <label for="s124" id="slide124">
+        <img src="images/img124.png" height="100%" width="100%">
+    </label>
+    <label for="s125" id="slide125">
+        <img src="images/img125.png" height="100%" width="100%">
+
+</section>
+</div>
+<h1>One Of The Best Moments Of My Life </h1>
+<br><br>
+<div class="slider-container">
+<section id="slider">
+    <input type="radio" name="slider" id="s126">
+    <input type="radio" name="slider" id="s127">
+    <input type="radio" name="slider" id="s128" checked>
+    <input type="radio" name="slider" id="s129">
+    <input type="radio" name="slider" id="s130">
+
+    <label for="s126" id="slide126">
+        <img src="images/img121.png" height="100%" width="100%">
+    </label>
+    <label for="s127" id="slide127">
+        <img src="images/img127.png" height="100%" width="100%">
+    </label>
+    <label for="s128" id="slide128">
+        <img src="images/img128.png" height="100%" width="100%">
+    </label>
+    <label for="s129" id="slide129">
+        <img src="images/img129.png" height="100%" width="100%">
+    </label>
+    <label for="s130" id="slide130">
+        <img src="images/img130.png" height="100%" width="100%">
+
+</section>
+</div>
+
+<h1>Another Beautiful Memory</h1>
+
+<div class="slider-container">
+<section id="slider">
+    <input type="radio" name="slider" id="s131">
+    <input type="radio" name="slider" id="s132">
+    <input type="radio" name="slider" id="s133" checked>
+    <input type="radio" name="slider" id="s134">
+    <input type="radio" name="slider" id="s135">
+
+    <label for="s131" id="slide131">
+        <img src="images/img131.png" height="100%" width="100%">
+    </label>
+    <label for="s132" id="slide132">
+        <img src="images/img132.png" height="100%" width="100%">
+    </label>
+    <label for="s133" id="slide133">
+        <img src="images/img133.png" height="100%" width="100%">
+    </label>
+    <label for="s134" id="slide134">
+        <img src="images/img134.png" height="100%" width="100%">
+    </label>
+    <label for="s135" id="slide135">
+        <img src="images/img135.png" height="100%" width="100%">
+
+</section>
+</div>
+
+<h1>Another Beautiful Memory</h1>
+
+<div class="slider-container">
+<section id="slider">
+    <input type="radio" name="slider" id="s136">
+    <input type="radio" name="slider" id="s137">
+    <input type="radio" name="slider" id="s138" checked>
+    <input type="radio" name="slider" id="s139">
+    <input type="radio" name="slider" id="s140">
+
+    <label for="s136" id="slide136">
+        <img src="images/img136.png" height="100%" width="100%">
+    </label>
+    <label for="s137" id="slide137">
+        <img src="images/img137.png" height="100%" width="100%">
+    </label>
+    <label for="s138" id="slide138">
+        <img src="images/img138.png" height="100%" width="100%">
+    </label>
+    <label for="s139" id="slide139">
+        <img src="images/img139.png" height="100%" width="100%">
+    </label>
+    <label for="s140" id="slide140">
+        <img src="images/img140.png" height="100%" width="100%">
+
+</section>
+</div>
+<h1>One Of The Best Moments Of My Life </h1>
+<br><br>
+<div class="slider-container">
+<section id="slider">
+    <input type="radio" name="slider" id="s141">
+    <input type="radio" name="slider" id="s142">
+    <input type="radio" name="slider" id="s143" checked>
+    <input type="radio" name="slider" id="s144">
+    <input type="radio" name="slider" id="s145">
+
+    <label for="s141" id="slide141">
+        <img src="images/img141.png" height="100%" width="100%">
+    </label>
+    <label for="s142" id="slide142">
+        <img src="images/img142.png" height="100%" width="100%">
+    </label>
+    <label for="s143" id="slide143">
+        <img src="images/img143.png" height="100%" width="100%">
+    </label>
+    <label for="s144" id="slide144">
+        <img src="images/img144.png" height="100%" width="100%">
+    </label>
+    <label for="s145" id="slide145">
+        <img src="images/img145.png" height="100%" width="100%">
+
+</section>
+</div>
+
+<h1>Another Beautiful Memory</h1>
+
+<div class="slider-container">
+<section id="slider">
+    <input type="radio" name="slider" id="s146">
+    <input type="radio" name="slider" id="s147">
+    <input type="radio" name="slider" id="s148" checked>
+    <input type="radio" name="slider" id="s149">
+    <input type="radio" name="slider" id="s150">
+
+    <label for="s146" id="slide146">
+        <img src="images/img146.png" height="100%" width="100%">
+    </label>
+    <label for="s147" id="slide147">
+        <img src="images/img147.png" height="100%" width="100%">
+    </label>
+    <label for="s148" id="slide148">
+        <img src="images/img148.png" height="100%" width="100%">
+    </label>
+    <label for="s149" id="slide149">
+        <img src="images/img149.png" height="100%" width="100%">
+    </label>
+    <label for="s150" id="slide150">
+        <img src="images/img150.png" height="100%" width="100%">
+
+</section>
+</div>
+
+<h1>Another Beautiful Memory</h1>
+
+<div class="slider-container">
+<section id="slider">
+    <input type="radio" name="slider" id="s151">
+    <input type="radio" name="slider" id="s152">
+    <input type="radio" name="slider" id="s153" checked>
+    <input type="radio" name="slider" id="s154">
+    <input type="radio" name="slider" id="s155">
+
+    <label for="s151" id="slide151">
+        <img src="images/img151.png" height="100%" width="100%">
+    </label>
+    <label for="s152" id="slide152">
+        <img src="images/img152.png" height="100%" width="100%">
+    </label>
+    <label for="s153" id="slide153">
+        <img src="images/img153.png" height="100%" width="100%">
+    </label>
+    <label for="s154" id="slide154">
+        <img src="images/img154.png" height="100%" width="100%">
+    </label>
+    <label for="s155" id="slide155">
+        <img src="images/img155.png" height="100%" width="100%">
+
+</section>
+</div>
+<h1>One Of The Best Moments Of My Life </h1>
+<br><br>
+<div class="slider-container">
+<section id="slider">
+    <input type="radio" name="slider" id="s156">
+    <input type="radio" name="slider" id="s157">
+    <input type="radio" name="slider" id="s158" checked>
+    <input type="radio" name="slider" id="s159">
+    <input type="radio" name="slider" id="s160">
+
+    <label for="s156" id="slide156">
+        <img src="images/img156.png" height="100%" width="100%">
+    </label>
+    <label for="s157" id="slide157">
+        <img src="images/img157.png" height="100%" width="100%">
+    </label>
+    <label for="s158" id="slide158">
+        <img src="images/img158.png" height="100%" width="100%">
+    </label>
+    <label for="s159" id="slide159">
+        <img src="images/img159.png" height="100%" width="100%">
+    </label>
+    <label for="s160" id="slide160">
+        <img src="images/img160.png" height="100%" width="100%">
+
+</section>
+</div>
+
+<h1>Another Beautiful Memory</h1>
+
+<div class="slider-container">
+<section id="slider">
+    <input type="radio" name="slider" id="s161">
+    <input type="radio" name="slider" id="s162">
+    <input type="radio" name="slider" id="s163" checked>
+    <input type="radio" name="slider" id="s164">
+    <input type="radio" name="slider" id="s165">
+
+    <label for="s161" id="slide161">
+        <img src="images/img161.png" height="100%" width="100%">
+    </label>
+    <label for="s162" id="slide162">
+        <img src="images/img162.png" height="100%" width="100%">
+    </label>
+    <label for="s163" id="slide163">
+        <img src="images/img163.png" height="100%" width="100%">
+    </label>
+    <label for="s164" id="slide164">
+        <img src="images/img164.png" height="100%" width="100%">
+    </label>
+    <label for="s165" id="slide165">
+        <img src="images/img165.png" height="100%" width="100%">
+
+</section>
+</div>
+
+<h1>Another Beautiful Memory</h1>
+
+<div class="slider-container">
+<section id="slider">
+    <input type="radio" name="slider" id="s166">
+    <input type="radio" name="slider" id="s167">
+    <input type="radio" name="slider" id="s168" checked>
+    <input type="radio" name="slider" id="s169">
+    <input type="radio" name="slider" id="s170">
+
+    <label for="s166" id="slide166">
+        <img src="images/img166.png" height="100%" width="100%">
+    </label>
+    <label for="s167" id="slide167">
+        <img src="images/img167.png" height="100%" width="100%">
+    </label>
+    <label for="s168" id="slide168">
+        <img src="images/img168.png" height="100%" width="100%">
+    </label>
+    <label for="s169" id="slide169">
+        <img src="images/img169.png" height="100%" width="100%">
+    </label>
+    <label for="s170" id="slide170">
+        <img src="images/img170.png" height="100%" width="100%">
+
+</section>
+</div>
+<h1>One Of The Best Moments Of My Life </h1>
+<br><br>
+<div class="slider-container">
+<section id="slider">
+    <input type="radio" name="slider" id="s171">
+    <input type="radio" name="slider" id="s172">
+    <input type="radio" name="slider" id="s173" checked>
+    <input type="radio" name="slider" id="s174">
+    <input type="radio" name="slider" id="s175">
+
+    <label for="s171" id="slide171">
+        <img src="images/img171.png" height="100%" width="100%">
+    </label>
+    <label for="s172" id="slide172">
+        <img src="images/img172.png" height="100%" width="100%">
+    </label>
+    <label for="s173" id="slide173">
+        <img src="images/img173.png" height="100%" width="100%">
+    </label>
+    <label for="s174" id="slide174">
+        <img src="images/img174.png" height="100%" width="100%">
+    </label>
+    <label for="s175" id="slide175">
+        <img src="images/img175.png" height="100%" width="100%">
+
+</section>
+</div>
+
+<h1>Another Beautiful Memory</h1>
+
+<div class="slider-container">
+<section id="slider">
+    <input type="radio" name="slider" id="s176">
+    <input type="radio" name="slider" id="s177">
+    <input type="radio" name="slider" id="s178" checked>
+    <input type="radio" name="slider" id="s179">
+    <input type="radio" name="slider" id="s180">
+
+    <label for="s176" id="slide176">
+        <img src="images/img176.png" height="100%" width="100%">
+    </label>
+    <label for="s177" id="slide177">
+        <img src="images/img177.png" height="100%" width="100%">
+    </label>
+    <label for="s178" id="slide178">
+        <img src="images/img178.png" height="100%" width="100%">
+    </label>
+    <label for="s179" id="slide179">
+        <img src="images/img179.png" height="100%" width="100%">
+    </label>
+    <label for="s180" id="slide180">
+        <img src="images/img180.png" height="100%" width="100%">
+
+</section>
+</div>
+
+<h1>Another Beautiful Memory</h1>
+
+<div class="slider-container">
+<section id="slider">
+    <input type="radio" name="slider" id="s181">
+    <input type="radio" name="slider" id="s182">
+    <input type="radio" name="slider" id="s183" checked>
+    <input type="radio" name="slider" id="s184">
+    <input type="radio" name="slider" id="s185">
+
+    <label for="s181" id="slide181">
+        <img src="images/img181.png" height="100%" width="100%">
+    </label>
+    <label for="s182" id="slide182">
+        <img src="images/img182.png" height="100%" width="100%">
+    </label>
+    <label for="s183" id="slide183">
+        <img src="images/img183.png" height="100%" width="100%">
+    </label>
+    <label for="s184" id="slide184">
+        <img src="images/img184.png" height="100%" width="100%">
+    </label>
+    <label for="s185" id="slide185">
+        <img src="images/img185.png" height="100%" width="100%">
+
+</section>
+</div>
+<h1>One Of The Best Moments Of My Life </h1>
+<br><br>
+<div class="slider-container">
+<section id="slider">
+    <input type="radio" name="slider" id="s186">
+    <input type="radio" name="slider" id="s187">
+    <input type="radio" name="slider" id="s188" checked>
+    <input type="radio" name="slider" id="s189">
+    <input type="radio" name="slider" id="s190">
+
+    <label for="s186" id="slide186">
+        <img src="images/img186.png" height="100%" width="100%">
+    </label>
+    <label for="s187" id="slide187">
+        <img src="images/img187.png" height="100%" width="100%">
+    </label>
+    <label for="s188" id="slide188">
+        <img src="images/img188.png" height="100%" width="100%">
+    </label>
+    <label for="s189" id="slide189">
+        <img src="images/img189.png" height="100%" width="100%">
+    </label>
+    <label for="s190" id="slide190">
+        <img src="images/img190.png" height="100%" width="100%">
+
+</section>
+</div>
+
+<h1>Another Beautiful Memory</h1>
+
+<div class="slider-container">
+<section id="slider">
+    <input type="radio" name="slider" id="s191">
+    <input type="radio" name="slider" id="s192">
+    <input type="radio" name="slider" id="s193" checked>
+    <input type="radio" name="slider" id="s194">
+    <input type="radio" name="slider" id="s195">
+
+    <label for="s191" id="slide191">
+        <img src="images/img191.png" height="100%" width="100%">
+    </label>
+    <label for="s192" id="slide192">
+        <img src="images/img192.png" height="100%" width="100%">
+    </label>
+    <label for="s193" id="slide193">
+        <img src="images/img193.png" height="100%" width="100%">
+    </label>
+    <label for="s194" id="slide194">
+        <img src="images/img194.png" height="100%" width="100%">
+    </label>
+    <label for="s195" id="slide195">
+        <img src="images/img195.png" height="100%" width="100%">
+
+</section>
+</div>
+
+<h1>Another Beautiful Memory</h1>
+
+<div class="slider-container">
+<section id="slider">
+    <input type="radio" name="slider" id="s196">
+    <input type="radio" name="slider" id="s197">
+    <input type="radio" name="slider" id="s198" checked>
+    <input type="radio" name="slider" id="s199">
+    <input type="radio" name="slider" id="s200">
+
+    <label for="s196" id="slide196">
+        <img src="images/img196.png" height="100%" width="100%">
+    </label>
+    <label for="s197" id="slide197">
+        <img src="images/img197.png" height="100%" width="100%">
+    </label>
+    <label for="s198" id="slide198">
+        <img src="images/img198.png" height="100%" width="100%">
+    </label>
+    <label for="s199" id="slide199">
+        <img src="images/img199.png" height="100%" width="100%">
+    </label>
+    <label for="s200" id="slide200">
+        <img src="images/img200.png" height="100%" width="100%">
+
+</section>
+</div>
+<h1>One Of The Best Moments Of My Life </h1>
+<br><br>
+<div class="slider-container">
+<section id="slider">
+    <input type="radio" name="slider" id="s201">
+    <input type="radio" name="slider" id="s202">
+    <input type="radio" name="slider" id="s203" checked>
+    <input type="radio" name="slider" id="s204">
+    <input type="radio" name="slider" id="s205">
+
+    <label for="s201" id="slide201">
+        <img src="images/img201.png" height="100%" width="100%">
+    </label>
+    <label for="s202" id="slide202">
+        <img src="images/img202.png" height="100%" width="100%">
+    </label>
+    <label for="s203" id="slide203">
+        <img src="images/img203.png" height="100%" width="100%">
+    </label>
+    <label for="s204" id="slide204">
+        <img src="images/img204.png" height="100%" width="100%">
+    </label>
+    <label for="s205" id="slide205">
+        <img src="images/img205.png" height="100%" width="100%">
+
+</section>
+</div>
+
+<h1>Another Beautiful Memory</h1>
+
+<div class="slider-container">
+<section id="slider">
+    <input type="radio" name="slider" id="s206">
+    <input type="radio" name="slider" id="s207">
+    <input type="radio" name="slider" id="s208" checked>
+    <input type="radio" name="slider" id="s209">
+    <input type="radio" name="slider" id="s210">
+
+    <label for="s206" id="slide206">
+        <img src="images/img206.png" height="100%" width="100%">
+    </label>
+    <label for="s207" id="slide207">
+        <img src="images/img207.png" height="100%" width="100%">
+    </label>
+    <label for="s208" id="slide208">
+        <img src="images/img208.png" height="100%" width="100%">
+    </label>
+    <label for="s209" id="slide209">
+        <img src="images/img209.png" height="100%" width="100%">
+    </label>
+    <label for="s210" id="slide210">
+        <img src="images/img300.png" height="100%" width="100%">
+
+</section>
+</div>
+
+<h1>Another Beautiful Memory</h1>
+
+<div class="slider-container">
+<section id="slider">
+    <input type="radio" name="slider" id="s211">
+    <input type="radio" name="slider" id="s212">
+    <input type="radio" name="slider" id="s213" checked>
+    <input type="radio" name="slider" id="s214">
+    <input type="radio" name="slider" id="s215">
+
+    <label for="s211" id="slide211">
+        <img src="images/img211.png" height="100%" width="100%">
+    </label>
+    <label for="s212" id="slide212">
+        <img src="images/img212.png" height="100%" width="100%">
+    </label>
+    <label for="s213" id="slide213">
+        <img src="images/img213.png" height="100%" width="100%">
+    </label>
+    <label for="s214" id="slide214">
+        <img src="images/img214.png" height="100%" width="100%">
+    </label>
+    <label for="s215" id="slide215">
+        <img src="images/img215.png" height="100%" width="100%">
+
+</section>
+</div>
+
+<h1>One Of The Best Moments Of My Life </h1>
+<br><br>
+<div class="slider-container">
+<section id="slider">
+    <input type="radio" name="slider" id="s216">
+    <input type="radio" name="slider" id="s217">
+    <input type="radio" name="slider" id="s218" checked>
+    <input type="radio" name="slider" id="s219">
+    <input type="radio" name="slider" id="s220">
+
+    <label for="s216" id="slide216">
+        <img src="images/img216.png" height="100%" width="100%">
+    </label>
+    <label for="s217" id="slide217">
+        <img src="images/img217.png" height="100%" width="100%">
+    </label>
+    <label for="s218" id="slide218">
+        <img src="images/img218.png" height="100%" width="100%">
+    </label>
+    <label for="s219" id="slide219">
+        <img src="images/img219.png" height="100%" width="100%">
+    </label>
+    <label for="s220" id="slide220">
+        <img src="images/img220.png" height="100%" width="100%">
+
+</section>
+</div>
+
+<h1>Another Beautiful Memory</h1>
+
+<div class="slider-container">
+<section id="slider">
+    <input type="radio" name="slider" id="s221">
+    <input type="radio" name="slider" id="s222">
+    <input type="radio" name="slider" id="s223" checked>
+    <input type="radio" name="slider" id="s224">
+    <input type="radio" name="slider" id="s225">
+
+    <label for="s221" id="slide221">
+        <img src="images/img221.png" height="100%" width="100%">
+    </label>
+    <label for="s222" id="slide222">
+        <img src="images/img222.png" height="100%" width="100%">
+    </label>
+    <label for="s223" id="slide223">
+        <img src="images/img223.png" height="100%" width="100%">
+    </label>
+    <label for="s224" id="slide224">
+        <img src="images/img224.png" height="100%" width="100%">
+    </label>
+    <label for="s225" id="slide225">
+        <img src="images/img225.png" height="100%" width="100%">
+
+</section>
+</div>
+
+<h1>Another Beautiful Memory</h1>
+
+<div class="slider-container">
+<section id="slider">
+    <input type="radio" name="slider" id="s226">
+    <input type="radio" name="slider" id="s227">
+    <input type="radio" name="slider" id="s228" checked>
+    <input type="radio" name="slider" id="s229">
+    <input type="radio" name="slider" id="s230">
+
+    <label for="s226" id="slide226">
+        <img src="images/img226.png" height="100%" width="100%">
+    </label>
+    <label for="s227" id="slide227">
+        <img src="images/img227.png" height="100%" width="100%">
+    </label>
+    <label for="s228" id="slide228">
+        <img src="images/img228.png" height="100%" width="100%">
+    </label>
+    <label for="s229" id="slide229">
+        <img src="images/img229.png" height="100%" width="100%">
+    </label>
+    <label for="s230" id="slide230">
+        <img src="images/img230.png" height="100%" width="100%">
+
+</section>
+</div>
+
+<h1>One Of The Best Moments Of My Life </h1>
+<br><br>
+<div class="slider-container">
+<section id="slider">
+    <input type="radio" name="slider" id="s231">
+    <input type="radio" name="slider" id="s232">
+    <input type="radio" name="slider" id="s233" checked>
+    <input type="radio" name="slider" id="s234">
+    <input type="radio" name="slider" id="s235">
+
+    <label for="s231" id="slide231">
+        <img src="images/img231.png" height="100%" width="100%">
+    </label>
+    <label for="s232" id="slide232">
+        <img src="images/img232.png" height="100%" width="100%">
+    </label>
+    <label for="s233" id="slide233">
+        <img src="images/img233.png" height="100%" width="100%">
+    </label>
+    <label for="s234" id="slide234">
+        <img src="images/img234.png" height="100%" width="100%">
+    </label>
+    <label for="s235" id="slide235">
+        <img src="images/img235.png" height="100%" width="100%">
+
+</section>
+</div>
+
+<h1>Another Beautiful Memory</h1>
+
+<div class="slider-container">
+<section id="slider">
+    <input type="radio" name="slider" id="s236">
+    <input type="radio" name="slider" id="s237">
+    <input type="radio" name="slider" id="s238" checked>
+    <input type="radio" name="slider" id="s239">
+    <input type="radio" name="slider" id="s240">
+
+    <label for="s236" id="slide236">
+        <img src="images/img236.png" height="100%" width="100%">
+    </label>
+    <label for="s237" id="slide237">
+        <img src="images/img237.png" height="100%" width="100%">
+    </label>
+    <label for="s238" id="slide238">
+        <img src="images/img238.png" height="100%" width="100%">
+    </label>
+    <label for="s239" id="slide239">
+        <img src="images/img239.png" height="100%" width="100%">
+    </label>
+    <label for="s240" id="slide240">
+        <img src="images/img240.png" height="100%" width="100%">
+
+</section>
+</div>
+
+<h1>Another Beautiful Memory</h1>
+
+<div class="slider-container">
+<section id="slider">
+    <input type="radio" name="slider" id="s241">
+    <input type="radio" name="slider" id="s242">
+    <input type="radio" name="slider" id="s243" checked>
+    <input type="radio" name="slider" id="s244">
+    <input type="radio" name="slider" id="s245">
+
+    <label for="s241" id="slide241">
+        <img src="images/img241.png" height="100%" width="100%">
+    </label>
+    <label for="s242" id="slide242">
+        <img src="images/img242.png" height="100%" width="100%">
+    </label>
+    <label for="s243" id="slide243">
+        <img src="images/img243.png" height="100%" width="100%">
+    </label>
+    <label for="s244" id="slide244">
+        <img src="images/img244.png" height="100%" width="100%">
+    </label>
+    <label for="s245" id="slide245">
+        <img src="images/img245.png" height="100%" width="100%">
+
+</section>
+</div>
+
+<h1>One Of The Best Moments Of My Life </h1>
+<br><br>
+<div class="slider-container">
+<section id="slider">
+    <input type="radio" name="slider" id="s246">
+    <input type="radio" name="slider" id="s247">
+    <input type="radio" name="slider" id="s248" checked>
+    <input type="radio" name="slider" id="s249">
+    <input type="radio" name="slider" id="s250">
+
+    <label for="s246" id="slide246">
+        <img src="images/img246.png" height="100%" width="100%">
+    </label>
+    <label for="s247" id="slide247">
+        <img src="images/img247.png" height="100%" width="100%">
+    </label>
+    <label for="s248" id="slide248">
+        <img src="images/img248.png" height="100%" width="100%">
+    </label>
+    <label for="s249" id="slide249">
+        <img src="images/img249.png" height="100%" width="100%">
+    </label>
+    <label for="s250" id="slide250">
+        <img src="images/img250.png" height="100%" width="100%">
+
+</section>
+</div>
+
+<h1>Another Beautiful Memory</h1>
+
+<div class="slider-container">
+<section id="slider">
+    <input type="radio" name="slider" id="s251">
+    <input type="radio" name="slider" id="s252">
+    <input type="radio" name="slider" id="s253" checked>
+    <input type="radio" name="slider" id="s254">
+    <input type="radio" name="slider" id="s255">
+
+    <label for="s251" id="slide251">
+        <img src="images/img251.png" height="100%" width="100%">
+    </label>
+    <label for="s252" id="slide252">
+        <img src="images/img252.png" height="100%" width="100%">
+    </label>
+    <label for="s253" id="slide253">
+        <img src="images/img253.png" height="100%" width="100%">
+    </label>
+    <label for="s254" id="slide254">
+        <img src="images/img254.png" height="100%" width="100%">
+    </label>
+    <label for="s255" id="slide255">
+        <img src="images/img255.png" height="100%" width="100%">
+
+</section>
+</div>
+
+<h1>Another Beautiful Memory</h1>
+
+<div class="slider-container">
+<section id="slider">
+    <input type="radio" name="slider" id="s256">
+    <input type="radio" name="slider" id="s257">
+    <input type="radio" name="slider" id="s258" checked>
+    <input type="radio" name="slider" id="s259">
+    <input type="radio" name="slider" id="s260">
+
+    <label for="s256" id="slide256">
+        <img src="images/img256.png" height="100%" width="100%">
+    </label>
+    <label for="s257" id="slide257">
+        <img src="images/img257.png" height="100%" width="100%">
+    </label>
+    <label for="s258" id="slide258">
+        <img src="images/img258.png" height="100%" width="100%">
+    </label>
+    <label for="s259" id="slide259">
+        <img src="images/img259.png" height="100%" width="100%">
+    </label>
+    <label for="s260" id="slide260">
+        <img src="images/img260.png" height="100%" width="100%">
+
+</section>
+</div>
+
+<h1>One Of The Best Moments Of My Life </h1>
+<br><br>
+<div class="slider-container">
+<section id="slider">
+    <input type="radio" name="slider" id="s261">
+    <input type="radio" name="slider" id="s262">
+    <input type="radio" name="slider" id="s263" checked>
+    <input type="radio" name="slider" id="s264">
+    <input type="radio" name="slider" id="s265">
+
+    <label for="s261" id="slide261">
+        <img src="images/img261.png" height="100%" width="100%">
+    </label>
+    <label for="s262" id="slide262">
+        <img src="images/img262.png" height="100%" width="100%">
+    </label>
+    <label for="s263" id="slide263">
+        <img src="images/img263.png" height="100%" width="100%">
+    </label>
+    <label for="s264" id="slide264">
+        <img src="images/img264.png" height="100%" width="100%">
+    </label>
+    <label for="s265" id="slide265">
+        <img src="images/img265.png" height="100%" width="100%">
+
+</section>
+</div>
+
+<h1>Another Beautiful Memory</h1>
+
+<div class="slider-container">
+<section id="slider">
+    <input type="radio" name="slider" id="s266">
+    <input type="radio" name="slider" id="s267">
+    <input type="radio" name="slider" id="s268" checked>
+    <input type="radio" name="slider" id="s269">
+    <input type="radio" name="slider" id="s270">
+
+    <label for="s266" id="slide266">
+        <img src="images/img266.png" height="100%" width="100%">
+    </label>
+    <label for="s267" id="slide267">
+        <img src="images/img267.png" height="100%" width="100%">
+    </label>
+    <label for="s268" id="slide268">
+        <img src="images/img268.png" height="100%" width="100%">
+    </label>
+    <label for="s269" id="slide269">
+        <img src="images/img269.png" height="100%" width="100%">
+    </label>
+    <label for="s270" id="slide270">
+        <img src="images/img270.png" height="100%" width="100%">
+
+</section>
+</div>
+
+<h1>Another Beautiful Memory</h1>
+
+<div class="slider-container">
+<section id="slider">
+    <input type="radio" name="slider" id="s271">
+    <input type="radio" name="slider" id="s272">
+    <input type="radio" name="slider" id="s273" checked>
+    <input type="radio" name="slider" id="s274">
+    <input type="radio" name="slider" id="s275">
+
+    <label for="s271" id="slide271">
+        <img src="images/img271.png" height="100%" width="100%">
+    </label>
+    <label for="s272" id="slide272">
+        <img src="images/img272.png" height="100%" width="100%">
+    </label>
+    <label for="s273" id="slide273">
+        <img src="images/img273.png" height="100%" width="100%">
+    </label>
+    <label for="s274" id="slide274">
+        <img src="images/img274.png" height="100%" width="100%">
+    </label>
+    <label for="s275" id="slide275">
+        <img src="images/img275.png" height="100%" width="100%">
+
+</section>
+</div>
+
+<h1>One Of The Best Moments Of My Life </h1>
+<br><br>
+<div class="slider-container">
+<section id="slider">
+    <input type="radio" name="slider" id="s276">
+    <input type="radio" name="slider" id="s277">
+    <input type="radio" name="slider" id="s278" checked>
+    <input type="radio" name="slider" id="s279">
+    <input type="radio" name="slider" id="s280">
+
+    <label for="s276" id="slide276">
+        <img src="images/img276.png" height="100%" width="100%">
+    </label>
+    <label for="s277" id="slide277">
+        <img src="images/img277.png" height="100%" width="100%">
+    </label>
+    <label for="s278" id="slide278">
+        <img src="images/img278.png" height="100%" width="100%">
+    </label>
+    <label for="s279" id="slide279">
+        <img src="images/img279.png" height="100%" width="100%">
+    </label>
+    <label for="s280" id="slide280">
+        <img src="images/img280.png" height="100%" width="100%">
+
+</section>
+</div>
+
+<h1>Another Beautiful Memory</h1>
+
+<div class="slider-container">
+<section id="slider">
+    <input type="radio" name="slider" id="s281">
+    <input type="radio" name="slider" id="s282">
+    <input type="radio" name="slider" id="s283" checked>
+    <input type="radio" name="slider" id="s284">
+    <input type="radio" name="slider" id="s285">
+
+    <label for="s281" id="slide281">
+        <img src="images/img281.png" height="100%" width="100%">
+    </label>
+    <label for="s282" id="slide282">
+        <img src="images/img282.png" height="100%" width="100%">
+    </label>
+    <label for="s283" id="slide283">
+        <img src="images/img283.png" height="100%" width="100%">
+    </label>
+    <label for="s284" id="slide284">
+        <img src="images/img284.png" height="100%" width="100%">
+    </label>
+    <label for="s285" id="slide285">
+        <img src="images/img285.png" height="100%" width="100%">
+
+</section>
+</div>
+
+<h1>Another Beautiful Memory</h1>
+
+<div class="slider-container">
+<section id="slider">
+    <input type="radio" name="slider" id="s286">
+    <input type="radio" name="slider" id="s287">
+    <input type="radio" name="slider" id="s288" checked>
+    <input type="radio" name="slider" id="s289">
+    <input type="radio" name="slider" id="s290">
+
+    <label for="s286" id="slide286">
+        <img src="images/img286.png" height="100%" width="100%">
+    </label>
+    <label for="s287" id="slide287">
+        <img src="images/img287.png" height="100%" width="100%">
+    </label>
+    <label for="s288" id="slide288">
+        <img src="images/img288.png" height="100%" width="100%">
+    </label>
+    <label for="s289" id="slide289">
+        <img src="images/img289.png" height="100%" width="100%">
+    </label>
+    <label for="s290" id="slide290">
+        <img src="images/img290.png" height="100%" width="100%">
+
+</section>
+</div>
+
+<h1>One Of The Best Moments Of My Life </h1>
+<br><br>
+<div class="slider-container">
+<section id="slider">
+    <input type="radio" name="slider" id="s291">
+    <input type="radio" name="slider" id="s292">
+    <input type="radio" name="slider" id="s293" checked>
+    <input type="radio" name="slider" id="s294">
+    <input type="radio" name="slider" id="s295">
+
+    <label for="s291" id="slide291">
+        <img src="images/img291.png" height="100%" width="100%">
+    </label>
+    <label for="s292" id="slide292">
+        <img src="images/img292.png" height="100%" width="100%">
+    </label>
+    <label for="s293" id="slide293">
+        <img src="images/img293.png" height="100%" width="100%">
+    </label>
+    <label for="s294" id="slide294">
+        <img src="images/img294.png" height="100%" width="100%">
+    </label>
+    <label for="s295" id="slide295">
+        <img src="images/img295.png" height="100%" width="100%">
+
+</section>
+</div>
+
+<h1>Another Beautiful Memory</h1>
+
+<div class="slider-container">
+<section id="slider">
+    <input type="radio" name="slider" id="s296">
+    <input type="radio" name="slider" id="s297">
+    <input type="radio" name="slider" id="s298" checked>
+    <input type="radio" name="slider" id="s299">
+    <input type="radio" name="slider" id="s300">
+
+    <label for="s296" id="slide296">
+        <img src="images/img296.png" height="100%" width="100%">
+    </label>
+    <label for="s297" id="slide297">
+        <img src="images/img297.png" height="100%" width="100%">
+    </label>
+    <label for="s298" id="slide298">
+        <img src="images/img298.png" height="100%" width="100%">
+    </label>
+    <label for="s299" id="slide299">
+        <img src="images/img299.png" height="100%" width="100%">
+    </label>
+    <label for="s300" id="slide300">
+        <img src="images/img300.png" height="100%" width="100%">
+
+</section>
+</div>
+<h1>One Of The Best Moments Of My Life </h1>
+<br><br>
+<div class="slider-container">
+<section id="slider">
+    <input type="radio" name="slider" id="s301">
+    <input type="radio" name="slider" id="s302">
+    <input type="radio" name="slider" id="s303" checked>
+    <input type="radio" name="slider" id="s304">
+    <input type="radio" name="slider" id="s305">
+
+    <label for="s301" id="slide301">
+        <img src="images/img301.png" height="100%" width="100%">
+    </label>
+    <label for="s302" id="slide302">
+        <img src="images/img302.png" height="100%" width="100%">
+    </label>
+    <label for="s303" id="slide303">
+        <img src="images/img303.png" height="100%" width="100%">
+    </label>
+    <label for="s304" id="slide304">
+        <img src="images/img304.png" height="100%" width="100%">
+    </label>
+    <label for="s305" id="slide305">
+        <img src="images/img305.png" height="100%" width="100%">
+
+</section>
+</div>
+
+<h1>Another Beautiful Memory</h1>
+
+<div class="slider-container">
+<section id="slider">
+    <input type="radio" name="slider" id="s306">
+    <input type="radio" name="slider" id="s307">
+    <input type="radio" name="slider" id="s308" checked>
+    <input type="radio" name="slider" id="s309">
+    <input type="radio" name="slider" id="s310">
+
+    <label for="s306" id="slide306">
+        <img src="images/img306.png" height="100%" width="100%">
+    </label>
+    <label for="s307" id="slide307">
+        <img src="images/img307.png" height="100%" width="100%">
+    </label>
+    <label for="s308" id="slide308">
+        <img src="images/img308.png" height="100%" width="100%">
+    </label>
+    <label for="s309" id="slide309">
+        <img src="images/img309.png" height="100%" width="100%">
+    </label>
+    <label for="s310" id="slide310">
+        <img src="images/img310.png" height="100%" width="100%">
+
+</section>
+</div>
+
+<h1>Another Beautiful Memory</h1>
+
+<div class="slider-container">
+<section id="slider">
+    <input type="radio" name="slider" id="s311">
+    <input type="radio" name="slider" id="s312">
+    <input type="radio" name="slider" id="s313" checked>
+    <input type="radio" name="slider" id="s314">
+    <input type="radio" name="slider" id="s315">
+
+    <label for="s311" id="slide311">
+        <img src="images/img311.png" height="100%" width="100%">
+    </label>
+    <label for="s312" id="slide312">
+        <img src="images/img312.png" height="100%" width="100%">
+    </label>
+    <label for="s313" id="slide313">
+        <img src="images/img313.png" height="100%" width="100%">
+    </label>
+    <label for="s314" id="slide314">
+        <img src="images/img314.png" height="100%" width="100%">
+    </label>
+    <label for="s315" id="slide315">
+        <img src="images/img315.png" height="100%" width="100%">
+
+</section>
+</div>
+
+<h1>One Of The Best Moments Of My Life </h1>
+<br><br>
+<div class="slider-container">
+<section id="slider">
+    <input type="radio" name="slider" id="s316">
+    <input type="radio" name="slider" id="s317">
+    <input type="radio" name="slider" id="s318" checked>
+    <input type="radio" name="slider" id="s319">
+    <input type="radio" name="slider" id="s320">
+
+    <label for="s316" id="slide316">
+        <img src="images/img316.png" height="100%" width="100%">
+    </label>
+    <label for="s317" id="slide317">
+        <img src="images/img317.png" height="100%" width="100%">
+    </label>
+    <label for="s318" id="slide318">
+        <img src="images/img318.png" height="100%" width="100%">
+    </label>
+    <label for="s319" id="slide319">
+        <img src="images/img319.png" height="100%" width="100%">
+    </label>
+    <label for="s320" id="slide320">
+        <img src="images/img320.png" height="100%" width="100%">
+
+</section>
+</div>
+
+<h1>Another Beautiful Memory</h1>
+
+<div class="slider-container">
+<section id="slider">
+    <input type="radio" name="slider" id="s321">
+    <input type="radio" name="slider" id="s322">
+    <input type="radio" name="slider" id="s323" checked>
+    <input type="radio" name="slider" id="s324">
+    <input type="radio" name="slider" id="s325">
+
+    <label for="s321" id="slide321">
+        <img src="images/img321.png" height="100%" width="100%">
+    </label>
+    <label for="s322" id="slide322">
+        <img src="images/img322.png" height="100%" width="100%">
+    </label>
+    <label for="s323" id="slide323">
+        <img src="images/img323.png" height="100%" width="100%">
+    </label>
+    <label for="s324" id="slide324">
+        <img src="images/img324.png" height="100%" width="100%">
+    </label>
+    <label for="s325" id="slide325">
+        <img src="images/img325.png" height="100%" width="100%">
+
+</section>
+</div>
+
+<h1>Another Beautiful Memory</h1>
+
+<div class="slider-container">
+<section id="slider">
+    <input type="radio" name="slider" id="s326">
+    <input type="radio" name="slider" id="s327">
+    <input type="radio" name="slider" id="s328" checked>
+    <input type="radio" name="slider" id="s329">
+    <input type="radio" name="slider" id="s330">
+
+    <label for="s326" id="slide326">
+        <img src="images/img326.png" height="100%" width="100%">
+    </label>
+    <label for="s327" id="slide327">
+        <img src="images/img327.png" height="100%" width="100%">
+    </label>
+    <label for="s328" id="slide328">
+        <img src="images/img328.png" height="100%" width="100%">
+    </label>
+    <label for="s329" id="slide329">
+        <img src="images/img329.png" height="100%" width="100%">
+    </label>
+    <label for="s330" id="slide330">
+        <img src="images/img330.jpg" height="100%" width="100%">
+
+</section>
+</div>
+</body>
+</body>
+</html>

@@ -1,0 +1,205 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Falling Hearts Rain</title>
+  <H1 class="glow">MY Dimension Seduction</H1>
+  <style>
+    /* Reset body margin and padding */
+    body {
+      margin: 0;
+      padding: 0;
+      font-family: Arial, sans-serif;
+      height: auto; /* Allow the body to grow with content */
+      min-height: 100vh; /* Ensure it takes at least the full viewport height */
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+      align-items: center;
+      background: linear-gradient(45deg, #8b0000, #d00000, #c40000);
+      background-size: 800% 800%;
+      animation: bloodWave 10s ease infinite;
+      overflow-x: hidden; /* Hide horizontal scrollbar */
+    }
+
+    /* Animation for the blood red gradient background */
+    @keyframes bloodWave {
+      0% {
+        background-position: 0% 50%;
+      }
+
+      50% {
+        background-position: 100% 50%;
+      }
+
+      100% {
+        background-position: 0% 50%;
+      }
+    }
+
+    /* Heart Shape Styling */
+    .heart {
+      position: absolute;
+      width: 30px;
+      height: 30px;
+      background-color: #ff6f61;
+      transform: rotate(45deg);
+      animation: fall 3s ease-in infinite;
+      opacity: 0;
+    }
+
+    .heart:before,
+    .heart:after {
+      content: "";
+      position: absolute;
+      width: 30px;
+      height: 30px;
+      border-radius: 50%;
+      background-color: #ff6f61;
+    }
+
+    .heart:before {
+      left: -15px;
+    }
+
+    .heart:after {
+      top: -15px;
+    }
+
+    /* Falling Animation for Hearts */
+    @keyframes fall {
+      0% {
+        top: -30px;
+        left: 50%;
+        opacity: 1;
+      }
+
+      100% {
+        top: 100%;
+        opacity: 0;
+      }
+    }
+
+    /* Randomize heart creation */
+    .heart:nth-child(1) {
+      animation-delay: 0s;
+      left: 10%;
+    }
+
+    .heart:nth-child(2) {
+      animation-delay: 1s;
+      left: 30%;
+    }
+
+    .heart:nth-child(3) {
+      animation-delay: 2s;
+      left: 50%;
+    }
+
+    .heart:nth-child(4) {
+      animation-delay: 3s;
+      left: 70%;
+    }
+
+    .heart:nth-child(5) {
+      animation-delay: 4s;
+      left: 90%;
+    }
+
+    /* Styling for images */
+    .images-container {
+      z-index: 1;
+      text-align: center;
+    }
+
+    .images-container img {
+      max-width: 350px; /* Reduce the image size */
+      max-height: 500px; /* Maintain proportion */
+      margin: 30px 40px; /* Increase the space between images */
+      border-radius: 15px;
+      box-shadow: 0 4px 10px rgba(255, 223, 0, 0.7);
+      transition: box-shadow 1.5s ease;
+    }
+
+    .images-container img:hover {
+      box-shadow: 0 0 20px rgba(255, 223, 0, 1), 0 0 30px rgba(138, 43, 226, 0.9), 0 0 40px rgba(255, 105, 180, 0.8);
+    }
+
+    /* Add more content below images for testing scrolling */
+    .test-content {
+      color: white;
+      font-size: 18px;
+      text-align: center;
+      margin-top: 50px;
+    }
+
+    /* Text glow animation */
+    .glow {
+      font-size: 48px;
+      font-weight: bold;
+      text-transform: uppercase;
+      animation: glowColors 5s infinite linear;
+      color: #ffdf00;
+      text-shadow: 0 0 10px rgba(255, 223, 0, 0.9), 0 0 20px rgba(128, 0, 128, 0.8), 0 0 30px rgba(255, 20, 147, 0.8);
+    }
+
+    @keyframes glowColors {
+      0% {
+        color: #ffdf00;
+        text-shadow: 0 0 10px #ffdf00, 0 0 20px #ffdf00;
+      }
+
+      33% {
+        color: #8a2be2;
+        text-shadow: 0 0 10px #8a2be2, 0 0 20px #8a2be2;
+      }
+
+      66% {
+        color: #ff69b4;
+        text-shadow: 0 0 10px #ff69b4, 0 0 20px #ff69b4;
+      }
+
+      100% {
+        color: #ffdf00;
+        text-shadow: 0 0 10px #ffdf00, 0 0 20px #ffdf00;
+      }
+    }
+  </style>
+</head>
+
+<body>
+  <!-- Hearts falling from top -->
+  <div class="heart"></div>
+  <div class="heart"></div>
+  <div class="heart"></div>
+  <div class="heart"></div>
+  <div class="heart"></div>
+  <div class="heart"></div>
+
+  <!-- Images Section -->
+  <div class="images-container">
+    <img src="m1.jpg" alt="First Image">
+    <img src="m2.jpg" alt="Second Image">
+    <img src="m4.jpeg" alt="Second Image">
+    <img src="m3.jpeg" alt="Second Image">
+  </div>
+
+  <!-- Extra Content to Trigger Scrolling -->
+  <div class="test-content">
+    <p><H3>HAPPY BIRTHDAY TO U</H3></p>
+
+  </div>
+
+  <!-- Audio -->
+  <audio autoplay loop>
+    <source src="https://www.soundhelix.com/examples/mp3/SoundHelix-Song-1.mp3" type="audio/mp3">
+    Your browser does not support the audio element.
+  </audio>
+</body>
+
+</html>
+
+

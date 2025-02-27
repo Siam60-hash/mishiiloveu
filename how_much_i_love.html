@@ -1,0 +1,251 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Infinity for My Love</title>
+    <style>
+        /* Global Styles */
+        body {
+            margin: 0;
+            font-family: 'Arial', sans-serif;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            flex-direction: column;
+            height: 100vh;
+            overflow: hidden;
+            background: linear-gradient(120deg, #ff9a9e, #fad0c4, #fbc2eb, #ffecd2);
+            background-size: 400% 400%;
+            animation: backgroundFlow 12s infinite alternate;
+            position: relative;
+        }
+
+        @keyframes backgroundFlow {
+            0% { background-position: 0% 50%; }
+            50% { background-position: 100% 50%; }
+            100% { background-position: 0% 50%; }
+        }
+
+        /* Glowing Particles */
+        .particle {
+            position: absolute;
+            width: 8px;
+            height: 8px;
+            background: radial-gradient(circle, rgba(255, 255, 255, 1) 0%, rgba(255, 182, 193, 0) 70%);
+            border-radius: 50%;
+            opacity: 0.8;
+            animation: particleMove 10s infinite ease-in-out;
+        }
+
+        .particle:nth-child(even) {
+            background: radial-gradient(circle, rgba(255, 223, 186, 1) 0%, rgba(255, 140, 186, 0) 70%);
+        }
+
+        @keyframes particleMove {
+            0% {
+                transform: translate(0, 0) scale(0.5);
+                opacity: 0.7;
+            }
+            50% {
+                transform: translate(calc(100vw * (Math.random() - 0.5)), calc(100vh * (Math.random() - 0.5))) scale(1.2);
+                opacity: 1;
+            }
+            100% {
+                transform: translate(calc(200vw * (Math.random() - 0.5)), calc(200vh * (Math.random() - 0.5))) scale(0.8);
+                opacity: 0;
+            }
+        }
+
+        /* Sparkling Stars */
+        .star {
+            position: absolute;
+            width: 4px;
+            height: 4px;
+            background: rgba(255, 255, 255, 0.9);
+            border-radius: 50%;
+            animation: starTwinkle 4s infinite ease-in-out;
+        }
+
+        @keyframes starTwinkle {
+            0%, 100% {
+                opacity: 0.6;
+                transform: scale(0.8);
+            }
+            50% {
+                opacity: 1;
+                transform: scale(1.3);
+            }
+        }
+
+        /* Message Before Input Box */
+        #message {
+            font-size: 24px;
+            color: darkblue;
+            margin-bottom: 10px;
+            font-weight: bold;
+            text-align: center;
+        }
+
+        /* Input Box */
+        input {
+            font-size: 20px;
+            padding: 10px;
+            margin-top: 10px;
+            width: 70%;
+            max-width: 400px;
+            border: 2px solid darkslategray;
+            border-radius: 5px;
+            outline: none;
+            background-color: rgba(255, 255, 255, 0.8);
+            color: darkslategray;
+            z-index: 2;
+        }
+
+        /* Scatter Text with Gradient */
+        .scatter-text {
+            font-size: 50px;
+            font-weight: bold;
+            text-align: center;
+            opacity: 1;
+            transition: opacity 1s ease-out;
+            background: linear-gradient(45deg, #ff7e5f, #feb47b, #ff9a9e, #fbc2eb); /* Gradient without white */
+            -webkit-background-clip: text;
+            color: transparent;
+        }
+
+        .scatter-text.hidden {
+            opacity: 0;
+            animation: scatterText 1.5s forwards;
+        }
+
+        @keyframes scatterText {
+            0% { transform: translate(0, 0); opacity: 1; }
+            100% {
+                transform: translate(calc(var(--dx) * 10vw), calc(var(--dy) * 10vh));
+                opacity: 0;
+            }
+        }
+
+        /* Output Container for infinity symbols */
+        .output-container {
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            pointer-events: none;
+            overflow: hidden;
+            z-index: 1;
+        }
+
+        .infinity {
+            position: absolute;
+            font-size: 80px;
+            font-weight: bold;
+            color: darkblue;
+            opacity: 0.8;
+            transform: scale(0.5);
+            animation: moveInfinity 8s infinite ease-in-out;
+        }
+
+        @keyframes moveInfinity {
+            0% {
+                transform: translate(var(--startX), var(--startY)) scale(0.5);
+                opacity: 0.5;
+            }
+            50% {
+                opacity: 1;
+            }
+            100% {
+                transform: translate(var(--endX), var(--endY)) scale(1.5);
+                opacity: 0;
+            }
+        }
+    </style>
+</head>
+<body>
+    <div class="container" id="container">
+        <div id="message">How much do you think I love you?</div>
+        <input type="text" placeholder="Enter a number..." id="inputBox" />
+    </div>
+    <div class="output-container" id="outputContainer"></div>
+    <div class="scatter-text" id="scatterText" style="display: none;">BUT HOW MUCH I LOVE YOU</div>
+    
+    <!-- Particles and Stars -->
+    <div id="particleContainer"></div>
+    <div id="starContainer"></div>
+
+    <script>
+        const inputBox = document.getElementById('inputBox');
+        const container = document.getElementById('container');
+        const scatterText = document.getElementById('scatterText');
+        const outputContainer = document.getElementById('outputContainer');
+        const particleContainer = document.getElementById('particleContainer');
+        const starContainer = document.getElementById('starContainer');
+
+        // Create floating particles
+        for (let i = 0; i < 40; i++) {
+            const particle = document.createElement('div');
+            particle.classList.add('particle');
+            particle.style.left = Math.random() * 100 + 'vw';
+            particle.style.top = Math.random() * 100 + 'vh';
+            particleContainer.appendChild(particle);
+        }
+
+        // Create twinkling stars
+        for (let i = 0; i < 60; i++) {
+            const star = document.createElement('div');
+            star.classList.add('star');
+            star.style.left = Math.random() * 100 + 'vw';
+            star.style.top = Math.random() * 100 + 'vh';
+            starContainer.appendChild(star);
+        }
+
+        function handleInput() {
+            container.style.display = 'none';
+            scatterText.style.display = 'block';
+            setTimeout(() => scatterAndShowInfinity(), 2000);
+        }
+
+        function scatterAndShowInfinity() {
+            const words = scatterText.textContent.split('');
+            scatterText.innerHTML = words.map((char) => {
+                const dx = Math.random() * 2 - 1;
+                const dy = Math.random() * 2 - 1;
+                return `<span style="--dx: ${dx}; --dy: ${dy};">${char}</span>`;
+            }).join('');
+            scatterText.classList.add('hidden');
+            setTimeout(startInfinity, 1500);
+        }
+
+        function createInfinitySymbol() {
+            const infinity = document.createElement('div');
+            infinity.classList.add('infinity');
+            infinity.textContent = '∞';
+            const startX = Math.random() * 100 + 'vw';
+            const startY = Math.random() * 100 + 'vh';
+            const endX = Math.random() * 100 + 'vw';
+            const endY = Math.random() * 100 + 'vh';
+            infinity.style.setProperty('--startX', startX);
+            infinity.style.setProperty('--startY', startY);
+            infinity.style.setProperty('--endX', endX);
+            infinity.style.setProperty('--endY', endY);
+            outputContainer.appendChild(infinity);
+            setTimeout(() => infinity.remove(), 8000);
+        }
+
+        function startInfinity() {
+            setInterval(createInfinitySymbol, 50);
+        }
+
+        inputBox.addEventListener('keydown', (event) => {
+            if (event.key === 'Enter' && inputBox.value.trim() !== '') {
+                handleInput();
+            }
+        });
+    </script>
+</body>
+</html>
+
+

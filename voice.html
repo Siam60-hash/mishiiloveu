@@ -1,0 +1,201 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Publish 6 Audio Files</title>
+    <style>
+        body {
+            font-family: 'Arial', sans-serif;
+            margin: 20px;
+            text-align: center;
+            background: #000;
+            color: #fff;
+            animation: backgroundPulse 8s infinite alternate;
+        }
+        @keyframes backgroundPulse {
+            0% {
+                background-color: #000;
+            }
+            50% {
+                background-color: #1a1a1a;
+            }
+            100% {
+                background-color: #000;
+            }
+        }
+        h1 {
+            font-size: 2.5em;
+            margin-bottom: 30px;
+            text-shadow: 2px 2px 5px rgba(255, 255, 255, 0.3);
+        }
+        .audio-container {
+            margin-bottom: 30px;
+            padding: 15px;
+            border-radius: 10px;
+            background: rgba(255, 255, 255, 0.1);
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.7);
+            position: relative;
+        }
+        p {
+            font-size: 1.2em;
+            margin-bottom: 10px;
+            text-shadow: 1px 1px 2px rgba(255, 255, 255, 0.2);
+        }
+        .progress {
+            margin-top: 10px;
+            font-size: 0.9em;
+        }
+        audio {
+            width: 100%;
+            outline: none;
+            display: none;
+        }
+        button {
+            padding: 8px 15px;
+            margin: 5px;
+            border: none;
+            border-radius: 5px;
+            background: linear-gradient(45deg, #444, #888);
+            color: #fff;
+            font-size: 0.9em;
+            cursor: pointer;
+            box-shadow: 0 4px 6px rgba(0, 0, 0, 0.7);
+            transition: transform 0.2s ease, box-shadow 0.2s ease;
+        }
+        button:hover {
+            transform: scale(1.05);
+            box-shadow: 0 6px 10px rgba(0, 0, 0, 0.9);
+        }
+    </style>
+    <script>
+        function playAudio(id) {
+            const audio = document.getElementById(id);
+            audio.play();
+        }
+
+        function pauseAudio(id) {
+            const audio = document.getElementById(id);
+            audio.pause();
+        }
+
+        function skipForward(id) {
+            const audio = document.getElementById(id);
+            audio.currentTime += 5;
+        }
+
+        function skipBackward(id) {
+            const audio = document.getElementById(id);
+            audio.currentTime -= 5;
+        }
+
+        function updateProgress(id, progressId) {
+            const audio = document.getElementById(id);
+            const progress = document.getElementById(progressId);
+            audio.addEventListener('timeupdate', () => {
+                const currentTime = formatTime(audio.currentTime);
+                const duration = formatTime(audio.duration);
+                progress.textContent = `${currentTime} / ${duration}`;
+            });
+        }
+
+        function formatTime(seconds) {
+            const minutes = Math.floor(seconds / 60);
+            const secs = Math.floor(seconds % 60).toString().padStart(2, '0');
+            return `${minutes}:${secs}`;
+        }
+
+        document.addEventListener('DOMContentLoaded', () => {
+            updateProgress('audio1', 'progress1');
+            updateProgress('audio2', 'progress2');
+            updateProgress('audio3', 'progress3');
+            updateProgress('audio4', 'progress4');
+            updateProgress('audio5', 'progress5');
+            updateProgress('audio6', 'progress6');
+        });
+    </script>
+</head>
+<body>
+    <h1>My Audio Files</h1>
+
+    <div class="audio-container">
+        <p> Heavenly Delusion Voice</p>
+        <audio id="audio1">
+            <source src="my dimensional seduction 4 copy.mp3" type="audio/mpeg">
+            Your browser does not support the audio element.
+        </audio>
+        <button onclick="playAudio('audio1')">Play</button>
+        <button onclick="pauseAudio('audio1')">Pause</button>
+        <button onclick="skipBackward('audio1')">&#9664;&#9664; 5s</button>
+        <button onclick="skipForward('audio1')">5s &#9654;&#9654;</button>
+        <div class="progress" id="progress1">0:00 / 0:00</div>
+    </div>
+
+    <div class="audio-container">
+        <p>Heavenly Delusion Voice</p>
+        <audio id="audio2">
+            <source src="my dimensional seduction 6.mp3" type="audio/mpeg">
+            Your browser does not support the audio element.
+        </audio>
+        <button onclick="playAudio('audio2')">Play</button>
+        <button onclick="pauseAudio('audio2')">Pause</button>
+        <button onclick="skipBackward('audio2')">&#9664;&#9664; 5s</button>
+        <button onclick="skipForward('audio2')">5s &#9654;&#9654;</button>
+        <div class="progress" id="progress2">0:00 / 0:00</div>
+    </div>
+
+    <div class="audio-container">
+        <p>Heavenly Delusion Voice</p>
+        <audio id="audio3">
+            <source src="my dimentional seduction 1.mp3" type="audio/mpeg">
+            Your browser does not support the audio element.
+        </audio>
+        <button onclick="playAudio('audio3')">Play</button>
+        <button onclick="pauseAudio('audio3')">Pause</button>
+        <button onclick="skipBackward('audio3')">&#9664;&#9664; 5s</button>
+        <button onclick="skipForward('audio3')">5s &#9654;&#9654;</button>
+        <div class="progress" id="progress3">0:00 / 0:00</div>
+    </div>
+
+    <div class="audio-container">
+        <p>Heavenly Delusion Voice</p>
+        <audio id="audio4">
+            <source src="my dimentional seduction 2.mp3" type="audio/mpeg">
+            Your browser does not support the audio element.
+        </audio>
+        <button onclick="playAudio('audio4')">Play</button>
+        <button onclick="pauseAudio('audio4')">Pause</button>
+        <button onclick="skipBackward('audio4')">&#9664;&#9664; 5s</button>
+        <button onclick="skipForward('audio4')">5s &#9654;&#9654;</button>
+        <div class="progress" id="progress4">0:00 / 0:00</div>
+    </div>
+
+    <div class="audio-container">
+        <p>Heavenly Delusion Voice</p>
+        <audio id="audio5">
+            <source src="my dimentional seduction 3.mp3" type="audio/mpeg">
+            Your browser does not support the audio element.
+        </audio>
+        <button onclick="playAudio('audio5')">Play</button>
+        <button onclick="pauseAudio('audio5')">Pause</button>
+        <button onclick="skipBackward('audio5')">&#9664;&#9664; 5s</button>
+        <button onclick="skipForward('audio5')">5s &#9654;&#9654;</button>
+        <div class="progress" id="progress5">0:00 / 0:00</div>
+    </div>
+
+    <div class="audio-container">
+        <p>Heavenly Delusion Voice</p>
+        <audio id="audio6">
+            <source src="my dimentional seduction 5.mp3" type="audio/mpeg">
+            Your browser does not support the audio element.
+        </audio>
+        <button onclick="playAudio('audio6')">Play</button>
+        <button onclick="pauseAudio('audio6')">Pause</button>
+        <button onclick="skipBackward('audio6')">&#9664;&#9664; 5s</button>
+        <button onclick="skipForward('audio6')">5s &#9654;&#9654;</button>
+        <div class="progress" id="progress6">0:00 / 0:00</div>
+    </div>
+
+</body>
+</html>
+

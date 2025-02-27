@@ -1,0 +1,149 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Heartbeat Sound</title>
+    <style>
+        body {
+            margin: 0;
+            padding: 0;
+            font-family: Arial, sans-serif;
+            background: linear-gradient(120deg, #0d0d0d, #550505, #0d0d0d);
+            background-size: 300% 300%;
+            animation: backgroundPulse 6s infinite;
+            color: white;
+            text-align: center;
+            overflow: hidden;
+            height: 100vh;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            flex-direction: column;
+        }
+
+        @keyframes backgroundPulse {
+            0% { background-position: 0% 50%; }
+            50% { background-position: 100% 50%; }
+            100% { background-position: 0% 50%; }
+        }
+
+        .heart {
+            position: absolute;
+            width: 15px;
+            height: 15px;
+            background: rgba(255, 105, 180, 0.8);
+            border-radius: 50%;
+            animation: floatHeart 4s infinite ease-in-out;
+        }
+
+        .heart:before,
+        .heart:after {
+            content: '';
+            position: absolute;
+            width: 15px;
+            height: 15px;
+            background: rgba(255, 105, 180, 0.8);
+            border-radius: 50%;
+        }
+
+        .heart:before { top: -7.5px; left: 0; }
+        .heart:after { left: 7.5px; top: 0; }
+
+        @keyframes floatHeart {
+            0% { transform: translate(0, 0) scale(1); opacity: 1; }
+            25% { transform: translate(100px, 100px) scale(1.2); opacity: 0.7; }
+            50% { transform: translate(-100px, -50px) scale(1); opacity: 0.7; }
+            75% { transform: translate(50px, -150px) scale(1.1); opacity: 0.7; }
+            100% { transform: translate(-100px, 100px) scale(1); opacity: 0; }
+        }
+
+        .hearts-container {
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            overflow: hidden;
+        }
+
+        #text-container {
+            font-size: 2rem;
+            text-shadow: 0 0 10px rgba(255, 255, 255, 0.8), 0 0 20px rgba(255, 0, 0, 0.5);
+            display: none;
+            white-space: pre-wrap;
+        }
+
+        button {
+            position: absolute;
+            top: 20px;
+            left: 50%;
+            transform: translateX(-50%);
+            padding: 10px 20px;
+            font-size: 1rem;
+            border: none;
+            border-radius: 5px;
+            background-color: #ff4d4d;
+            color: white;
+            cursor: pointer;
+            box-shadow: 0 4px 8px rgba(255, 0, 0, 0.6);
+            animation: pulse 2s infinite;
+        }
+
+        @keyframes pulse {
+            0%, 100% { transform: scale(1); }
+            50% { transform: scale(1.1); }
+        }
+    </style>
+</head>
+<body>
+    <audio id="heartbeat-sound" loop>
+        <source src="heartbeat.mp3" type="audio/mpeg">
+        Your browser does not support the audio element.
+    </audio>
+
+    <div class="hearts-container"></div>
+
+    <button id="play-sound-btn">Before Reading pls touch me</button>
+    <div id="text-container"></div>
+
+    <script>
+        const text = "You Have Entered Into My Heart. With every beat of my heart, I feel closer to you.Ami jni nah j tumi amake niye ki feel koro but trust ami tomake onnorokom feel kori . Tumi hoito ask korte paro bolte paro j amito Nilima keo posondo kortam . Tumi bolte paro j ami Nilima k onek bosor dhore posondo kori . But trust me j ami oke niye kokhono tmr moto vabi nai . Ami always vabtam j are oo gele or theke aro valo meye ashbe aro sundor meye amr life e ashbe oke biye korbo , or sathe life spend korbo. But ami kokhono toamke niye oirokom vabtesi nah , vabtei partesi nah . Mind e always ekta jinish ei ghure hoi tumi nahoi onno keu nah . Tumi na thakle r kauke ami oi spot ta dite parbo nah amr life e . Hoito bolte paro j ami dramatic ba natoker moto kotha boltesi but it is true . R ami amr sorbocho ta diye try kortesi jate ami tomake amr kore nite pari . Shibraj bolte parbe j ami kototaditesi amr life er . Just to make sure that u remain only mine. Ami majhe modhe vabi j tumake onno keu biye korbe vablei amr moner vetor ta venge jai just mne ki bolbo oita niye vableo kirokom onno ekta feelings hoi . Mne hoi jno onek vari ekta jinish amr buker upore keu chapai dise . Ami chai na j tumi onno karo ghore jao onno karo hat dhoro onno karo feelings hou . Ami always namaz e tomake chai ekhon bkita Allah er hate . Ami sob ksu ter upor sere disi , but tao keno jno mante pari nah j tumi onno karo hoba . ";
+        let index = 0;
+        const textContainer = document.getElementById("text-container");
+        const heartsContainer = document.querySelector('.hearts-container');
+
+        function playHeartbeat() {
+            const heartbeatSound = document.getElementById('heartbeat-sound');
+            heartbeatSound.play().catch(error => console.error("Autoplay blocked: ", error));
+            
+            textContainer.style.display = "block";
+            textContainer.innerHTML = "";
+            index = 0;
+            revealText();
+            setInterval(createHeart, 150);
+        }
+
+        function revealText() {
+            if (index < text.length) {
+                textContainer.innerHTML += text[index];
+                index++;
+                setTimeout(revealText, 100); // Faster writing speed
+            }
+        }
+
+        function createHeart() {
+            const heart = document.createElement('div');
+            heart.classList.add('heart');
+            heart.style.left = Math.random() * 100 + 'vw';
+            heart.style.top = Math.random() * 100 + 'vh';
+            heart.style.animationDuration = Math.random() * 2 + 3 + 's';
+            heart.style.animationDelay = Math.random() * 3 + 's';
+            heartsContainer.appendChild(heart);
+            setTimeout(() => heart.remove(), 5000);
+        }
+
+        document.getElementById('play-sound-btn').addEventListener('click', playHeartbeat);
+    </script>
+</body>
+</html>
